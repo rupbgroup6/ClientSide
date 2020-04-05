@@ -1,0 +1,29 @@
+.about{
+    height:50px;
+    width: 100%;
+    background-color: #fff;
+    border: none;
+}
+
+html{
+    width: 100%;
+}
+*{
+    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+ .about .logo{
+    background-color: #fff;
+    border: none;
+    
+ }
+ .header{
+     width:100%;
+ }
+
+img{
+    width:100%;
+    padding: 0;
+    margin: 0;   
+}
