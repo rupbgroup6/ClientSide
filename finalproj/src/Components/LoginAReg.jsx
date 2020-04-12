@@ -17,10 +17,10 @@ class LogAReg extends Component {
             showPassword : "false",
             rememberMe: "false",
             mode:"login",
-            local: true
+            local: true,
         }
 
-        this.apiUrl = 'tbd';//Dont forget to change
+        this.apiUrl = 'http://localhost:51298/api/users';
         if (!this.state.local) {
           this.apiUrl = 'tbd';//Dont forget to change
         }
@@ -37,8 +37,19 @@ class LogAReg extends Component {
             return res.json()
           })
           .then(
-            (user) => {
-              this.checkMatch(user);
+            (result) => {
+                let notExists = false;
+                for(var i =0 ; i< result.length ; i++){
+                    if(this.state.email.toLowerCase() === result[i].Email){
+                        this.checkMatch(result[i]);
+                    }
+                    else if(i === result.length-1){
+                        notExists = true;
+                    }
+                }
+                if(notExists){
+                    alert("There's no such user \nPlease register")
+                }
             },
             (error) => {
               console.log("err post=", error);
@@ -63,7 +74,7 @@ class LogAReg extends Component {
           .then(
             (result) => {
               console.log("fetch POST= ", result);
-              swal("Great!", "Let's log in", "success");
+              alert("Great \nLet's log in")
             },
             (error) => {
               console.log("err post=", error);
@@ -71,38 +82,40 @@ class LogAReg extends Component {
       }
 
       register = () =>{
-          let email = this.state.email;
+          let email = this.state.email.toLowerCase();
           let password = this.state.password;
           let sPassword = this.state.sPassword;
+          let today = new Date().toLocaleDateString()
           if(email === "" || password === ""|| sPassword === ""){
-            swal("Error", "Please fill all the fields");
+            alert("Error \nPlease fill all the fields");
           }
           else{
             if(password === sPassword){
                 let u = {
                     Email: email,
-                    Password: password
+                    Password: password,
+                    Admin: false,
+                    DateStamp: today
                 }
                 this.fetchRegister(u);
             }
             else{
-              swal("Error", "Passwords don't match");
+              alert("Error \nPasswords don't match");
             }
           }
           
       }
 
-      checkMatch = (user) =>{//must correct later!!
-        if('123' === this.state.email){
-            if('123' === this.state.password){
+      checkMatch = (user) =>{
+        let password = this.state.password;
+            if(String(user.Password) === password){
                 this.props.history.push("/intro");
-               
             }
             else{
-                swal("Error", "Something is incorrect \nPlease try again");
+                alert("Something was incorrect \nPlease try again");
             }
         }
-      }
+      
 
       
 
@@ -174,7 +187,7 @@ class LogAReg extends Component {
                         <div></div>
                    </div>
                    <div className="tabs">
-                        <form>
+                        <div className="form">
                             <div className="inputs" style={{paddingBottom:"15px"}}>
                                 <div className="input">
                                     <input type="text" placeholder="Email" onChange={this.changeEmail}/>
@@ -193,10 +206,10 @@ class LogAReg extends Component {
                                     <span>Show Password</span>
                                 </label>
                             </div>
-                            <button onClick={this.checkMatch}>Login</button>
-                        </form>
+                            <button onClick={this.btnFetchGetIfo}>Login</button>
+                        </div>
 
-                        <form>
+                        <div className="form">
                             <div className="inputs">
                                 <div className="input">
                                     <input type="text" placeholder="Email" onChange={this.changeEmail}/>
@@ -211,8 +224,8 @@ class LogAReg extends Component {
                                     <img src={password}/>
                                 </div>
                             </div>
-                            <button>Register</button>
-                        </form>
+                            <button onClick={this.register}>Register</button>
+                        </div>
                    </div>
                </div>
            </div>
