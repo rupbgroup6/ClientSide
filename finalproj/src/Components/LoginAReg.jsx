@@ -26,7 +26,7 @@ class LogAReg extends Component {
         }
     }
 
-    btnFetchGetIfo = () => {
+    btnFetchGetIfo = () => {//get all users and match info before login
         fetch(this.apiUrl, {
           method: 'GET',
           headers: new Headers({
@@ -59,33 +59,59 @@ class LogAReg extends Component {
       fetchRegister = (u) =>{
         //pay attention case sensitive!!!! should be exactly as the prop in C#!
 
-        fetch(this.apiUrl, {
-          method: 'POST',
-          body: JSON.stringify(u),
-          headers: new Headers({
-            'Content-type': 'application/json; charset=UTF-8' //very important to add the 'charset=UTF-8'!!!!
+        fetch(this.apiUrl, {//checking first if theres a userwith the same email
+            method: 'GET',
+            headers: new Headers({
+              'Content-Type': 'application/json; charset=UTF-8',
+            })
           })
-      
-        })
-          .then(res => {
-            console.log('res=', res);
-            return res.json()
-          })
-          .then(
-            (result) => {
-              console.log("fetch POST= ", result);
-              alert("Great \nLet's log in")
-            },
-            (error) => {
-              console.log("err post=", error);
-            });
+            .then(res => {
+              return res.json()
+            })
+            .then(
+              (result) => {
+                  let notExists = false;
+                  for(var i =0 ; i< result.length ; i++){
+                      if(this.state.email.toLowerCase() === result[i].Email){
+                        alert("Email has already been registered \nPlease choose a different email")
+                        break;
+                      }
+                      else if(i === result.length-1){
+                          notExists = true;
+                      }
+                  }
+                  if(notExists){
+                    fetch(this.apiUrl, {//registering the user to the system
+                        method: 'POST',
+                        body: JSON.stringify(u),
+                        headers: new Headers({
+                          'Content-type': 'application/json; charset=UTF-8' //very important to add the 'charset=UTF-8'!!!!
+                        })
+                    
+                      })
+                        .then(res => {
+                          console.log('res=', res);
+                          return res.json()
+                        })
+                        .then(
+                          (result) => {
+                            console.log("fetch POST= ", result);
+                            alert("Great \nLet's log in")
+                          },
+                          (error) => {
+                            console.log("err post=", error);
+                          });
+                  }
+              },
+              (error) => {
+                console.log("err post=", error);
+              });
       }
 
-      register = () =>{
+      register = () =>{// check all the fields and then register
           let email = this.state.email.toLowerCase();
           let password = this.state.password;
           let sPassword = this.state.sPassword;
-          let today = new Date().toLocaleDateString()
           if(email === "" || password === ""|| sPassword === ""){
             alert("Error \nPlease fill all the fields");
           }
@@ -95,9 +121,8 @@ class LogAReg extends Component {
                     Email: email,
                     Password: password,
                     Admin: false,
-                    DateStamp: today
                 }
-                this.fetchRegister(u);
+                this.fetchRegister(u);//move to check that user doesnt exist and then register it
             }
             else{
               alert("Error \nPasswords don't match");
@@ -106,7 +131,7 @@ class LogAReg extends Component {
           
       }
 
-      checkMatch = (user) =>{
+      checkMatch = (user) =>{// checking that passwords matche
         let password = this.state.password;
             if(String(user.Password) === password){
                 this.props.history.push("/intro");
@@ -119,7 +144,7 @@ class LogAReg extends Component {
 
       
 
-    showPassword = () =>{
+    showPassword = () =>{//show or hide password
         if(this.state.showPassword === "false"){
             $('#password').prop('type', 'text');
             this.setState({
@@ -154,7 +179,7 @@ class LogAReg extends Component {
         });
     }
 
-    changeMode = () =>{
+    changeMode = () =>{// changing the mode from login to register
         if(this.state.mode === "login"){
             this.setState({
                 mode: "register"
