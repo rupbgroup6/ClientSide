@@ -134,7 +134,7 @@ class LogAReg extends Component {
       checkMatch = (user) =>{// checking that passwords matche
         let password = this.state.password;
             if(String(user.Password) === password){
-                this.props.history.push("/intro");
+                this.props.history.push("/intro/"+this.state.email);
             }
             else{
                 alert("Something was incorrect \nPlease try again");

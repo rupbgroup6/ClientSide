@@ -8,7 +8,8 @@ class Quiz extends Component {
         super(props);
         this.state = {
             local: true,
-            questions: ["what up?", "how you doing?"]
+            questions: this.props.match.params.questions,
+            id: this.props.match.params.id
         }
 
         this.apiUrl = 'tbd';//Dont forget to change

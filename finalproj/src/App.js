@@ -13,10 +13,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 class App extends Component{
   constructor(props){
     super(props);
-    this.state={
-      local:false,
-      questions: []
-    }
 } 
 
 fetchGetQuestion = () =>{
@@ -49,6 +45,8 @@ fetchGetQuestion = () =>{
       });
 }
 
+
+
   render(){
     return (
       <div className="App">
@@ -63,10 +61,10 @@ fetchGetQuestion = () =>{
                 <Route exact path="/" >
                  <LogAReg />
                 </Route>
-                <Route path="/quiz" questions={this.state.questions} >
+                <Route path="/quiz/:id/:questions" >
                  <Quiz />
                 </Route>
-                <Route path="/intro" >
+                <Route path="/intro/:email" >
                  <Intro />
                 </Route>
               </Switch>
