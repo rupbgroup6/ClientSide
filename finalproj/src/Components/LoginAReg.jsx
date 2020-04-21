@@ -59,7 +59,7 @@ class LogAReg extends Component {
       fetchRegister = (u) =>{
         //pay attention case sensitive!!!! should be exactly as the prop in C#!
 
-        fetch(this.apiUrl, {//checking first if theres a userwith the same email
+        fetch(this.apiUrl, {//checking first if theres a user with the same email
             method: 'GET',
             headers: new Headers({
               'Content-Type': 'application/json; charset=UTF-8',
@@ -116,7 +116,7 @@ class LogAReg extends Component {
             alert("Error \nPlease fill all the fields");
           }
           else{
-            if(password === sPassword){
+            if(password === sPassword){//making an object exectly as in serverSide
                 let u = {
                     Email: email,
                     Password: password,
@@ -134,7 +134,8 @@ class LogAReg extends Component {
       checkMatch = (user) =>{// checking that passwords matche
         let password = this.state.password;
             if(String(user.Password) === password){
-                this.props.history.push("/intro/"+this.state.email);
+                let temp = "/intro/" + this.state.email;
+                this.props.history.replace(temp);
             }
             else{
                 alert("Something was incorrect \nPlease try again");

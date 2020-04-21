@@ -39,7 +39,7 @@ class Intro extends Component {
               (result) => {
                 result.map(user => {
                     if(user.Email === this.state.email.toLowerCase()){
-                        this.setState({
+                        this.setState({//saving the id of the specific user
                             id : user.UserId
                         });
                     }
@@ -92,11 +92,11 @@ class Intro extends Component {
                         </Col>
                     </Row>
                     <Row xs={2} className="about">
-                        <Col xs={6} style={{color:"black",textAlign:"center",border:"none",backgroundColor:"white",marginLeft:"0"}}><h2 className="logo" style={{float:"right"}}>About</h2></Col>
-                        <Col xs={6} style={{color:"#33adff",textAlign:"center",border:"none",backgroundColor:"white"}}><h2 className="logo">IO&nbsp;-&nbsp;OI</h2></Col>
+                        <Col xs={6} style={{color:"black",textAlign:"center",border:"none",backgroundColor:"white",marginLeft:"0"}}><h2 className="logo" style={{float:"right",color:"black"}}>About</h2></Col>
+                        <Col xs={6} style={{color:"#33adff",textAlign:"center",border:"none",backgroundColor:"white"}}><h2 className="logo" style={{color:"#33adff"}}>IO&nbsp;-&nbsp;OI</h2></Col>
                     </Row>
-                    <Row style={{height:"40%",backgroundColor:"white",alignItems:"center"}}>
-                      <Col xs={10} dir="rtl" style={{backgroundColor:"grey",height:"100%",margin:"auto 20px"}}><p dir="rtl" style={{backgroundColor:"grey",fontSize:"16.2px"}}>אפליקציה זו מבוססת על מחקר מדעי של ד"ר אסרף ופרופ' אביב שהם מאוניברסיטת חיפה שהתפרסם לאחרונה בכתב העת מספר 1 בעולם בתחום השיווק הבינלאומי: International Marketing Review.במסגרת המחקר נאספו נתונים מ 100 מנהלים מחברות ישראליות גדולות ו 100 מנהלים מחברות סטארט-אפ ישראליות. כל החברות במדגם עוסקות בפעילות שיווק בינלאומי. שאלת המחקר המרכזית הייתה איזו גישה אסטרטגית תביא לביצועים טובים יותר בשווקים בינלאומיים. בנוסף נבדק בצורה אמפירית מה תורם יותר להצלחה אסטרטגית גדולה יותר בשווקים בינלאומיים: יכולות שיווק או יכולות טכנולוגיות? התוצאות עשויות להפתיע חלק גדול מקהל היזמים בישראל ולהסביר לפחות חלק מהכישלון של סטארט-אפים רבים בפיתוח פעילות בינלאומית.</p></Col>
+                    <Row style={{height:"42%",backgroundColor:"white",alignItems:"center"}}>
+                      <Col xs={10} dir="rtl" style={{backgroundColor:"grey",height:"100%",margin:"auto 20px"}}><p dir="rtl" style={{backgroundColor:"grey",fontSize:"14.8px"}}>אפליקציה זו מבוססת על מחקר מדעי של ד"ר אסרף ופרופ' אביב שהם מאוניברסיטת חיפה שהתפרסם לאחרונה בכתב העת מספר 1 בעולם בתחום השיווק הבינלאומי: International Marketing Review.במסגרת המחקר נאספו נתונים מ 100 מנהלים מחברות ישראליות גדולות ו 100 מנהלים מחברות סטארט-אפ ישראליות. כל החברות במדגם עוסקות בפעילות שיווק בינלאומי. שאלת המחקר המרכזית הייתה איזו גישה אסטרטגית תביא לביצועים טובים יותר בשווקים בינלאומיים. בנוסף נבדק בצורה אמפירית מה תורם יותר להצלחה אסטרטגית גדולה יותר בשווקים בינלאומיים: יכולות שיווק או יכולות טכנולוגיות? התוצאות עשויות להפתיע חלק גדול מקהל היזמים בישראל ולהסביר לפחות חלק מהכישלון של סטארט-אפים רבים בפיתוח פעילות בינלאומית.</p></Col>
                     </Row>
                     <Row style={{backgroundColor:"white"}}>
                       <Col style={{backgroundColor:"white"}}></Col>

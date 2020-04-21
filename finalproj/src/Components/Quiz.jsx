@@ -5,7 +5,7 @@ import swal from 'sweetalert';
 import '../CSS/Quiz.css';
 import male from '../Images/Male.png';
 import female from '../Images/Female.png';
-import about from '../Images/About.png';
+import about from '../Images/about.png';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import next from '../Images/next2.png';
@@ -15,8 +15,8 @@ class Quiz extends Component {
         super(props);
         this.state = {
             local: true,
-            questions: this.props.match.params.questions,
-            id: this.props.match.params.id,
+            questions: this.props.match.params.questions,//get the question from params
+            id: this.props.match.params.id,//get the id from params
             gender: "",
             age: "",
             education : "",
