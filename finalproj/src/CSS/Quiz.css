@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+	padding: 0;
+	text-decoration: none;
+	font-family: 'Segoe UI', sans-serif;
+	outline: none;
+	border: none;
+	background: #0A0A0A;
+	color:rgb(238, 236, 236);
+	
+}
+
+html, body {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	width:100%
+  }
+
+.align {
+	height: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding-bottom: 3px;
+	padding-top: 0px;
+}
+
+
+
+.about {
+	
+	width: 120px;
+	height: 45px;
+	
+	
+}
+
+.card2 {
+	margin-top: 10px;
+	height: 100%;
+	width: 350px;
+	background: #121212;
+	border: 1px solid white;
+	border-radius: 10px;
+	overflow: hidden;
+	transition: max-height 0.2s;
+}
+
+
+.gender{
+	padding-left: 45px;
+	padding-top: 2px;
+	padding-bottom: 4px;
+	padding-right: 10px;
+	border: 1px solid #373737;
+	font-family: "sans-serif";
+}
+
+.age{
+	padding-top: 5px;
+	padding-bottom: 10px;
+	border: 1px solid #373737;
+	padding-right: 10px;
+	font-family: "sans-serif";
+
+}
+
+
+img {
+	display: block;
+	width: 100px;
+	height: 100px;	
+  }
+
+  .slidecontainer {
+
+	padding-left: 30px;
+	padding-right: 0px;
+
+  }
+
+  
+  .slider {
+	-webkit-appearance: none;
+	width: 90%;
+	height: 10px;
+	border-radius: 5px;
+	background: #d3d3d3;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+	
+	
+  }
+  
+ 
+  
+  .slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #207e81;
+	cursor: pointer;
+  }
+
+  .education{
+	padding-top: 5px;
+	padding-bottom: 2px;
+	border: 1px solid #373737;
+	padding-right: 10px;
+	font-family: "sans-serif";
+
+  }
+
+  .job{
+	padding-top: 3px;
+	padding-bottom: 6px;
+	border: 1px solid #373737;
+	padding-right: 10px;
+	font-family: "sans-serif";
+	  
+  }
+  .card2 button {
+	
+	background: 5ab6b9;
+	border-radius: 12px;
+	color:rgb(238, 236, 236);
+	font-weight: 700;
+	font-size: 15px;
+	border: 2px solid #0A0A0A;
+	
+	
+}
+
+.education button
+{
+	width: 75px;
+	height: 54px;
+}
+
+.job button{
+	width: 100px;
+	height: 55px;
+	
+}
+
+.explanation{
+	background-color: gray;
+	text-align: center;
+	padding-top: 10px;
+	padding-left: 26px;
+	padding-right: 4px;
+	padding-bottom: 5px;
+}
+
+.explanation >h6{
+	padding-right: 10px;
+	font-family: 'Segoe UI', sans-serif;
+	text-align: center;
+
+}
+
+
+
+.question{
+	text-align: center;
+	float: right;
+	background: none;
+	padding-right: opx;
+	padding-bottom: 10px;
+
+}
+
+.question button{
+	
+	width: 60px;
+	height: 50px;
+	
+
+}
+
+.question2 {
+
+	text-align: center;
+	float: right;
+	background: none;
+	padding-right: opx;
+	
+}
+
+.question2 button{
+	width: 120px;
+	height: 80px;
+}
+
+
+.btn-group{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	
+}
+
+
+
+.note button{
+
+	font-size: 10px;
+	float: right;
+	height: 40px;
+
+	
+	
+}
+
+.note{
+	padding-left: 25px;
+	padding-right: 23px;
+	padding-bottom: 5px;
+}
+
+.finish button{
+	display: block;
+	background: #33adff;
+	padding: 14px 52px;
+	font-weight: 700;
+	font-size: 17px;
+	cursor: pointer;
+	
+}
+
+
+  
+  
+  

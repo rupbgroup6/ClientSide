@@ -8,6 +8,7 @@ import "./CSS/App.css";
 import LogAReg  from "./Components/LoginAReg.jsx";
 import Quiz from "./Components/Quiz.jsx";
 import Intro from './Components/intro.jsx';
+import Game from './Components/Game.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component{
@@ -66,6 +67,9 @@ fetchGetQuestion = () =>{
                 </Route>
                 <Route path="/intro/:email" >
                  <Intro />
+                </Route>
+                <Route path="/game/:profile" >
+                 <Game />
                 </Route>
               </Switch>
             </CSSTransition>
