@@ -17,12 +17,12 @@ class LogAReg extends Component {
             showPassword : "false",
             rememberMe: "false",
             mode:"login",
-            local: true,
+            local: false,
         }
 
         this.apiUrl = 'http://localhost:51298/api/users';
         if (!this.state.local) {
-          this.apiUrl = 'tbd';//Dont forget to change
+          this.apiUrl = 'http://proj.ruppin.ac.il/bgroup6/prod/api/users';//Dont forget to change
         }
     }
 

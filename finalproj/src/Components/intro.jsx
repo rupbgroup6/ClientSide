@@ -16,12 +16,12 @@ class Intro extends Component {
             email: this.props.match.params.email,
             questions:[],
             id: "",
-            local: true
+            local: false
         }
 
         this.apiUrl = 'http://localhost:51298/api/users';
         if (!this.state.local) {
-          this.apiUrl = 'tbd';//Dont forget to change
+          this.apiUrl = 'http://proj.ruppin.ac.il/bgroup6/prod/api/users';//Dont forget to change
         }
     }
 
@@ -50,7 +50,7 @@ class Intro extends Component {
                       url = "http://localhost:51298/api/questions";
                     }
                     else{
-                      url = "tbd";//dont forget to define
+                      url = "http://proj.ruppin.ac.il/bgroup6/prod/api/questions";//dont forget to define
                     }
                     fetch(url, {//fetch the questions
                       method: 'GET',
