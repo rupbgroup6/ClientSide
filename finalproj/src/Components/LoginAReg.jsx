@@ -38,16 +38,15 @@ class LogAReg extends Component {
           })
           .then(
             (result) => {
-                let notExists = false;
+                let counter = 0;
+            
                 for(var i =0 ; i< result.length ; i++){
                     if(this.state.email.toLowerCase() === result[i].Email){
                         this.checkMatch(result[i]);
-                    }
-                    else if(i === result.length-1){
-                        notExists = true;
+                        counter++;
                     }
                 }
-                if(notExists){
+                if(counter === 0){
                     alert("There's no such user \nPlease register")
                 }
             },
