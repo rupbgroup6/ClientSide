@@ -31,9 +31,7 @@ html, body {
 
 
 .about {
-	
-	width: 120px;
-	height: 45px;
+	height: 40px;
 }
 
 .card2 {
@@ -49,187 +47,79 @@ html, body {
 
 
 .gender{
-	padding-left: 45px;
+	width: 100%;
 	padding-top: 2px;
 	padding-bottom: 4px;
-	padding-right: 10px;
-	border: 1px solid #373737;
 	font-family: "sans-serif";
+	text-align: center;
 }
 
 .age{
 	padding-top: 5px;
 	padding-bottom: 10px;
-	border: 1px solid #373737;
-	padding-right: 10px;
 	font-family: "sans-serif";
+	width: 100%;
+}
 
+.role{
+	width: 100%;
+	text-align: center;
 }
 
 
-img {
+label img {
 	display: block;
 	width: 100px;	
-  }
+	border-radius: 50%;
+}
 
-  .slidecontainer {
+.gender-radio{
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+[type=radio]:checked + img {
 
-	padding-left: 30px;
-	padding-right: 0px;
+	box-shadow: -1px -2px 4px rgba(204, 215, 218, 0.521),
+				 5px 5px 8px rgba(255, 255, 255, 0.603);
+}
 
-  }
+.role-radio{
+	opacity: 0;
+	width: 40px;
+	height: 20px;
+}
 
+.role label{
+	
+	font-size: 20px;
+	text-align: center;
+	line-height: 20px;
+}
+
+.role label h5{
+	border-radius: 10px;
+}
+
+.role [type=radio]:checked + h5{
+
+	box-shadow: -1px -2px 4px rgba(212, 16, 26, 0.521),
+				 5px 5px 8px rgba(151, 11, 11, 0.603);
+}
+
+
+
+
+	
   
-  .slider {
-	-webkit-appearance: none;
-	width: 90%;
-	height: 10px;
-	border-radius: 5px;
-	background: #d3d3d3;
-	outline: none;
-	opacity: 0.7;
-	-webkit-transition: .2s;
-	transition: opacity .2s;
-	
-	
-  }
   
  
+
+
   
-  .slider::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	appearance: none;
-	width: 25px;
-	height: 25px;
-	border-radius: 50%;
-	background: #207e81;
-	cursor: pointer;
-  }
-
-  .education{
-	padding-top: 5px;
-	padding-bottom: 2px;
-	border: 1px solid #373737;
-	padding-right: 10px;
-	font-family: "sans-serif";
-
-  }
-
-  .job{
-	padding-top: 3px;
-	padding-bottom: 6px;
-	border: 1px solid #373737;
-	padding-right: 10px;
-	font-family: "sans-serif";
-	  
-  }
-  .card2 button {
-	
-	background: 5ab6b9;
-	border-radius: 12px;
-	color:rgb(238, 236, 236);
-	font-weight: 700;
-	font-size: 15px;
-	border: 2px solid #0A0A0A;
-	
-	
-}
-
-.education button
-{
-	width: 75px;
-	height: 54px;
-}
-
-.job button{
-	width: 100px;
-	height: 55px;
-	
-}
-
-.explanation{
-	background-color: gray;
-	text-align: center;
-	padding-top: 10px;
-	padding-left: 26px;
-	padding-right: 4px;
-	padding-bottom: 5px;
-}
-
-.explanation >h6{
-	padding-right: 10px;
-	font-family: 'Segoe UI', sans-serif;
-	text-align: center;
-
-}
 
 
 
-.question{
-	text-align: center;
-	float: right;
-	background: none;
-	padding-right: opx;
-	padding-bottom: 10px;
-
-}
-
-.question button{
-	
-	width: 60px;
-	height: 50px;
-	
-
-}
-
-.question2 {
-
-	text-align: center;
-	float: right;
-	background: none;
-	padding-right: opx;
-	
-}
-
-.question2 button{
-	width: 120px;
-	height: 80px;
-}
-
-
-.btn-group{
-	padding-top: 10px;
-	padding-bottom: 10px;
-	
-}
-
-
-
-.note button{
-
-	font-size: 10px;
-	float: right;
-	height: 40px;
-
-	
-	
-}
-
-.note{
-	padding-left: 25px;
-	padding-right: 23px;
-	padding-bottom: 5px;
-}
-
-.finish button{
-	display: block;
-	background: #33adff;
-	padding: 14px 52px;
-	font-weight: 700;
-	font-size: 17px;
-	cursor: pointer;
-	
-}
 
 
   

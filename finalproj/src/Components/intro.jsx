@@ -64,7 +64,7 @@ class Intro extends Component {
                         <Col xs={4}><h2 style={{textAlign:"center",color:"#fff"}}>-</h2></Col>
                         <Col xs={4}><h2 style={{float:"left",color:"#fff"}}>OI</h2></Col>
                         <Col xs={12} style={{padding:"0",height:"20%"}}>
-                            <img src={welcomePic} alt=""/>
+                            <img className="for-intro" src={welcomePic} alt=""/>
                         </Col>
                     </Row>
                     <Row xs={2} className="about">
