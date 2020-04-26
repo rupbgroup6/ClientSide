@@ -14,15 +14,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 class App extends Component{
   constructor(props){
     super(props);
+    this.state = {
+      local: false,
+      ioQuestions: [],
+      bigQuestions: [],
+      orQuestions: []
+    };
 } 
 
 fetchGetQuestion = () =>{
   let url ="";
   if(this.state.local){
-    url = "tbd";//dont forget to define
+    url = "http://localhost:51298/api/questions";
   }
   else{
-    url = "tbd";//dont forget to define
+    url = "http://proj.ruppin.ac.il/bgroup6/prod/api/questions";
   }
   fetch(url, {
     method: 'GET',
@@ -37,8 +43,33 @@ fetchGetQuestion = () =>{
       (result) => {
         let temp = [];
         result.map(question => temp.push(question));
+        let ioQuest = [];
+        let bigQuest = [];
+        let orQuest = [];
+        for(var i =0 ; i< temp.length ; i++){//seperating the questions to 3 main groups
+            if(temp[i].KindOfQuestion === "IO-OI"){
+                ioQuest.push(temp[i]);
+            }
+            else if(temp[i].KindOfQuestion === "BIG 5"){
+                bigQuest.push(temp[i]);
+            }
+            else if(temp[i].KindOfQuestion === "OR"){
+                orQuest.push(temp[i]);
+            }
+        }
+        let sortedIo = ioQuest.sort(function (a,b) {//sorting the questions by order
+            return a.OrderView - b.OrderView;
+        });
+        let sortedBig = bigQuest.sort(function (a,b) {//sorting the questions by order
+            return a.OrderView - b.OrderView;
+        });
+        let sortedOr = orQuest.sort(function (a,b) {//sorting the questions by order
+            return a.OrderView - b.OrderView;
+        });
         this.setState({
-          questions : temp
+          ioQuestions: sortedIo,
+          bigQuestions: sortedBig,
+          orQuestions: sortedOr
         })
       },
       (error) => {
@@ -62,11 +93,11 @@ fetchGetQuestion = () =>{
                 <Route exact path="/" >
                  <LogAReg />
                 </Route>
-                <Route path="/quiz/:id/:questions" >
-                 <Quiz />
+                <Route path="/quiz/:id"  >
+                 <Quiz bigQuestions={this.state.bigQuestions}  orQuestions={this.state.orQuestions} ioQuestions={this.state.ioQuestions}/>
                 </Route>
                 <Route path="/intro/:email" >
-                 <Intro />
+                 <Intro getQuestions={this.fetchGetQuestion}/>
                 </Route>
                 <Route path="/game/:profile" >
                  <Game />

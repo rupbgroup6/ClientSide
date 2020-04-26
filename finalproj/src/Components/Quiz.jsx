@@ -14,8 +14,10 @@ class Quiz extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            local: true,
-            questions: this.props.match.params.questions,//get the question from params
+            local: false,
+            ioQuestions: this.props.ioQuestions,//getting the io-oi questions 
+            orQuestions: this.props.orQuestions,//getting the or questions 
+            bigQuestions: this.props.bigQuestions,//getting the big 5 questions 
             id: this.props.match.params.id,//get the id from params
             gender: "",
             age: "",
@@ -26,12 +28,7 @@ class Quiz extends Component {
             question2: ['text 1', 'text 2', 'text 3', 'text 4', 'text 5', 'text 6', 'text 7', 'text 8', 'text 9', 'text 10']//need to be deleted later
         }
 
-        this.apiUrl = 'tbd';//Dont forget to change
-        if (!this.state.local) {
-          this.apiUrl = 'tbd';//Dont forget to change
-        }
     }
-
   
     render() {
         return (

@@ -14,7 +14,6 @@ class Intro extends Component {
         super(props);
         this.state  ={
             email: this.props.match.params.email,
-            questions:[],
             id: "",
             local: false
         }
@@ -23,6 +22,10 @@ class Intro extends Component {
         if (!this.state.local) {
           this.apiUrl = 'http://proj.ruppin.ac.il/bgroup6/prod/api/users';//Dont forget to change
         }
+    }
+
+    fetchQuestions = () =>{
+      this.props.getQuestions();
     }
 
     componentDidMount(){//take the current user info and all the question for next component
@@ -44,34 +47,7 @@ class Intro extends Component {
                         });
                     }
                 });
-                    //strating to get questions
-                    let url ="";
-                    if(this.state.local){
-                      url = "http://localhost:51298/api/questions";
-                    }
-                    else{
-                      url = "http://proj.ruppin.ac.il/bgroup6/prod/api/questions";//dont forget to define
-                    }
-                    fetch(url, {//fetch the questions
-                      method: 'GET',
-                      headers: new Headers({
-                        'Content-Type': 'application/json; charset=UTF-8',
-                      })
-                    })
-                      .then(res => {
-                        return res.json()
-                      })
-                      .then(
-                        (result) => {
-                          let temp = [];
-                          result.map(question => temp.push(question));
-                          this.setState({
-                            questions : temp
-                          })
-                        },
-                        (error) => {
-                          console.log("err post=", error);
-                        });
+                this.fetchQuestions();
               },
               (error) => {
                 console.log("err post=", error);
@@ -100,7 +76,7 @@ class Intro extends Component {
                     </Row>
                     <Row style={{backgroundColor:"white"}}>
                       <Col style={{backgroundColor:"white"}}></Col>
-                      <Col style={{backgroundColor:"white",textAlign:"center",margin:"0",padding:"0"}}><Link to={'/quiz/' + this.state.id + '/' + this.state.questions}> <Button variant="outline-primary" style={{marginRight:"25px"}}>Let's start</Button></Link></Col>
+                      <Col style={{backgroundColor:"white",textAlign:"center",margin:"0",padding:"0"}}><Link to={'/quiz/' + this.state.id}> <Button variant="outline-primary" style={{marginRight:"25px"}}>Let's start</Button></Link></Col>
                       <Col style={{backgroundColor:"white"}}></Col>
                     </Row>
                 </Container>
