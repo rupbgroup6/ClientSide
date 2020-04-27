@@ -1,8 +1,17 @@
-.about{
+.about2{
     height:50px;
     width: 100%;
     background-color: #fff;
     border: none;
+}
+
+.align2 {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding-bottom: 8px;
 }
 
 html{
@@ -13,7 +22,7 @@ html{
 	margin: 0;
 	padding: 0;
 }
- .about .logo{
+ .about2 .logo{
     background-color: #fff;
     border: none;
     

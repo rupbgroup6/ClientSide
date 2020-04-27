@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import "../CSS/rest.css";
 import welcomePic from '../Images/welcome.JPG';
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
 
 class Intro extends Component {
     constructor(props) {
@@ -57,8 +57,8 @@ class Intro extends Component {
   
     render() {
         return (
-           <div>
-                <Container fluid style={{padding:"0",marginLeft:"15px", height:"100vh"}}>
+           <div className="align2" style={{height:"100vh"}}>
+                <Container fluid style={{padding:"0",height:"100%"}}>
                     <Row className="header">
                         <Col xs={4}><h2 style={{float:"right",color:"#33adff"}}>IO</h2></Col>
                         <Col xs={4}><h2 style={{textAlign:"center",color:"#fff"}}>-</h2></Col>
@@ -67,16 +67,18 @@ class Intro extends Component {
                             <img className="for-intro" src={welcomePic} alt=""/>
                         </Col>
                     </Row>
-                    <Row xs={2} className="about">
+                    <Row xs={2} className="about2">
                         <Col xs={6} style={{color:"black",textAlign:"center",border:"none",backgroundColor:"white",marginLeft:"0"}}><h2 className="logo" style={{float:"right",color:"black"}}>About</h2></Col>
                         <Col xs={6} style={{color:"#33adff",textAlign:"center",border:"none",backgroundColor:"white"}}><h2 className="logo" style={{color:"#33adff"}}>IO&nbsp;-&nbsp;OI</h2></Col>
                     </Row>
-                    <Row style={{height:"42%",backgroundColor:"white",alignItems:"center"}}>
-                      <Col xs={10} dir="rtl" style={{backgroundColor:"grey",height:"100%",margin:"auto 20px"}}><p dir="rtl" style={{backgroundColor:"grey",fontSize:"14.8px"}}>אפליקציה זו מבוססת על מחקר מדעי של ד"ר אסרף ופרופ' אביב שהם מאוניברסיטת חיפה שהתפרסם לאחרונה בכתב העת מספר 1 בעולם בתחום השיווק הבינלאומי: International Marketing Review.במסגרת המחקר נאספו נתונים מ 100 מנהלים מחברות ישראליות גדולות ו 100 מנהלים מחברות סטארט-אפ ישראליות. כל החברות במדגם עוסקות בפעילות שיווק בינלאומי. שאלת המחקר המרכזית הייתה איזו גישה אסטרטגית תביא לביצועים טובים יותר בשווקים בינלאומיים. בנוסף נבדק בצורה אמפירית מה תורם יותר להצלחה אסטרטגית גדולה יותר בשווקים בינלאומיים: יכולות שיווק או יכולות טכנולוגיות? התוצאות עשויות להפתיע חלק גדול מקהל היזמים בישראל ולהסביר לפחות חלק מהכישלון של סטארט-אפים רבים בפיתוח פעילות בינלאומית.</p></Col>
+                    <Row style={{height:"45%",backgroundColor:"white",alignItems:"center"}}>
+                      <Col></Col>
+                      <Col xs={10} dir="rtl" style={{backgroundColor:"grey",height:"100%"}}><p dir="rtl" style={{backgroundColor:"grey",fontSize:"75%"}}>אפליקציה זו מבוססת על מחקר מדעי של ד"ר אסרף ופרופ' אביב שהם מאוניברסיטת חיפה שהתפרסם לאחרונה בכתב העת מספר 1 בעולם בתחום השיווק הבינלאומי: International Marketing Review.במסגרת המחקר נאספו נתונים מ 100 מנהלים מחברות ישראליות גדולות ו 100 מנהלים מחברות סטארט-אפ ישראליות. כל החברות במדגם עוסקות בפעילות שיווק בינלאומי. שאלת המחקר המרכזית הייתה איזו גישה אסטרטגית תביא לביצועים טובים יותר בשווקים בינלאומיים. בנוסף נבדק בצורה אמפירית מה תורם יותר להצלחה אסטרטגית גדולה יותר בשווקים בינלאומיים: יכולות שיווק או יכולות טכנולוגיות? התוצאות עשויות להפתיע חלק גדול מקהל היזמים בישראל ולהסביר לפחות חלק מהכישלון של סטארט-אפים רבים בפיתוח פעילות בינלאומית.</p></Col>
+                      <Col></Col>
                     </Row>
                     <Row style={{backgroundColor:"white"}}>
                       <Col style={{backgroundColor:"white"}}></Col>
-                      <Col style={{backgroundColor:"white",textAlign:"center",margin:"0",padding:"0"}}><Link to={'/quiz/' + this.state.id}> <Button variant="outline-primary" style={{marginRight:"25px"}}>Let's start</Button></Link></Col>
+                      <Col style={{backgroundColor:"white",textAlign:"center"}}><Link to={'/quiz/' + this.state.id}> <Button variant="outline-primary" style={{}}>Let's start</Button></Link></Col>
                       <Col style={{backgroundColor:"white"}}></Col>
                     </Row>
                 </Container>

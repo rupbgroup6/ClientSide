@@ -47,7 +47,7 @@ class LogAReg extends Component {
                     }
                 }
                 if(counter === 0){
-                    alert("There's no such user \nPlease register")
+                    swal("Error!","There's no such user \nPlease register")
                 }
             },
             (error) => {
@@ -72,7 +72,7 @@ class LogAReg extends Component {
                   let notExists = false;
                   for(var i =0 ; i< result.length ; i++){
                       if(this.state.email.toLowerCase() === result[i].Email){
-                        alert("Email has already been registered \nPlease choose a different email")
+                        swal("Error!","Email has already been registeredPlease choose a different email")
                         break;
                       }
                       else if(i === result.length-1){
@@ -95,7 +95,7 @@ class LogAReg extends Component {
                         .then(
                           (result) => {
                             console.log("fetch POST= ", result);
-                            alert("Great \nLet's log in")
+                            swal("Great!", "Let's log in")
                           },
                           (error) => {
                             console.log("err post=", error);
@@ -112,7 +112,7 @@ class LogAReg extends Component {
           let password = this.state.password;
           let sPassword = this.state.sPassword;
           if(email === "" || password === ""|| sPassword === ""){
-            alert("Error \nPlease fill all the fields");
+            swal("Error!","Please fill all the fields");
           }
           else{
             if(password === sPassword){//making an object exectly as in serverSide
@@ -124,7 +124,7 @@ class LogAReg extends Component {
                 this.fetchRegister(u);//move to check that user doesnt exist and then register it
             }
             else{
-              alert("Error \nPasswords don't match");
+                swal("Error!", "Passwords don't match");
             }
           }
           
@@ -137,7 +137,7 @@ class LogAReg extends Component {
                 this.props.history.replace(temp);
             }
             else{
-                alert("Something was incorrect \nPlease try again");
+                swal("Error!", "Something was incorrect \nPlease try again");
             }
         }
       
@@ -204,7 +204,7 @@ class LogAReg extends Component {
         return (
            <div className="align">
                <img className="logo" src={logo} style={{paddingTop:"15px"}}/>
-               <div className="card" style={{paddingTop:"0"}}>
+               <div className="card" style={{paddingTop:"0",backgroundColor:"#0A0A0A"}}>
                     <div className="head">
                         <div></div>
                         <a id="login" className="selected" onClick={this.changeMode}>Login</a>

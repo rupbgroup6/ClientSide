@@ -10,6 +10,26 @@
 	
 }
 
+div.row{
+	margin: 0;
+	padding: 0;
+	width:100%;
+}
+
+div.col{
+	margin: 0;
+	padding: 0;
+}
+
+label h5{
+	text-align: center;
+	justify-content: center;
+	flex-direction: column;
+	display: flex;
+	height: 100%;
+}
+
+
 html, body {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -20,6 +40,7 @@ html, body {
 
 .align {
 	height: 80%;
+	max-height: none;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -28,21 +49,26 @@ html, body {
 	padding-top: 0px;
 }
 
-
+.next{
+	width: 100%;
+	text-align: center;
+}
 
 .about {
 	height: 40px;
+	margin: auto;
 }
 
 .card2 {
-	margin-top: 10px;
-	height: 100%;
-	width: 350px;
+	width: 100%;
+	max-height: none;
 	background: #121212;
 	border: 1px solid white;
 	border-radius: 10px;
 	overflow: hidden;
 	transition: max-height 0.2s;
+	margin-right: 0;
+	margin-left: 0;
 }
 
 
@@ -61,7 +87,13 @@ html, body {
 	width: 100%;
 }
 
-.role{
+.job{
+	margin: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.educ{
 	width: 100%;
 	text-align: center;
 }
@@ -84,27 +116,129 @@ label img {
 				 5px 5px 8px rgba(255, 255, 255, 0.603);
 }
 
-.role-radio{
+.job-radio{
 	opacity: 0;
 	width: 40px;
 	height: 20px;
 }
 
-.role label{
+.job label{
+	
+	font-size: 10px;
+	text-align: center;
+	line-height: 15px;
+}
+
+.job label h5{
+	border-radius: 10px;
+	line-height: 20px;
+	background: #33adff;
+	height: 40px;
+	width: 80px;
+}
+
+.job [type=radio]:checked + h5{
+
+	box-shadow: -1px -2px 4px rgba(204, 215, 218, 0.521),
+				 5px 5px 8px rgba(255, 255, 255, 0.603);
+}
+
+.educ-radio{
+	opacity: 0;
+	width: 40px;
+	height: 20px;
+}
+
+.educ label{
+	
+	font-size: 10px;
+	text-align: center;
+	line-height: 15px;
+}
+
+.educ label h5{
+	border-radius: 10px;
+	line-height: 20px;
+	background: #33adff;
+	height: 40px;
+	width: 80px;
+}
+
+.educ [type=radio]:checked + h5{
+
+	box-shadow: -1px -2px 4px rgba(204, 215, 218, 0.521),
+				 5px 5px 8px rgba(255, 255, 255, 0.603);
+}
+
+.ioQuestion{
+	margin:auto;
+}
+
+.multi-radio{
+	opacity: 0;
+	width: 40px;
+	height: 20px;
+}
+
+.multi-Choice label{
 	
 	font-size: 20px;
 	text-align: center;
 	line-height: 20px;
 }
 
-.role label h5{
+.multi-Choice label h5{
 	border-radius: 10px;
+	line-height: 20px;
+	background: #33adff;
+	height: 40px;
+	width: 60px;
+}
+.multi-Choice label h6{
+	border-radius: 10px;
+	line-height: 20px;
+	background: #33adff;
+	height: 50px;
+	width: 150px;
+	
 }
 
-.role [type=radio]:checked + h5{
+.multi-Choice [type=radio]:checked + h5{
 
-	box-shadow: -1px -2px 4px rgba(212, 16, 26, 0.521),
-				 5px 5px 8px rgba(151, 11, 11, 0.603);
+	box-shadow: -1px -2px 4px rgba(204, 215, 218, 0.521),
+				 5px 5px 8px rgba(255, 255, 255, 0.603);
+}
+
+.multi-Choice [type=radio]:checked + h6{
+
+	box-shadow: -1px -2px 4px rgba(204, 215, 218, 0.521),
+				 5px 5px 8px rgba(255, 255, 255, 0.603);
+}
+
+div.swal-text{
+	background: white;
+
+}
+div.swal-footer{
+	background: white;
+}
+div.swal-title{
+	background: white;
+}
+div.swal-icon.swal-icon--error{
+	background: white;
+}
+div.swal{
+	background: white;
+}
+button.swal-button.swal-button-confirm{
+	background: white;
+}
+div.swal-icon--success__ring{
+	background: white;
+}
+div.swal-button-container{
+	background: white;
 }
 
 
