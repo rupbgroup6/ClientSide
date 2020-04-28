@@ -210,36 +210,56 @@ class Quiz extends Component {
         });
     }
 
-    next1 =() => {
+    next1 = () => {
         let gender = this.state.gender;
         let age = this.state.age;
         let job = this.state.job;
         let education = this.state.education;
-        if(gender === "" || age === "" || job === "" || education === ""){
+        if (gender === "" || age === "" || job === "" || education === "") {
             swal("please select all the fields")
         }
-        else{
-            /*if(this.state.local){
-                let url = "http://localhost:51298/api/users";
+        else {
+            if (this.state.local) {
+                let url = "http://localhost:51298/api/users/";
             }
-            else{
-                let url = "http://proj.ruppin.ac.il/bgroup6/prod/api/users";
+            else {
+                let url = "http://proj.ruppin.ac.il/bgroup6/prod/api/users/";
             }
             let now = new Date();
-            let fixedDate = now.getDate() + "/" + (now.getMonth()+1) + "/" + now.getFullYear();
-            let u ={
+            let fixedDate = now.getDate() + "/" + (now.getMonth() + 1) + "/" + now.getFullYear();
+            let u = {
                 UserId: parseInt(this.state.id),
                 Gender: this.state.gender,
                 Age: parseInt(this.state.age),
                 Job: this.state.job,
-                Education: this.state.education
-                
-            }*/
+                Education: this.state.education,
+                DateStamp: fixedDate
+            }
+            url += "u.UserId";
+            fetch(url, {//registering the user to the system
+                method: 'PUT',
+                body: JSON.stringify(u),
+                headers: new Headers({
+                    'Content-type': 'application/json; charset=UTF-8' //very important to add the 'charset=UTF-8'!!!!
+                })
 
-            $("#2nd").show();
+            })
+                .then(res => {
+                    console.log('res=', res);
+                    return res.json()
+                })
+                .then(
+                    (result) => {
+                        console.log("fetch POST= ", result);
+                    },
+                    (error) => {
+                        console.log("err post=", error);
+                    });
         }
+        $("#2nd").show();
+
     }
-    next2 =() => {
+    next2 = () => {
         let io1 = this.state.io1;
         let io2 = this.state.io2;
         let io3 = this.state.io3;
@@ -252,25 +272,87 @@ class Quiz extends Component {
         let io10 = this.state.io10;
         let io11 = this.state.io11;
         let io12 = this.state.io12;
-        if(io1 === "" || io2 === "" ||io3 === "" ||io4 === "" ||io5 === "" ||io6 === "" ||io7 === "" ||io8 === "" ||io9 === "" ||io10 === "" ||io11=== "" ||io12 === "" ){
+        if (io1 === "" || io2 === "" || io3 === "" || io4 === "" || io5 === "" || io6 === "" || io7 === "" || io8 === "" || io9 === "" || io10 === "" || io11 === "" || io12 === "") {
             swal("please select all the fields")
         }
-        else{
+        else {
+            let avgA = ((parseInt(io1) + parseInt(io3) + parseInt(io5) + parseInt(io7) + parseInt(io9) + parseInt(io11)) / 6);
+            let avgB = ((parseInt(io2) + parseInt(io4) + parseInt(io6) + parseInt(io8) + parseInt(io10) + parseInt(io12)) / 6);
+            let profile = "";
+            if (avgA < 3.51 && avgB < 3.2) {//1
+                profile = "השורדים"
+            }
+            else if (avgA < 3.51 && 3.2 < avgB < 3.66) {//2
+                profile = "המאמינים"
+            }
+            else if (avgA < 3.51 && 3.66 < avgB) {//3
+                profile = "המהפכנים"
+            }
+            else if (3.51 < avgA < 3.95 && avgB < 3.2) {//4
+                profile = "המנתחים"
+            }
+            else if (3.51 < avgA < 3.95 && 3.2 < avgB < 3.66) {//5
+                profile = "המאזנים"
+            }
+            else if (3.51 < avgA < 3.95 && 3.66 < avgB) {//6
+                profile = "המחושבים"
+            }
+            else if (3.95 < avgA && avgB < 3.2) {//7
+                profile = "המתאימים"
+            }
+            else if (3.95 < avgA && 3.2 < avgB < 3.66) {//8
+                profile = "המעיזים"
+            }
+            else if (3.95 < avgA && 3.66 < avgB) {//9
+                profile = "האלופים"
+            }
+            if (this.state.local) {
+                let url = "http://localhost:51298/api/users/updateprofile";
+            }
+            else {
+                let url = "http://proj.ruppin.ac.il/bgroup6/prod/api/users/updateprofile";
+            }
+            let u = {
+                UserId: parseInt(this.state.id),
+                ScoreA: avgA,
+                ScoreB: avgB
+            }
+            url += "u.UserId";
+            fetch(url, {//registering the user to the system
+                method: 'PUT',
+                body: JSON.stringify(u),
+                headers: new Headers({
+                    'Content-type': 'application/json; charset=UTF-8' //very important to add the 'charset=UTF-8'!!!!
+                })
+
+            })
+                .then(res => {
+                    console.log('res=', res);
+                    return res.json()
+                })
+                .then(
+                    (result) => {
+                        console.log("fetch POST= ", result);
+                    },
+                    (error) => {
+                        console.log("err post=", error);
+                    });
+
             $("#3rd").show();
         }
     }
-    next3 =() => {
+    next3 = () => {
         let or1 = this.state.or1;
         let or2 = this.state.or2;
         let or3 = this.state.or3;
-        if(or1 === "" || or2 === "" || or3 === "" ){
+        if (or1 === "" || or2 === "" || or3 === "") {
             swal("please select all the fields")
         }
-        else{
+        else {
             $("#4th").show();
         }
     }
-    next4 =() => {
+    next4 = () => {
         let big1 = this.state.big1;
         let big2 = this.state.big2;
         let big3 = this.state.big3;
@@ -281,10 +363,10 @@ class Quiz extends Component {
         let big8 = this.state.big8;
         let big9 = this.state.big9;
         let big10 = this.state.big10;
-        if(big1 === "" || big2 === "" || big3 === "" || big4 === "" || big5 === "" || big6 === "" || big7 === "" || big8 === "" || big9 === "" || big10 === ""){
+        if (big1 === "" || big2 === "" || big3 === "" || big4 === "" || big5 === "" || big6 === "" || big7 === "" || big8 === "" || big9 === "" || big10 === "") {
             swal("please select all the fields")
         }
-        else{
+        else {
 
         }
     }
@@ -358,7 +440,7 @@ class Quiz extends Component {
                 }
             }
         }
-        let fixedOr1 = or1.slice(0, or1.length -3);
+        let fixedOr1 = or1.slice(0, or1.length - 3);
         let fixedOr3 = or3.slice(0, or3.length - 3);
         let fixedOr5 = or5.slice(0, or5.length - 3);
         let seperatedOrs = [];
@@ -1756,7 +1838,7 @@ class Quiz extends Component {
                                         </Row>{/*description */}
                                     </Col>
                                 </Row>{/*end of question */}
-                                
+
                             </Col>
                             <Row className="next">
                                 <Col xs={5}></Col>
@@ -1766,7 +1848,7 @@ class Quiz extends Component {
                                 <Col xs={5}></Col>
                             </Row>{/*end of next */}
                             <br></br>
-                            {this.state.allFull?"":""}
+                            {this.state.allFull ? "" : ""}
                         </Row>{/*end of card2 */}
                     </Row>{/*end of 4th */}
                 </Row >{/*end of align */}
