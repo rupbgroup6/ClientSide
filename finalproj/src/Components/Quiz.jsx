@@ -20,7 +20,7 @@ class Quiz extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            local: true,
+            local: false,
             ioQuestions: this.props.ioQuestions,//getting the io-oi questions 
             orQuestions: this.props.orQuestions,//getting the or questions 
             seperatedOrQuest: [],
@@ -53,6 +53,16 @@ class Quiz extends Component {
             big8: "",
             big9: "",
             big10: "",
+            big11: "",
+            big12: "",
+            big13: "",
+            big14: "",
+            big15: "",
+            big16: "",
+            big17: "",
+            big18: "",
+            big19: "",
+            big20: "",
             or1: "",
             or2: "",
             or3: "",
@@ -123,6 +133,56 @@ class Quiz extends Component {
     handleBig10 = (e) => {
         this.setState({
             big10: e.target.value
+        });
+    }
+    handleBig11 = (e) => {
+        this.setState({
+            big11: e.target.value
+        });
+    }
+    handleBig12 = (e) => {
+        this.setState({
+            big12: e.target.value
+        });
+    }
+    handleBig13 = (e) => {
+        this.setState({
+            big13: e.target.value
+        });
+    }
+    handleBig14 = (e) => {
+        this.setState({
+            big14: e.target.value
+        });
+    }
+    handleBig15 = (e) => {
+        this.setState({
+            big15: e.target.value
+        });
+    }
+    handleBig16 = (e) => {
+        this.setState({
+            big16: e.target.value
+        });
+    }
+    handleBig17 = (e) => {
+        this.setState({
+            big17: e.target.value
+        });
+    }
+    handleBig18 = (e) => {
+        this.setState({
+            big18: e.target.value
+        });
+    }
+    handleBig19 = (e) => {
+        this.setState({
+            big19: e.target.value
+        });
+    }
+    handleBig20 = (e) => {
+        this.setState({
+            big20: e.target.value
         });
     }
     handleIo1 = (e) => {
@@ -219,23 +279,23 @@ class Quiz extends Component {
             swal("please select all the fields")
         }
         else {
+            let url="";
             if (this.state.local) {
-                let url = "http://localhost:51298/api/users/";
+                 url = "http://localhost:51298/api/users/";
             }
             else {
-                let url = "http://proj.ruppin.ac.il/bgroup6/prod/api/users/";
+                 url = "http://proj.ruppin.ac.il/bgroup6/prod/api/users/";
             }
             let now = new Date();
-            let fixedDate = now.getDate() + "/" + (now.getMonth() + 1) + "/" + now.getFullYear();
             let u = {
                 UserId: parseInt(this.state.id),
                 Gender: this.state.gender,
                 Age: parseInt(this.state.age),
                 Job: this.state.job,
                 Education: this.state.education,
-                DateStamp: fixedDate
+                DateStamp: now
             }
-            url += "u.UserId";
+            url += u.UserId;
             fetch(url, {//registering the user to the system
                 method: 'PUT',
                 body: JSON.stringify(u),
@@ -251,12 +311,14 @@ class Quiz extends Component {
                 .then(
                     (result) => {
                         console.log("fetch POST= ", result);
+                        $("#2nd").show();
                     },
                     (error) => {
                         console.log("err post=", error);
                     });
+                    
         }
-        $("#2nd").show();
+        
 
     }
     next2 = () => {
@@ -280,44 +342,46 @@ class Quiz extends Component {
             let avgB = ((parseInt(io2) + parseInt(io4) + parseInt(io6) + parseInt(io8) + parseInt(io10) + parseInt(io12)) / 6);
             let profile = "";
             if (avgA < 3.51 && avgB < 3.2) {//1
-                profile = "השורדים"
+                profile = "השורד"
             }
             else if (avgA < 3.51 && 3.2 < avgB < 3.66) {//2
-                profile = "המאמינים"
+                profile = "המחפש"
             }
             else if (avgA < 3.51 && 3.66 < avgB) {//3
-                profile = "המהפכנים"
+                profile = "המהפכן"
             }
             else if (3.51 < avgA < 3.95 && avgB < 3.2) {//4
-                profile = "המנתחים"
+                profile = "המנתח"
             }
             else if (3.51 < avgA < 3.95 && 3.2 < avgB < 3.66) {//5
-                profile = "המאזנים"
+                profile = "המאזן"
             }
             else if (3.51 < avgA < 3.95 && 3.66 < avgB) {//6
-                profile = "המחושבים"
+                profile = "המחושב"
             }
             else if (3.95 < avgA && avgB < 3.2) {//7
-                profile = "המתאימים"
+                profile = "המגיב"
             }
             else if (3.95 < avgA && 3.2 < avgB < 3.66) {//8
-                profile = "המעיזים"
+                profile = "המעז"
             }
             else if (3.95 < avgA && 3.66 < avgB) {//9
-                profile = "האלופים"
+                profile = "האלוף"
             }
+            let url ="";
             if (this.state.local) {
-                let url = "http://localhost:51298/api/users/updateprofile";
+                 url = "http://localhost:51298/api/users/updateprofile/";
             }
             else {
-                let url = "http://proj.ruppin.ac.il/bgroup6/prod/api/users/updateprofile";
+                 url = "http://proj.ruppin.ac.il/bgroup6/prod/api/users/updateprofile/";
             }
             let u = {
                 UserId: parseInt(this.state.id),
                 ScoreA: avgA,
-                ScoreB: avgB
+                ScoreB: avgB,
+                Profile: profile
             }
-            url += "u.UserId";
+            url += u.UserId;
             fetch(url, {//registering the user to the system
                 method: 'PUT',
                 body: JSON.stringify(u),
@@ -333,23 +397,61 @@ class Quiz extends Component {
                 .then(
                     (result) => {
                         console.log("fetch POST= ", result);
+                        $("#3rd").show();
                     },
                     (error) => {
                         console.log("err post=", error);
                     });
 
-            $("#3rd").show();
+            
         }
     }
     next3 = () => {
         let or1 = this.state.or1;
         let or2 = this.state.or2;
         let or3 = this.state.or3;
+        let combinedOrs = [or1, or2, or3];
         if (or1 === "" || or2 === "" || or3 === "") {
             swal("please select all the fields")
         }
         else {
-            $("#4th").show();
+            //send all the or
+            let orAnswers = [];
+            let url = "";
+            if (this.state.local) {
+                url = "http://localhost:51298/api/answers";
+           }
+           else {
+                url = "http://proj.ruppin.ac.il/bgroup6/prod/api/answers";
+           }
+           for(var i = 0; i < 3; i++){
+            let ans = {
+                AnswerNum: combinedOrs[i],
+                UserId: parseInt(this.state.id),
+                QuestionId: this.state.orQuestions[i].QuestionId
+            }
+            orAnswers.push(ans);
+           }
+           fetch(url, {//registering the user to the system
+            method: 'POST',
+            body: JSON.stringify(orAnswers),
+            headers: new Headers({
+                'Content-type': 'application/json; charset=UTF-8' //very important to add the 'charset=UTF-8'!!!!
+            })
+
+        })
+            .then(res => {
+                console.log('res=', res);
+                return res.json()
+            })
+            .then(
+                (result) => {
+                    console.log("fetch POST= ", result);
+                    $("#4th").show();
+                },
+                (error) => {
+                    console.log("err post=", error);
+                });
         }
     }
     next4 = () => {
@@ -363,11 +465,117 @@ class Quiz extends Component {
         let big8 = this.state.big8;
         let big9 = this.state.big9;
         let big10 = this.state.big10;
-        if (big1 === "" || big2 === "" || big3 === "" || big4 === "" || big5 === "" || big6 === "" || big7 === "" || big8 === "" || big9 === "" || big10 === "") {
+        let big11 = this.state.big11;
+        let big12 = this.state.big12;
+        let big13 = this.state.big13;
+        let big14 = this.state.big14;
+        let big15 = this.state.big15;
+        let big16 = this.state.big16;
+        let big17 = this.state.big17;
+        let big18 = this.state.big18;
+        let big19 = this.state.big19;
+        let big20 = this.state.big20;
+        let combinedAnswers = [];
+        let combinedBig = [big1, big2, big3, big4, big5, big6, big7, big8, big9, big10, big11, big12, big13, big14, big15, big16, big17, big18, big19, big20 ];
+        let combinedIo = [this.state.io1, this.state.io2, this.state.io3, this.state.io4, this.state.io5, this.state.io6, this.state.io7, this.state.io8, this.state.io9, this.state.io10, this.state.io11, this.state.io12]
+        if (big1 === "" || big2 === "" || big3 === "" || big4 === "" || big5 === "" || big6 === "" || big7 === "" || big8 === "" || big9 === "" || big10 === "" || big11 === "" || big12 === "" || big13 === "" || big14 === "" || big15 === "" || big16 === "" || big17 === "" || big18 === "" || big19 === "" || big20 === "") {
             swal("please select all the fields")
         }
         else {
+            let avgSay1 = ((parseInt(big1) + parseInt(big2) + parseInt(big3) + parseInt(big4)) / 4);
+            let avgSay2 = ((parseInt(big5) + parseInt(big6) + parseInt(big7) + parseInt(big8)) / 4);
+            let avgSay3 = ((parseInt(big9) + parseInt(big10) + parseInt(big11) + parseInt(big12)) / 4);
+            let avgSay4 = ((parseInt(big13) + parseInt(big14) + parseInt(big15) + parseInt(big16)) / 4);
+            let avgSay5 = ((parseInt(big17) + parseInt(big18) + parseInt(big19) + parseInt(big20)) / 4);
+            let url ="";
+            for(var i = 0; i < (this.state.bigQuestions.length); i++){
+                let u = {};
+                let u2 = {};
+                if(i < this.state.ioQuestions.length){
+                    u= {
+                        AnswerNum: combinedBig[i],
+                        UserId: parseInt(this.state.id),
+                        QuestionId: this.state.bigQuestions[i].QuestionId
+                    }
+                    u2 ={
+                        AnswerNum: combinedIo[i],
+                        UserId: parseInt(this.state.id),
+                        QuestionId: this.state.ioQuestions[i].QuestionId
+                    }
+                    combinedAnswers.push(u);
+                    combinedAnswers.push(u2);
+                }
+                else{
+                    u={
+                        AnswerNum: combinedBig[i],
+                        UserId: parseInt(this.state.id),
+                        QuestionId: this.state.bigQuestions[i].QuestionId
+                    }
+                    combinedAnswers.push(u);
+                }
+            }
+            if (this.state.local) {
+                 url = "http://localhost:51298/api/users/updatesayings/";
+            }
+            else {
+                 url = "http://proj.ruppin.ac.il/bgroup6/prod/api/users/updatesayings/";
+            }
+            let u = {
+                UserId: parseInt(this.state.id),
+                AvgSay1: avgSay1,
+                AvgSay2: avgSay2,
+                AvgSay3: avgSay3,
+                AvgSay4: avgSay4,
+                AvgSay5: avgSay5
+            }
+            url += u.UserId;
+            fetch(url, {//registering the user to the system
+                method: 'PUT',
+                body: JSON.stringify(u),
+                headers: new Headers({
+                    'Content-type': 'application/json; charset=UTF-8' //very important to add the 'charset=UTF-8'!!!!
+                })
 
+            })
+                .then(res => {
+                    console.log('res=', res);
+                    return res.json()
+                })
+                .then(
+                    (result) => {
+                        console.log("fetch POST= ", result);
+                        if (this.state.local) {
+                            url = "http://localhost:51298/api/answers";
+                       }
+                       else {
+                            url = "http://proj.ruppin.ac.il/bgroup6/prod/api/answers";
+                       }
+                        fetch(url, {//registering the user to the system
+                            method: 'POST',
+                            body: JSON.stringify(combinedAnswers),
+                            headers: new Headers({
+                                'Content-type': 'application/json; charset=UTF-8' //very important to add the 'charset=UTF-8'!!!!
+                            })
+                
+                        })
+                            .then(res => {
+                                console.log('res=', res);
+                                return res.json()
+                            })
+                            .then(
+                                (result) => {
+                                    console.log("fetch POST= ", result);
+                                    this.setState({
+                                        allFull: true
+                                    });
+                                },
+                                (error) => {
+                                    console.log("err post=", error);
+                                });
+                    },
+                    (error) => {
+                        console.log("err post=", error);
+                    });
         }
     }
 
@@ -1315,7 +1523,7 @@ class Quiz extends Component {
                                 <h6 style={{ textAlign: "left", paddingLeft: "10px", margin: "0", background: "#0A0A0A", width: "100%" }}> 4 / 4</h6>
                                 <Row>
                                     <Col>
-                                        <h6 style={{ background: "#33adff" }}>דרג את המידה בה 2 התכונות מתאימות לכם, אפילו אם תכונה אחת מתאימה לכם יותר מהשניה<br></br>(מסכים בהחלט = 5, לא מסכים בכלל = 1)</h6>
+                                        <h6 style={{ background: "#33adff" }}>עד כמה אתה מסכים שההיגדים הבאים משקפים אותך כמנהל?<br></br>(מסכים בהחלט = 5, לא מסכים בכלל = 1)</h6>
                                     </Col>
                                 </Row>
                                 <Row className="multi-Choice">
@@ -1838,7 +2046,526 @@ class Quiz extends Component {
                                         </Row>{/*description */}
                                     </Col>
                                 </Row>{/*end of question */}
-
+                                <Row className="multi-Choice">
+                                    <Col xs={12}>
+                                        <Row>
+                                            <Col xs={12}><h6 className="ioQuestion">{this.state.bigQuestions[10].QuestionSTR}</h6></Col>
+                                        </Row>{/*question */}
+                                        <Row xs={5}>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big11-radio" value="5" onClick={this.handleBig11} />
+                                                    <h5>5</h5>
+                                                </label>
+                                            </Col>
+                                            <label>
+                                                <input type="radio" className="multi-radio" name="big11-radio" value="4" onClick={this.handleBig11} />
+                                                <h5>4</h5>
+                                            </label>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big11-radio" value="3" onClick={this.handleBig11} />
+                                                    <h5>3</h5>
+                                                </label>
+                                            </Col>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big11-radio" value="2" onClick={this.handleBig11} />
+                                                    <h5>2</h5>
+                                                </label>
+                                            </Col>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big11-radio" value="1" onClick={this.handleBig11} />
+                                                    <h5>1</h5>
+                                                </label>
+                                            </Col>
+                                        </Row>{/*radios */}
+                                        <Row>
+                                            <Col>
+                                                <label>
+                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                </label>
+                                            </Col>
+                                            <Col></Col>
+                                            <Col></Col>
+                                            <Col></Col>
+                                            <Col>
+                                                <label>
+                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                </label>
+                                            </Col>
+                                        </Row>{/*description */}
+                                    </Col>
+                                </Row>{/*end of question */}
+                                <Row className="multi-Choice">
+                                    <Col xs={12}>
+                                        <Row>
+                                            <Col xs={12}><h6 className="ioQuestion">{this.state.bigQuestions[11].QuestionSTR}</h6></Col>
+                                        </Row>{/*question */}
+                                        <Row xs={5}>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big12-radio" value="5" onClick={this.handleBig12} />
+                                                    <h5>5</h5>
+                                                </label>
+                                            </Col>
+                                            <label>
+                                                <input type="radio" className="multi-radio" name="big12-radio" value="4" onClick={this.handleBig12} />
+                                                <h5>4</h5>
+                                            </label>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big12-radio" value="3" onClick={this.handleBig12} />
+                                                    <h5>3</h5>
+                                                </label>
+                                            </Col>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big12-radio" value="2" onClick={this.handleBig12} />
+                                                    <h5>2</h5>
+                                                </label>
+                                            </Col>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big12-radio" value="1" onClick={this.handleBig12} />
+                                                    <h5>1</h5>
+                                                </label>
+                                            </Col>
+                                        </Row>{/*radios */}
+                                        <Row>
+                                            <Col>
+                                                <label>
+                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                </label>
+                                            </Col>
+                                            <Col></Col>
+                                            <Col></Col>
+                                            <Col></Col>
+                                            <Col>
+                                                <label>
+                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                </label>
+                                            </Col>
+                                        </Row>{/*description */}
+                                    </Col>
+                                </Row>{/*end of question */}
+                                <Row className="multi-Choice">
+                                    <Col xs={12}>
+                                        <Row>
+                                            <Col xs={12}><h6 className="ioQuestion">{this.state.bigQuestions[12].QuestionSTR}</h6></Col>
+                                        </Row>{/*question */}
+                                        <Row xs={5}>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big13-radio" value="5" onClick={this.handleBig13} />
+                                                    <h5>5</h5>
+                                                </label>
+                                            </Col>
+                                            <label>
+                                                <input type="radio" className="multi-radio" name="big13-radio" value="4" onClick={this.handleBig13} />
+                                                <h5>4</h5>
+                                            </label>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big13-radio" value="3" onClick={this.handleBig13} />
+                                                    <h5>3</h5>
+                                                </label>
+                                            </Col>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big13-radio" value="2" onClick={this.handleBig13} />
+                                                    <h5>2</h5>
+                                                </label>
+                                            </Col>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big13-radio" value="1" onClick={this.handleBig13} />
+                                                    <h5>1</h5>
+                                                </label>
+                                            </Col>
+                                        </Row>{/*radios */}
+                                        <Row>
+                                            <Col>
+                                                <label>
+                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                </label>
+                                            </Col>
+                                            <Col></Col>
+                                            <Col></Col>
+                                            <Col></Col>
+                                            <Col>
+                                                <label>
+                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                </label>
+                                            </Col>
+                                        </Row>{/*description */}
+                                    </Col>
+                                </Row>{/*end of question */}
+                                <Row className="multi-Choice">
+                                    <Col xs={12}>
+                                        <Row>
+                                            <Col xs={12}><h6 className="ioQuestion">{this.state.bigQuestions[13].QuestionSTR}</h6></Col>
+                                        </Row>{/*question */}
+                                        <Row xs={5}>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big14-radio" value="5" onClick={this.handleBig14} />
+                                                    <h5>5</h5>
+                                                </label>
+                                            </Col>
+                                            <label>
+                                                <input type="radio" className="multi-radio" name="big14-radio" value="4" onClick={this.handleBig14} />
+                                                <h5>4</h5>
+                                            </label>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big14-radio" value="3" onClick={this.handleBig14} />
+                                                    <h5>3</h5>
+                                                </label>
+                                            </Col>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big14-radio" value="2" onClick={this.handleBig14} />
+                                                    <h5>2</h5>
+                                                </label>
+                                            </Col>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big14-radio" value="1" onClick={this.handleBig14} />
+                                                    <h5>1</h5>
+                                                </label>
+                                            </Col>
+                                        </Row>{/*radios */}
+                                        <Row>
+                                            <Col>
+                                                <label>
+                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                </label>
+                                            </Col>
+                                            <Col></Col>
+                                            <Col></Col>
+                                            <Col></Col>
+                                            <Col>
+                                                <label>
+                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                </label>
+                                            </Col>
+                                        </Row>{/*description */}
+                                    </Col>
+                                </Row>{/*end of question */}
+                                <Row className="multi-Choice">
+                                    <Col xs={12}>
+                                        <Row>
+                                            <Col xs={12}><h6 className="ioQuestion">{this.state.bigQuestions[14].QuestionSTR}</h6></Col>
+                                        </Row>{/*question */}
+                                        <Row xs={5}>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big15-radio" value="5" onClick={this.handleBig15} />
+                                                    <h5>5</h5>
+                                                </label>
+                                            </Col>
+                                            <label>
+                                                <input type="radio" className="multi-radio" name="big15-radio" value="4" onClick={this.handleBig15} />
+                                                <h5>4</h5>
+                                            </label>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big15-radio" value="3" onClick={this.handleBig15} />
+                                                    <h5>3</h5>
+                                                </label>
+                                            </Col>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big15-radio" value="2" onClick={this.handleBig15} />
+                                                    <h5>2</h5>
+                                                </label>
+                                            </Col>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big15-radio" value="1" onClick={this.handleBig15} />
+                                                    <h5>1</h5>
+                                                </label>
+                                            </Col>
+                                        </Row>{/*radios */}
+                                        <Row>
+                                            <Col>
+                                                <label>
+                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                </label>
+                                            </Col>
+                                            <Col></Col>
+                                            <Col></Col>
+                                            <Col></Col>
+                                            <Col>
+                                                <label>
+                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                </label>
+                                            </Col>
+                                        </Row>{/*description */}
+                                    </Col>
+                                </Row>{/*end of question */}
+                                <Row className="multi-Choice">
+                                    <Col xs={12}>
+                                        <Row>
+                                            <Col xs={12}><h6 className="ioQuestion">{this.state.bigQuestions[15].QuestionSTR}</h6></Col>
+                                        </Row>{/*question */}
+                                        <Row xs={5}>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big16-radio" value="5" onClick={this.handleBig16} />
+                                                    <h5>5</h5>
+                                                </label>
+                                            </Col>
+                                            <label>
+                                                <input type="radio" className="multi-radio" name="big16-radio" value="4" onClick={this.handleBig16} />
+                                                <h5>4</h5>
+                                            </label>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big16-radio" value="3" onClick={this.handleBig16} />
+                                                    <h5>3</h5>
+                                                </label>
+                                            </Col>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big16-radio" value="2" onClick={this.handleBig16} />
+                                                    <h5>2</h5>
+                                                </label>
+                                            </Col>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big16-radio" value="1" onClick={this.handleBig16} />
+                                                    <h5>1</h5>
+                                                </label>
+                                            </Col>
+                                        </Row>{/*radios */}
+                                        <Row>
+                                            <Col>
+                                                <label>
+                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                </label>
+                                            </Col>
+                                            <Col></Col>
+                                            <Col></Col>
+                                            <Col></Col>
+                                            <Col>
+                                                <label>
+                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                </label>
+                                            </Col>
+                                        </Row>{/*description */}
+                                    </Col>
+                                </Row>{/*end of question */}
+                                <Row className="multi-Choice">
+                                    <Col xs={12}>
+                                        <Row>
+                                            <Col xs={12}><h6 className="ioQuestion">{this.state.bigQuestions[16].QuestionSTR}</h6></Col>
+                                        </Row>{/*question */}
+                                        <Row xs={5}>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big17-radio" value="5" onClick={this.handleBig17} />
+                                                    <h5>5</h5>
+                                                </label>
+                                            </Col>
+                                            <label>
+                                                <input type="radio" className="multi-radio" name="big17-radio" value="4" onClick={this.handleBig17} />
+                                                <h5>4</h5>
+                                            </label>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big17-radio" value="3" onClick={this.handleBig17} />
+                                                    <h5>3</h5>
+                                                </label>
+                                            </Col>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big17-radio" value="2" onClick={this.handleBig17} />
+                                                    <h5>2</h5>
+                                                </label>
+                                            </Col>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big17-radio" value="1" onClick={this.handleBig17} />
+                                                    <h5>1</h5>
+                                                </label>
+                                            </Col>
+                                        </Row>{/*radios */}
+                                        <Row>
+                                            <Col>
+                                                <label>
+                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                </label>
+                                            </Col>
+                                            <Col></Col>
+                                            <Col></Col>
+                                            <Col></Col>
+                                            <Col>
+                                                <label>
+                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                </label>
+                                            </Col>
+                                        </Row>{/*description */}
+                                    </Col>
+                                </Row>{/*end of question */}
+                                <Row className="multi-Choice">
+                                    <Col xs={12}>
+                                        <Row>
+                                            <Col xs={12}><h6 className="ioQuestion">{this.state.bigQuestions[17].QuestionSTR}</h6></Col>
+                                        </Row>{/*question */}
+                                        <Row xs={5}>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big18-radio" value="5" onClick={this.handleBig18} />
+                                                    <h5>5</h5>
+                                                </label>
+                                            </Col>
+                                            <label>
+                                                <input type="radio" className="multi-radio" name="big18-radio" value="4" onClick={this.handleBig18} />
+                                                <h5>4</h5>
+                                            </label>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big18-radio" value="3" onClick={this.handleBig18} />
+                                                    <h5>3</h5>
+                                                </label>
+                                            </Col>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big18-radio" value="2" onClick={this.handleBig18} />
+                                                    <h5>2</h5>
+                                                </label>
+                                            </Col>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big18-radio" value="1" onClick={this.handleBig18} />
+                                                    <h5>1</h5>
+                                                </label>
+                                            </Col>
+                                        </Row>{/*radios */}
+                                        <Row>
+                                            <Col>
+                                                <label>
+                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                </label>
+                                            </Col>
+                                            <Col></Col>
+                                            <Col></Col>
+                                            <Col></Col>
+                                            <Col>
+                                                <label>
+                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                </label>
+                                            </Col>
+                                        </Row>{/*description */}
+                                    </Col>
+                                </Row>{/*end of question */}
+                                <Row className="multi-Choice">
+                                    <Col xs={12}>
+                                        <Row>
+                                            <Col xs={12}><h6 className="ioQuestion">{this.state.bigQuestions[18].QuestionSTR}</h6></Col>
+                                        </Row>{/*question */}
+                                        <Row xs={5}>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big19-radio" value="5" onClick={this.handleBig19} />
+                                                    <h5>5</h5>
+                                                </label>
+                                            </Col>
+                                            <label>
+                                                <input type="radio" className="multi-radio" name="big19-radio" value="4" onClick={this.handleBig19} />
+                                                <h5>4</h5>
+                                            </label>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big19-radio" value="3" onClick={this.handleBig19} />
+                                                    <h5>3</h5>
+                                                </label>
+                                            </Col>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big19-radio" value="2" onClick={this.handleBig19} />
+                                                    <h5>2</h5>
+                                                </label>
+                                            </Col>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big19-radio" value="1" onClick={this.handleBig19} />
+                                                    <h5>1</h5>
+                                                </label>
+                                            </Col>
+                                        </Row>{/*radios */}
+                                        <Row>
+                                            <Col>
+                                                <label>
+                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                </label>
+                                            </Col>
+                                            <Col></Col>
+                                            <Col></Col>
+                                            <Col></Col>
+                                            <Col>
+                                                <label>
+                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                </label>
+                                            </Col>
+                                        </Row>{/*description */}
+                                    </Col>
+                                </Row>{/*end of question */}
+                                <Row className="multi-Choice">
+                                    <Col xs={12}>
+                                        <Row>
+                                            <Col xs={12}><h6 className="ioQuestion">{this.state.bigQuestions[19].QuestionSTR}</h6></Col>
+                                        </Row>{/*question */}
+                                        <Row xs={5}>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big20-radio" value="5" onClick={this.handleBig20} />
+                                                    <h5>5</h5>
+                                                </label>
+                                            </Col>
+                                            <label>
+                                                <input type="radio" className="multi-radio" name="big20-radio" value="4" onClick={this.handleBig20} />
+                                                <h5>4</h5>
+                                            </label>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big20-radio" value="3" onClick={this.handleBig20} />
+                                                    <h5>3</h5>
+                                                </label>
+                                            </Col>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big20-radio" value="2" onClick={this.handleBig20} />
+                                                    <h5>2</h5>
+                                                </label>
+                                            </Col>
+                                            <Col>
+                                                <label>
+                                                    <input type="radio" className="multi-radio" name="big20-radio" value="1" onClick={this.handleBig20} />
+                                                    <h5>1</h5>
+                                                </label>
+                                            </Col>
+                                        </Row>{/*radios */}
+                                        <Row>
+                                            <Col>
+                                                <label>
+                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                </label>
+                                            </Col>
+                                            <Col></Col>
+                                            <Col></Col>
+                                            <Col></Col>
+                                            <Col>
+                                                <label>
+                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                </label>
+                                            </Col>
+                                        </Row>{/*description */}
+                                    </Col>
+                                </Row>{/*end of question */}
                             </Col>
                             <Row className="next">
                                 <Col xs={5}></Col>
