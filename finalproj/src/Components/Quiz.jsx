@@ -2575,7 +2575,7 @@ class Quiz extends Component {
                                 <Col xs={5}></Col>
                             </Row>{/*end of next */}
                             <br></br>
-                            {this.state.allFull ? "" : ""}
+                            {this.state.allFull ?   <Row><Col style={{textAlign:"center"}}><Link to={'/home'}> <Button variant="outline-primary">Let's Continue</Button></Link></Col></Row>  : ""}
                         </Row>{/*end of card2 */}
                     </Row>{/*end of 4th */}
                 </Row >{/*end of align */}

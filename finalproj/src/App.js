@@ -9,6 +9,9 @@ import LogAReg  from "./Components/LoginAReg.jsx";
 import Quiz from "./Components/Quiz.jsx";
 import Intro from './Components/intro.jsx';
 import Game from './Components/Game.jsx';
+import Findings from './Components/Findings.jsx';
+import Home from './Components/Home.jsx';
+import Profile from './Components/Profile.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component{
@@ -101,6 +104,15 @@ fetchGetQuestion = () =>{
                 </Route>
                 <Route path="/game/:profile" >
                  <Game />
+                </Route>
+                <Route exact path="/home" >
+                 <Home />
+                </Route>
+                <Route exact path="/findings" >
+                 <Findings />
+                </Route>
+                <Route exact path="/profile" >
+                 <Profile />
                 </Route>
               </Switch>
             </CSSTransition>

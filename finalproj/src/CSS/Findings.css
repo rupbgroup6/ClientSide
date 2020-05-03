@@ -1,5 +1,5 @@
 * {
-	margin: 0;
+    margin: 0;
 	padding: 0;
 	text-decoration: none;
 	font-family: 'Segoe UI', sans-serif;
@@ -19,13 +19,13 @@ html, body {
 	
   }
 
-  .cont{
-	  height:100%;
+  .cont4{
+	height:100%;
 	
   }
 
 .align {
-	height: 100%;
+	height: 80%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -38,7 +38,7 @@ html, body {
 
 
 
-.card3 {
+.card4 {
 	
 	height: 100%;
 	width: 98%;
@@ -51,61 +51,42 @@ html, body {
 
 	}
 
-	.title {
+
+	.title{
 	
-		width: 70%;
+        width: 70%;
         height: 80px;
         text-align: center; 
-		margin-bottom: 10px;    
-			
-	}
+		margin-bottom: 10px;   
+        
+}
 
-	.header2{
+	.header4{
 		text-align: center;
+		
 
 	}
 
-	.typeOfManager {
-		
-			width: 90%;
-			height: 80px;
-			margin-left: 25px;
-			margin-top: 15px;
-			padding-bottom: 5px;
-						
-		}
-
-	.game img{
-		width: 100%;
-		height: 350px;
-		float: right;
-		
-	}
 	
-	 h6{
-		font-size: 90%;
-		text-align: center;
-	}
 
-	h5{
-		margin-top: 8px;
-		text-align: center;
-		font-size: 100%;
-			
-	}
-
-	.type button{
-		margin-top: 10px;
-		border: 1px solid gray;
-		border-radius: 10px;
-		margin-left: 18px;	
-		height: 90%;
-		width: 90%;
-	    background-color: black;
+	.text p{
+		background-color: rgb(143, 140, 140);
+		padding-left: 25px;
+		padding-top: 10px;
+		padding-right: 10px;
+		margin: 10px;
+		float: right;
+		padding-bottom: 10px;
 		
 	}
 
-	.type{
-		margin-bottom: 15px;
+
+
+	b{
+		background: none;
+		color: #0A0A0A;
+		font-size: 18px;
+		float:right;
+	
 	}
 	
