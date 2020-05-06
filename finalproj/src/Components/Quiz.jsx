@@ -312,6 +312,11 @@ class Quiz extends Component {
                     (result) => {
                         console.log("fetch POST= ", result);
                         $("#2nd").show();
+                        window.scrollBy({
+                            top: 100,
+                            left: 0,
+                            behavior: 'smooth'
+                          });
                     },
                     (error) => {
                         console.log("err post=", error);
@@ -398,6 +403,11 @@ class Quiz extends Component {
                     (result) => {
                         console.log("fetch POST= ", result);
                         $("#3rd").show();
+                        window.scrollBy({
+                            top: 100,
+                            left: 0,
+                            behavior: 'smooth'
+                          });
                     },
                     (error) => {
                         console.log("err post=", error);
@@ -448,6 +458,11 @@ class Quiz extends Component {
                 (result) => {
                     console.log("fetch POST= ", result);
                     $("#4th").show();
+                    window.scrollBy({
+                        top: 100,
+                        left: 0,
+                        behavior: 'smooth'
+                      });
                 },
                 (error) => {
                     console.log("err post=", error);
@@ -856,7 +871,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -864,7 +879,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -908,7 +923,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -916,7 +931,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -960,7 +975,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -968,7 +983,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -1012,7 +1027,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -1020,7 +1035,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -1064,7 +1079,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -1072,7 +1087,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -1116,7 +1131,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -1124,7 +1139,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -1168,7 +1183,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -1176,7 +1191,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -1220,7 +1235,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -1228,7 +1243,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -1272,7 +1287,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -1280,7 +1295,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -1324,7 +1339,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -1332,7 +1347,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -1376,7 +1391,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -1384,7 +1399,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -1428,7 +1443,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -1436,7 +1451,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -1463,7 +1478,7 @@ class Quiz extends Component {
                                         <h6 style={{ background: "#33adff" }}>סמן לאיזה היגד אתה מסכים יותר מבין השניים בכל שורה</h6>
                                     </Col>
                                 </Row>
-                                <Row className="multi-Choice" style={{ borderBottom: "1px solid white" }}>
+                                <Row className="multi-Choice">
                                     <Col style={{ textAlign: "center" }}>
                                         <label>
                                             <input type="radio" className="multi-radio" name="or1-radio" value={this.state.seperatedOrQuest[1]} onClick={this.handleOr1} />
@@ -1477,7 +1492,7 @@ class Quiz extends Component {
                                         </label>
                                     </Col>
                                 </Row>
-                                <Row className="multi-Choice" style={{ borderBottom: "1px solid white" }}>
+                                <Row className="multi-Choice">
                                     <Col style={{ textAlign: "center" }}>
                                         <label>
                                             <input type="radio" className="multi-radio" name="or2-radio" value={this.state.seperatedOrQuest[3]} onClick={this.handleOr2} />
@@ -1564,7 +1579,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -1572,7 +1587,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -1616,7 +1631,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -1624,7 +1639,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -1668,7 +1683,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -1676,7 +1691,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -1720,7 +1735,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -1728,7 +1743,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -1772,7 +1787,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -1780,7 +1795,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -1824,7 +1839,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -1832,7 +1847,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -1876,7 +1891,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -1884,7 +1899,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -1928,7 +1943,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -1936,7 +1951,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -1980,7 +1995,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -1988,7 +2003,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -2032,7 +2047,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -2040,7 +2055,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -2084,7 +2099,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -2092,7 +2107,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -2136,7 +2151,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -2144,7 +2159,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -2188,7 +2203,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -2196,7 +2211,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -2240,7 +2255,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -2248,7 +2263,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -2292,7 +2307,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -2300,7 +2315,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -2344,7 +2359,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -2352,7 +2367,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -2396,7 +2411,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -2404,7 +2419,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -2448,7 +2463,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -2456,7 +2471,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -2500,7 +2515,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -2508,7 +2523,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}
@@ -2552,7 +2567,7 @@ class Quiz extends Component {
                                         <Row>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>מסכים בהחלט</h5>
                                                 </label>
                                             </Col>
                                             <Col></Col>
@@ -2560,7 +2575,7 @@ class Quiz extends Component {
                                             <Col></Col>
                                             <Col>
                                                 <label>
-                                                    <h5 style={{ fontSize: "17px" }}>בכלל לא</h5>
+                                                    <h5 id="multi-explain" style={{ fontSize: "17px" }}>בכלל לא</h5>
                                                 </label>
                                             </Col>
                                         </Row>{/*description */}

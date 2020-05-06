@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, Link, withRouter, Redirect } from 'react-router-dom';
+import {browserHistory} from "react-router";
 import '../CSS/Login.css';
 import logo from '../Images/logo.png';
 import email from '../Images/mail.svg';
@@ -137,8 +138,8 @@ class LogAReg extends Component {
       checkMatch = (user) =>{// checking that passwords matche
         let password = this.state.password;
             if(String(user.Password) === password){
-                let temp = "/intro/" + this.state.email;
-                this.props.history.replace(temp);
+                let direction = "/intro/" + this.state.email;
+                this.props.history.push(direction);
             }
             else{
                 swal("!שגיאה", "משהו לא תקין \nאנא נסה שוב");

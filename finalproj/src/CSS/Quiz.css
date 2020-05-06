@@ -194,6 +194,8 @@ label img {
 	height: 40px;
 	width: 60px;
 }
+
+
 .multi-Choice label h6{
 	border-radius: 10px;
 	line-height: 20px;
@@ -241,7 +243,17 @@ div.swal-button-container{
 	background: white;
 }
 
+#multi-explain{
+	border-radius: 10px;
+	line-height: 20px;
+	height: 40px;
+	width: 60px;
+	background: none;
+}
 
+.multi-Choice{
+	border-bottom: 2px solid white ;
+}
 
 
 	
