@@ -20,14 +20,15 @@ class LogAReg extends Component {
             local: false,
         }
 
-        this.apiUrl = 'http://localhost:51298/api/users';
+        this.apiUrl = 'http://localhost:51298/api/users/login/';
         if (!this.state.local) {
-          this.apiUrl = 'http://proj.ruppin.ac.il/bgroup6/prod/api/users';//Dont forget to change
+          this.apiUrl = 'http://proj.ruppin.ac.il/bgroup6/prod/api/users/login/';//Dont forget to change
         }
     }
 
     btnFetchGetIfo = () => {//get all users and match info before login
-        fetch(this.apiUrl, {
+        let url = this.apiUrl + this.state.email;
+        fetch(url, {
           method: 'GET',
           headers: new Headers({
             'Content-Type': 'application/json; charset=UTF-8',
@@ -38,16 +39,11 @@ class LogAReg extends Component {
           })
           .then(
             (result) => {
-                let counter = 0;
-            
-                for(var i =0 ; i< result.length ; i++){
-                    if(this.state.email.toLowerCase() === result[i].Email){
-                        this.checkMatch(result[i]);
-                        counter++;
-                    }
+                if(result.length > 0){
+                    this.checkMatch(result[0]);
                 }
-                if(counter === 0){
-                    swal("Error!","There's no such user \nPlease register")
+                else{
+                    swal("!שגיאה", "משתמש לא קיים, נא להירשם")
                 }
             },
             (error) => {
@@ -57,8 +53,8 @@ class LogAReg extends Component {
 
       fetchRegister = (u) =>{
         //pay attention case sensitive!!!! should be exactly as the prop in C#!
-
-        fetch(this.apiUrl, {//checking first if theres a user with the same email
+        let url = this.apiUrl + this.state.email
+        fetch(url, {//checking first if theres a user with the same email
             method: 'GET',
             headers: new Headers({
               'Content-Type': 'application/json; charset=UTF-8',
@@ -69,18 +65,18 @@ class LogAReg extends Component {
             })
             .then(
               (result) => {
-                  let notExists = false;
-                  for(var i =0 ; i< result.length ; i++){
-                      if(this.state.email.toLowerCase() === result[i].Email){
-                        swal("Error!","Email has already been registeredPlease choose a different email")
-                        break;
-                      }
-                      else if(i === result.length-1){
-                          notExists = true;
-                      }
-                  }
-                  if(notExists){
-                    fetch(this.apiUrl, {//registering the user to the system
+                if(result.length > 0){
+                    swal("!שגיאה","האימייל הנבחר כבר רשום, נא לבחור כתובת אחרת");
+                }
+                else{
+                   let url = "";
+                    if(this.state.local){
+                        url = "http://localhost:51298/api/users"
+                    }
+                    else{
+                        url = "http://proj.ruppin.ac.il/bgroup6/prod/api/users";
+                    }
+                    fetch(url, {//registering the user to the system
                         method: 'POST',
                         body: JSON.stringify(u),
                         headers: new Headers({
@@ -95,12 +91,13 @@ class LogAReg extends Component {
                         .then(
                           (result) => {
                             console.log("fetch POST= ", result);
-                            swal("Great!", "Let's log in")
+                            swal("!מצויין", "יאללה להתחבר")
                           },
                           (error) => {
                             console.log("err post=", error);
                           });
-                  }
+                    
+                }    
               },
               (error) => {
                 console.log("err post=", error);
@@ -111,22 +108,29 @@ class LogAReg extends Component {
           let email = this.state.email.toLowerCase();
           let password = this.state.password;
           let sPassword = this.state.sPassword;
-          if(email === "" || password === ""|| sPassword === ""){
-            swal("Error!","Please fill all the fields");
+          var re = /\S+@\S+\.\S+/;
+          let emailType = re.test(email);
+          if(emailType){
+            if(email === "" || password === ""|| sPassword === ""){
+                swal("!שגיאה","אנא מלא את כל האיזורים");
+              }
+              else{
+                if(password === sPassword){//making an object exectly as in serverSide
+                    let u = {
+                        Email: email,
+                        Password: password,
+                        Admin: false,
+                    }
+                    this.fetchRegister(u);//move to check that user doesnt exist and then register it
+                }
+                else{
+                    swal("!שגיאה", "הסיסמאות לא תואמות");
+                }
+              }
           }
           else{
-            if(password === sPassword){//making an object exectly as in serverSide
-                let u = {
-                    Email: email,
-                    Password: password,
-                    Admin: false,
-                }
-                this.fetchRegister(u);//move to check that user doesnt exist and then register it
-            }
-            else{
-                swal("Error!", "Passwords don't match");
-            }
-          }
+            swal("!שגיאה","אנא הקפד על פורמט של אימייל")
+        }
           
       }
 
@@ -137,7 +141,7 @@ class LogAReg extends Component {
                 this.props.history.replace(temp);
             }
             else{
-                swal("Error!", "Something was incorrect \nPlease try again");
+                swal("!שגיאה", "משהו לא תקין \nאנא נסה שוב");
             }
         }
       
@@ -237,7 +241,7 @@ class LogAReg extends Component {
                         <div className="form">
                             <div className="inputs">
                                 <div className="input">
-                                    <input type="text" placeholder="Email" onChange={this.changeEmail}/>
+                                    <input type="email" placeholder="Email" onChange={this.changeEmail} autocomplete="off"/>
                                     <img src={email}/>
                                 </div>
                                 <div className="input">

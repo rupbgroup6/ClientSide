@@ -18,9 +18,9 @@ class Intro extends Component {
             local: false
         }
 
-        this.apiUrl = 'http://localhost:51298/api/users';
+        this.apiUrl = 'http://localhost:51298/api/users/login/';
         if (!this.state.local) {
-          this.apiUrl = 'http://proj.ruppin.ac.il/bgroup6/prod/api/users';//Dont forget to change
+          this.apiUrl = 'http://proj.ruppin.ac.il/bgroup6/prod/api/users/login/';//Dont forget to change
         }
     }
 
@@ -29,7 +29,8 @@ class Intro extends Component {
     }
 
     componentDidMount(){//take the current user info and all the question for next component
-        fetch(this.apiUrl, {//get the user id
+      let url = this.apiUrl + this.state.email;
+        fetch(url, {//get the user id
             method: 'GET',
             headers: new Headers({
               'Content-Type': 'application/json; charset=UTF-8',
@@ -40,13 +41,9 @@ class Intro extends Component {
             })
             .then(
               (result) => {
-                result.map(user => {
-                    if(user.Email === this.state.email.toLowerCase()){
-                        this.setState({//saving the id of the specific user
-                            id : user.UserId
-                        });
-                    }
-                });
+               this.setState({
+                 id: result[0].UserId
+               });
                 this.fetchQuestions();
               },
               (error) => {

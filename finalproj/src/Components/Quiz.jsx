@@ -276,7 +276,7 @@ class Quiz extends Component {
         let job = this.state.job;
         let education = this.state.education;
         if (gender === "" || age === "" || job === "" || education === "") {
-            swal("please select all the fields")
+            swal("לא בחרת את כל הפרמטרים")
         }
         else {
             let url="";
@@ -335,7 +335,7 @@ class Quiz extends Component {
         let io11 = this.state.io11;
         let io12 = this.state.io12;
         if (io1 === "" || io2 === "" || io3 === "" || io4 === "" || io5 === "" || io6 === "" || io7 === "" || io8 === "" || io9 === "" || io10 === "" || io11 === "" || io12 === "") {
-            swal("please select all the fields")
+            swal("לא בחרת את כל הפרמטרים")
         }
         else {
             let avgA = ((parseInt(io1) + parseInt(io3) + parseInt(io5) + parseInt(io7) + parseInt(io9) + parseInt(io11)) / 6);
@@ -412,7 +412,7 @@ class Quiz extends Component {
         let or3 = this.state.or3;
         let combinedOrs = [or1, or2, or3];
         if (or1 === "" || or2 === "" || or3 === "") {
-            swal("please select all the fields")
+            swal("לא בחרת את כל הפרמטרים")
         }
         else {
             //send all the or
@@ -479,7 +479,7 @@ class Quiz extends Component {
         let combinedBig = [big1, big2, big3, big4, big5, big6, big7, big8, big9, big10, big11, big12, big13, big14, big15, big16, big17, big18, big19, big20 ];
         let combinedIo = [this.state.io1, this.state.io2, this.state.io3, this.state.io4, this.state.io5, this.state.io6, this.state.io7, this.state.io8, this.state.io9, this.state.io10, this.state.io11, this.state.io12]
         if (big1 === "" || big2 === "" || big3 === "" || big4 === "" || big5 === "" || big6 === "" || big7 === "" || big8 === "" || big9 === "" || big10 === "" || big11 === "" || big12 === "" || big13 === "" || big14 === "" || big15 === "" || big16 === "" || big17 === "" || big18 === "" || big19 === "" || big20 === "") {
-            swal("please select all the fields")
+            swal("לא בחרת את כל הפרמטרים")
         }
         else {
             let avgSay1 = ((parseInt(big1) + parseInt(big2) + parseInt(big3) + parseInt(big4)) / 4);
@@ -684,14 +684,14 @@ class Quiz extends Component {
                                                 <label>
                                                     <input className="gender-radio" type="radio" name="gender" value="אישה" id="female" onClick={this.handleGender} />
                                                     <img src={female} alt="" />
-                                                    <h5 style={{ float: "right" }}>אישה</h5>
+                                                    <h5 style={{ float: "center" }}>אישה</h5>
                                                 </label>
                                             </Col>
                                             <Col xs={6}>
                                                 <label>
                                                     <input className="gender-radio" type="radio" name="gender" value="גבר" id="male" onClick={this.handleGender} />
                                                     <img src={male} alt="" />
-                                                    <h5 style={{ float: "right" }}>גבר</h5>
+                                                    <h5 style={{ float: "center" }}>גבר</h5>
                                                 </label>
                                             </Col>
                                         </Row>
