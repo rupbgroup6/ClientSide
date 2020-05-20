@@ -69,10 +69,19 @@ fetchGetQuestion = () =>{
         let sortedOr = orQuest.sort(function (a,b) {//sorting the questions by order
             return a.OrderView - b.OrderView;
         });
+        let fixedOr = [];
+        for (i = 0; i < sortedOr.length/2; i++) {
+           let counter = i*2;
+           let orQuest ={
+             a:sortedOr[counter],
+             b:sortedOr[counter+1]
+           }
+           fixedOr.push(orQuest)
+        }
         this.setState({
           ioQuestions: sortedIo,
           bigQuestions: sortedBig,
-          orQuestions: sortedOr
+          orQuestions: fixedOr
         })
       },
       (error) => {

@@ -200,8 +200,12 @@ label img {
 	border-radius: 10px;
 	line-height: 20px;
 	background: #33adff;
-	height: 50px;
+	height: 65px;
 	width: 150px;
+	justify-content: center;
+  	align-items: center;
+	text-align: center;
+	display: flex;
 	
 }
 
