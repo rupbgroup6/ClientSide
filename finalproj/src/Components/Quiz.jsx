@@ -437,7 +437,7 @@ class Quiz extends Component {
   componentDidMount() {
     $("#2nd").hide();
     $("#3rd").hide();
-    //$("#4th").hide();
+    $("#4th").hide();
   }
 
   render() {
