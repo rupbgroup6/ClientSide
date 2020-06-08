@@ -14,14 +14,6 @@ import red from '../Images/red.png';
 class Game extends Component {
     constructor(props) {
         super(props);
-
-           
-        
-
-        this.apiUrl = 'tbd';//dont forget to change
-        if (!this.state.local) {
-          this.apiUrl = 'tbd';//Dont forget to change
-        }
     }
 
     
