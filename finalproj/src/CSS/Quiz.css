@@ -62,7 +62,6 @@ html, body {
 .card2 {
 	width: 100%;
 	max-height: none;
-	background: #121212;
 	border: 1px solid white;
 	border-radius: 10px;
 	overflow: hidden;

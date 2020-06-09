@@ -8,6 +8,10 @@
 	color:rgb(238, 236, 236);	
 }
 
+b.rtl {
+	text-align: right;
+   }
+
 html, body {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;

@@ -11,6 +11,7 @@ import iooi from '../Images/ioLogo.png';
 import Button from 'react-bootstrap/Button';
 import '../CSS/intro.css';
 
+
 class Intro extends Component {
     constructor(props) {
         super(props);
@@ -92,7 +93,7 @@ class Intro extends Component {
 
                 <Row className="text1"> 
                 <Col xs={12}>
-                                <p><b style={{color:"white", paddingLeft:"10px", paddingTop:"5px"}}>  
+                                <p><b className="rtl" style={{color:"white", paddingLeft:"10px", paddingTop:"5px",fontSize:"13.4px"}}>  
                                 שלום! 
 
 אפליקציה זו מבוססת על מחקר אקדמי של ד"ר יואל אסרף מהמרכז האקדמי רופין ופרופ' אביב שהם מאוניברסיטת חיפה שהתפרסם בכתב העת International Marketing Review. במסך הבא תתבקש לענות על מספר שאלות שיסייעו לך לאבחן איזה סוג מנהל אתה? מנהל שנוקט בגישה אסטרטגית מסוג Outside-in או מנהל בעל גישת Inside-out. לאחר מילוי השאלון תוכל להעמיק את הלמידה בנושא, לבדוק היכן אתה מממוקם יחסית לאוכלוסיית המנהלים במחקר ולהבין את המשמעויות והדגשים השונים של כל גישה החל מפיתוח היכולות האסטרטגיות ועד ליחסים עם לקוחות, חדשנות ולקיחת סיכונים. חשוב להדגיש שאין תשובות נכונות או לא נכונות ולכן אנא סמן את התשובה המתארת במידה הטובה ביותר את הסכמתך עם ההיגדים. הפרטים שלך ימסרו בסודיות מוחלטת. 
