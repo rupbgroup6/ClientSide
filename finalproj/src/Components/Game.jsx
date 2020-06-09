@@ -10,6 +10,8 @@ import Button from 'react-bootstrap/Button';
 import blue from '../Images/blue.png';
 import logovs from '../Images/logoVs.jpg';
 import red from '../Images/red.png';
+import iooi from '../Images/ioLogo.png';
+import typeOfManager from '../Images/typeOfManager.png';
 
 class Game extends Component {
     constructor(props) {
@@ -20,34 +22,49 @@ class Game extends Component {
   
     render() {
         return (
-            <div>
+            <div className="cont">
             <div className="align" >
-                <Row>Type of Manager <br/> </Row>
-                <div className="card3" style={{ paddingTop: "0" }}>
+                
+                <div className="card3" style={{ marginTop: "3%",marginBottom:"3%" }}>
 
-                    <Row className="game" >
-                        <Col>
+                <Row className="header2">    
+                <Col xs={2}></Col>
+                <Col xs={8}><img className="title" alt="" src={iooi} style={{ paddingTop: "10px" }} /></Col>   
+                <Col xs={2}></Col>         
+               </Row>
+
+                    <Row style={{paddingBottom: "10%"}}>
+
+<Col xs={12}>
+                        <img alt="" className="typeOfManager" src={typeOfManager} style={{ paddingTop: "10px" }} />
+                        </Col>
+                    </Row>
+
+                    <Row className="game">
+                        <Col xs={12}>
                             <div class="btn-group" role="group" aria-label="Basic example" >
-                                <div><button type="button"><img classNama={blue} src={blue} alt="" ></img></button></div>
-                                <div><button type="button"><img classNama={logovs} src={logovs} alt=""></img></button></div>
+                                <div><button id="btnGame"  onMouseOver={this.mouseOver} type="button" ><img classNama={blue} src={blue} alt="" ></img></button></div>
+                                <div><img classNama={logovs} src={logovs} alt=""></img></div>
                                 <div><button type="button"><img classNama={red} src={red} alt=""></img></button></div>
                             </div>
                         </Col>
                     </Row>
 
                     <Row className="type">
-                        <Col><h6>Outside - in <br/>
-                            אתם רוצים להצליח בשווקים 
-                            בינלאומיים</h6></Col>
-                        <Col><h6>                       Inside-out <br/>
-                                פיתוח חדשנות פורצת דרך הבנת השוק 
-                                וצרכיו</h6></Col>
+                        
+                        <Col><button><h5>Outside - in </h5><h6>
+                            אתם רוצים להצליח בשווקים
+בינלאומיים</h6></button></Col>
+                        <Col xs={6} style={{marginRight:"5px"}}><button><h5>                       Inside-out </h5><h6>
+                            פיתוח חדשנות פורצת דרך הבנת השוק
+וצרכיו</h6></button></Col>
                     </Row>
 
                 </div>
             </div >
         </div >
-        );
-    }
+    );
 }
+}
+
 export default withRouter(Game);

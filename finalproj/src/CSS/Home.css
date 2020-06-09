@@ -6,6 +6,7 @@
 	outline: none;
 	border: none;
 	color:rgb(238, 236, 236);
+	background: none;
 }
 
 html, body {
@@ -15,22 +16,12 @@ html, body {
 	-o-background-size: cover;
 	background-size: cover;
 	width:100%;
-	background-color: black;
-	
-	
+	background: none;
 	
   }
 
-  .cont3{
-	background-image: url('../Images/tt.webp');
-	background-position: center;
-	background-size: cover;
-	height:100%;
 
-	
-  }
-
-.align {
+.align6 {
 	height: 80%;
 	display: flex;
 	align-items: center;
@@ -38,10 +29,15 @@ html, body {
 	flex-direction: column;
 	padding-bottom: 1px;
 	padding-top: 0px;
-
+	background-image: url('../Images/tt.webp');
+		background-position: center;
+		background-size: cover;
+		height:100%;	
+	
 }
 
-.card4 {
+
+.card6 {
 	
 	height: 100%;
 	width: 98%;
@@ -49,11 +45,10 @@ html, body {
 	border-radius: 10px;
 	overflow: hidden;
 	transition: max-height 0.2s;
-	margin: 0 auto;
-	
+	margin: 0 auto;	
 
-	
 	}
+
 
 	.homeLogo{
 		width: 100%;
@@ -61,17 +56,21 @@ html, body {
 		padding-left: 2px;
 		margin-top: 10px;
 		padding-bottom: 30px;
+	    background: none;
+	
 			
 	}
 
-	.header3{
+	.header4{
 		height: 17px;
-		margin-top: 10px;
-		
+		margin-top: 10px;	
+		background: none;
 	}
+
 
 	.menu{
 		padding-top: 5px;
+		
 	}
 
 	.menu button{
@@ -79,8 +78,7 @@ html, body {
 		height: 95%;
 	background-color: rgb(231, 239, 241);
 		border-radius: 10px;
-		Border:2px solid black
-		
+		Border:2px solid black	;
 		
 	}
 
@@ -92,4 +90,11 @@ html, body {
 	.menu h6{	
 		font-size: 10px;	
 		color: #0A0A0A;
+		background: none;
 	}
+
+	.logo6{
+		background: none;
+	}
+	
+

@@ -133,8 +133,8 @@ label img {
 	border-radius: 10px;
 	line-height: 20px;
 	background: #33adff;
-	height: 40px;
-	width: 80px;
+	height: 50px;
+	width: 85px;
 }
 
 .job [type=radio]:checked + h5{
@@ -160,8 +160,8 @@ label img {
 	border-radius: 10px;
 	line-height: 20px;
 	background: #33adff;
-	height: 40px;
-	width: 80px;
+	height: 50px;
+	width: 85px;
 }
 
 .educ [type=radio]:checked + h5{

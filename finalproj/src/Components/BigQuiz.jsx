@@ -420,7 +420,7 @@ class BigQuiz extends Component {
                 <Col xs={5}></Col>
               </Row>{/*end of next */}
               <br></br>
-              {this.state.allFull ? <Row><Col style={{ textAlign: "center" }}><Link to={'/game/'+ this.props.refreshProfile() }> <Button variant="outline-primary">Let's Continue</Button></Link></Col></Row> : ""}
+              {this.state.allFull ? <Row><Col style={{ textAlign: "center" }}><Link to={'/game/'+ this.props.refreshProfile() }> <button  style={{background: "#33adff" , height:"55px",width:"135px" ,margin:"15px", borderRadius:"12px", color:" #003B15", fontSize:"17px", fontWeight:"700"}}>Let's Continue</button></Link></Col></Row> : ""}
             </Row>{/*end of card2 */}
             </div>
         )

@@ -26,54 +26,58 @@ class Home extends Component {
 
     render() {
         return (
-            <div className="cont3">
-
-                <div className="align">
-
-                    <div className="card4" style={{ marginTop: "3%", marginBottom: "3%" }}>
-                        <Row className="header3">
-                            <Col>
-                                <h6 style={{ textAlign: "center", paddingTop: "1px", color: "black" }}>HOME</h6>
+            <div className="align6">
+                <div className="card6" style={{ marginTop: "3%", marginBottom: "3%" }}>
+                    <Col className="all">
+                        <Row className="header4">
+                            <Col className="header4">
+                                <h6 className="header4"  style={{ textAlign: "center", paddingTop: "1px", color:"black"}}>HOME</h6>
                             </Col>
                         </Row>
 
-                        <Row>
-                            <Col xs={12}>
+                        <Row className="logo6">
+                            <Col xs={12}  className="logo6">
                                 <img className="homeLogo" alt="" src={home} style={{ paddingTop: "10px" }} />
                             </Col>
                         </Row>
 
-                        <Row className="menu">
-                            <Row>
-                                <div class="btn-group" role="group" aria-label="Basic example" >
+                       
+                            <Row className="menu">
+                                <Col className="menu">
+                                <Row class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
-                                    <Col xs={5}> <button type="button" style={{ float: "right" }}><img src={book} alt=""></img><h6>מחקר</h6></button></Col>
+                                    <Col xs={5}><a href="https://www.emerald.com/insight/content/doi/10.1108/IMR-01-2018-0016/full/html"> <button type="button" style={{ float: "right" }}><img src={book} alt=""></img><h6>מחקר</h6></button></a></Col>
                                     <Col xs={5}><button type="button" style={{ float: "left" }}><img src={friend} alt="" ></img><h6 style={{}}>רשימת חברים</h6></button> </Col>
                                     <Col xs={1}></Col>
-                                </div>
+                                </Row>
+                                </Col>
                             </Row>
 
-                            <Row style={{ marginTop: "20px" }}>
-                                <div class="btn-group" role="group" aria-label="Basic example" >
+                            <Row className="menu" style={{ marginTop: "20px" }} >
+                                <Col className="menu">
+                                <Row className="menu" class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
-                                    <Col xs={5}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} src={quiz} alt=""></img><h6>שאלונים</h6></button></Col>
+                                    <Col xs={5}><Link to={'/quiz/' + this.state.id}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} src={quiz} alt=""></img><h6>שאלונים</h6></button></Link></Col>
                                     <Col xs={5}><button type="button" style={{ float: "left" }}><img src={apostrophes} alt="" ></img><h6>ציטטות מנהלים</h6></button> </Col>
                                     <Col xs={1}></Col>
-                                </div>
+                                </Row >
+                                </Col>
                             </Row>
 
-                            <Row style={{ marginTop: "20px" }}>
-                                <div class="btn-group" role="group" aria-label="Basic example" >
+                            <Row className="menu" style={{ marginTop: "20px" }}>
+                                <Col className="menu">
+                                <Row class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
-                                    <Col xs={5}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} src={glass} alt=""></img><h6>ממצאים ותובנות</h6></button></Col>
-                                    <Col xs={5}><button type="button" style={{ float: "left" }}><img style={{ paddingTop: "5px" }} src={profile} alt="" ></img><h6>סוגי פרופיל</h6></button> </Col>
+                                    <Col xs={5}><Link to={'/findings'}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} src={glass} alt=""></img><h6>ממצאים ותובנות</h6></button></Link></Col>
+                                    <Col xs={5}><Link to={"/profile"}><button type="button" style={{ float: "left" }}><img style={{ paddingTop: "5px" }} src={profile} alt="" ></img><h6>סוגי פרופיל</h6></button></Link></Col>
                                     <Col xs={1}></Col>
-                                </div>
+                                </Row>
+                                </Col>
                             </Row>
-                        </Row>
 
-                    </div>
-                </div >
+                            </Col>
+
+                </div>
             </div >
         );
     }

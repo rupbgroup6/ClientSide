@@ -6,7 +6,7 @@
 	font-family: "Roboto";
 	outline: none;
 	border: none;
-	background: #0A0A0A;
+
 }
 
 html, body {
@@ -14,7 +14,12 @@ html, body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  width:100%
+  width:100%;
+
+}
+
+.App{
+	background-color: #0a0202;
 }
 
 .align {
@@ -24,6 +29,7 @@ html, body {
 	justify-content: center;
 	flex-direction: column;
 	padding-bottom: 8px;
+	
 }
 
 .logo {

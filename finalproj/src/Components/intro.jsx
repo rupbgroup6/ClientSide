@@ -6,8 +6,10 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import "../CSS/rest.css";
-import welcomePic from '../Images/welcome.JPG';
+import welcomePic from '../Images/IntroImage.png';
+import iooi from '../Images/ioLogo.png';
 import Button from 'react-bootstrap/Button';
+import '../CSS/intro.css';
 
 class Intro extends Component {
     constructor(props) {
@@ -54,33 +56,70 @@ class Intro extends Component {
   
     render() {
         return (
-           <div className="align2" style={{height:"100vh"}}>
-                <Container fluid style={{padding:"0",height:"100%"}}>
-                    <Row className="header">
-                        <Col xs={4}><h2 style={{float:"right",color:"#33adff"}}>IO</h2></Col>
-                        <Col xs={4}><h2 style={{textAlign:"center",color:"#fff"}}>-</h2></Col>
-                        <Col xs={4}><h2 style={{float:"left",color:"#fff"}}>OI</h2></Col>
-                        <Col xs={12} style={{padding:"0",height:"20%"}}>
-                            <img className="for-intro" src={welcomePic} alt=""/>
-                        </Col>
-                    </Row>
-                    <Row xs={2} className="about2">
-                        <Col xs={6} style={{color:"black",textAlign:"center",border:"none",backgroundColor:"white",marginLeft:"0"}}><h2 className="logo" style={{float:"right",color:"black"}}>About</h2></Col>
-                        <Col xs={6} style={{color:"#33adff",textAlign:"center",border:"none",backgroundColor:"white"}}><h2 className="logo" style={{color:"#33adff"}}>IO&nbsp;-&nbsp;OI</h2></Col>
-                    </Row>
-                    <Row style={{height:"45%",backgroundColor:"white",alignItems:"center"}}>
-                      <Col></Col>
-                      <Col xs={10} dir="rtl" style={{backgroundColor:"grey",height:"100%"}}><p dir="rtl" style={{backgroundColor:"grey",fontSize:"75%"}}>אפליקציה זו מבוססת על מחקר מדעי של ד"ר אסרף ופרופ' אביב שהם מאוניברסיטת חיפה שהתפרסם לאחרונה בכתב העת מספר 1 בעולם בתחום השיווק הבינלאומי: International Marketing Review.במסגרת המחקר נאספו נתונים מ 100 מנהלים מחברות ישראליות גדולות ו 100 מנהלים מחברות סטארט-אפ ישראליות. כל החברות במדגם עוסקות בפעילות שיווק בינלאומי. שאלת המחקר המרכזית הייתה איזו גישה אסטרטגית תביא לביצועים טובים יותר בשווקים בינלאומיים. בנוסף נבדק בצורה אמפירית מה תורם יותר להצלחה אסטרטגית גדולה יותר בשווקים בינלאומיים: יכולות שיווק או יכולות טכנולוגיות? התוצאות עשויות להפתיע חלק גדול מקהל היזמים בישראל ולהסביר לפחות חלק מהכישלון של סטארט-אפים רבים בפיתוח פעילות בינלאומית.</p></Col>
-                      <Col></Col>
-                    </Row>
-                    <Row style={{backgroundColor:"white"}}>
-                      <Col style={{backgroundColor:"white"}}></Col>
-                      <Col style={{backgroundColor:"white",textAlign:"center"}}><Link to={'/quiz/' + this.state.id}> <Button variant="outline-primary" style={{}}>Let's start</Button></Link></Col>
-                      <Col style={{backgroundColor:"white"}}></Col>
-                    </Row>
-                </Container>
-           </div>
-        );
-    }
+          <div className="cont2">
+        <div className="align" >
+        <Container>
+        
+          
+            <div className="card6" style={{ marginTop: "3%", marginBottom: "3%" }}>
+            
+              <Row>
+                <Col xs={12} >
+                  <img className="pic" alt="" src={welcomePic} style={{ width: "100%", height:"100%", paddingBottom:"10px"}} />
+                </Col>
+              </Row>
+
+              <Row>
+
+                <Col xs={12}>
+                  <Row className="title">
+                    <Col xs={2}></Col>
+                   
+                    <Col xs={8}>
+                      <Row>
+                        <Col> <h4 style={{ color: "gray" }}>About </h4> </Col>
+                      </Row>
+
+                      <Row>
+                        <Col>  <h6 style={{ color: "gray" }}> Outside-In - Inside-Out </h6> </Col>
+                      </Row> 
+                    </Col>
+
+                    <Col xs={2}></Col>
+                  </Row>
+
+                </Col>
+
+                <Row className="text1"> 
+                <Col xs={12}>
+                                <p><b style={{color:"white", paddingLeft:"10px", paddingTop:"5px"}}>  
+                                שלום! 
+
+אפליקציה זו מבוססת על מחקר אקדמי של ד"ר יואל אסרף מהמרכז האקדמי רופין ופרופ' אביב שהם מאוניברסיטת חיפה שהתפרסם בכתב העת International Marketing Review. במסך הבא תתבקש לענות על מספר שאלות שיסייעו לך לאבחן איזה סוג מנהל אתה? מנהל שנוקט בגישה אסטרטגית מסוג Outside-in או מנהל בעל גישת Inside-out. לאחר מילוי השאלון תוכל להעמיק את הלמידה בנושא, לבדוק היכן אתה מממוקם יחסית לאוכלוסיית המנהלים במחקר ולהבין את המשמעויות והדגשים השונים של כל גישה החל מפיתוח היכולות האסטרטגיות ועד ליחסים עם לקוחות, חדשנות ולקיחת סיכונים. חשוב להדגיש שאין תשובות נכונות או לא נכונות ולכן אנא סמן את התשובה המתארת במידה הטובה ביותר את הסכמתך עם ההיגדים. הפרטים שלך ימסרו בסודיות מוחלטת. 
+
+בהצלחה!
+
+                                </b></p>
+                            </Col>
+
+                </Row>
+
+
+
+
+                <Row style={{ backgroundColor: "black", paddingTop: "10px" }}>
+                  <Col xs={2} style={{ backgroundColor: "black" }}></Col>
+                  <Col xs={8} style={{ backgroundColor: "black", textAlign: "center" }}><Link to={'/quiz/' + this.state.id}> <button  style={{background: "#33adff" , height:"55px",width:"135px" ,margin:"15px", borderRadius:"12px", color:" #003B15", fontSize:"17px", fontWeight:"700"}}>Let's start</button></Link></Col>
+                  <Col xs={2} style={{ backgroundColor: "black" }}></Col>
+                </Row>
+
+              </Row>
+
+            </div>
+          </Container>
+        </div >
+      </div >
+    );
+  }
 }
 export default withRouter(Intro);
