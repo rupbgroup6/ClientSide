@@ -47,7 +47,7 @@ class Home extends Component {
                                 <Row class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
                                     <Col xs={5}><a href="https://www.emerald.com/insight/content/doi/10.1108/IMR-01-2018-0016/full/html"> <button type="button" style={{ float: "right" }}><img src={book} alt=""></img><h6>מחקר</h6></button></a></Col>
-                                    <Col xs={5}><button type="button" style={{ float: "left" }}><img src={friend} alt="" ></img><h6 style={{}}>רשימת חברים</h6></button> </Col>
+                                    <Col xs={5}><Link to={"/friendList"}><button type="button" style={{ float: "left" }}><img src={friend} alt="" ></img><h6 style={{}}>רשימת חברים</h6></button></Link> </Col>
                                     <Col xs={1}></Col>
                                 </Row>
                                 </Col>

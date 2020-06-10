@@ -12,6 +12,8 @@ import Game from './Components/Game.jsx';
 import Findings from './Components/Findings.jsx';
 import Home from './Components/Home.jsx';
 import Profile from './Components/Profile.jsx';
+import FriendList from './Components/FriendList.jsx';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component{
@@ -122,6 +124,9 @@ fetchGetQuestion = () =>{
                 </Route>
                 <Route exact path="/profile" >
                  <Profile />
+                </Route>
+                <Route exact path="/friendList" >
+                 <FriendList />
                 </Route>
               </Switch>
             </CSSTransition>

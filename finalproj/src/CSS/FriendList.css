@@ -1,0 +1,48 @@
+.logo9{
+    width: 95%;
+    height: 70px;
+padding-left: 70px;
+}
+
+.iconHome{
+    width: 50px;
+    height: 40px;
+    margin-top: 29px;
+    padding-right: 8px;
+}
+
+.card9{
+    margin-top: 15px;
+	height: 100%;
+	max-height: 88vh;
+	width: 95%;
+	background: #121212;
+	border: 1px solid #373737;
+	border-radius: 10px;
+	overflow: hidden;
+    transition: max-height 0.2s;
+    margin-bottom: 15px;
+}
+
+.friendLogo{
+    width: 90%;
+    height: 70%;
+    padding-bottom: 0px;
+    padding-left: 5px;
+    text-align: center;
+    
+}
+
+
+
+.friend p{
+    float: left;
+    padding-top: 25px;
+    
+}
+
+b{
+    font-size: larger;
+    padding-left: 20px;
+}
+

@@ -238,6 +238,8 @@ class LogAReg extends Component {
                             </div>
                             <button onClick={this.btnFetchGetIfo}>Login</button>
                             <Link to={'/home'}> <button  style={{background: "#33adff" , height:"55px",width:"135px" ,margin:"15px", borderRadius:"12px", color:" #003B15", fontSize:"17px", fontWeight:"700"}}>תפריט</button></Link>
+                            <Link to={'/friendList'}> <button  style={{background: "#33adff" , height:"55px",width:"135px" ,margin:"15px", borderRadius:"12px", color:" #003B15", fontSize:"17px", fontWeight:"700"}}>תפריט</button></Link>
+                        
                         </div>
 
                         <div className="form">

@@ -36,6 +36,10 @@ html, body {
 
 }
 
+.btn-group{
+	padding-bottom: 5px;
+}
+
 
 
 .card3 {
@@ -48,6 +52,7 @@ html, body {
 	transition: max-height 0.2s;
 	margin-left: 3px;
 	margin-right: 2px;
+	padding-bottom: 15px;
 
 	}
 
@@ -70,8 +75,8 @@ html, body {
 			width: 90%;
 			height: 80px;
 			margin-left: 25px;
-			margin-top: 15px;
-			padding-bottom: 5px;
+			margin-top: 10px;
+			
 						
 		}
 
@@ -87,7 +92,7 @@ html, body {
 		text-align: center;
 	}
 
-	h5{
+	h6{
 		margin-top: 8px;
 		text-align: center;
 		font-size: 100%;
@@ -98,16 +103,13 @@ html, body {
 		margin-top: 10px;
 		border: 1px solid gray;
 		border-radius: 10px;
-		margin-left: 18px;	
+		margin-left: 10px;	
 		height: 90%;
-		width: 90%;
+		width: 100%;
 		background-color: black;
 	}
 
-	.type{
-		margin-bottom: 15px;
-		
-	}
+	
 
 
 	
