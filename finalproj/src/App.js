@@ -13,7 +13,6 @@ import Findings from './Components/Findings.jsx';
 import Home from './Components/Home.jsx';
 import Profile from './Components/Profile.jsx';
 import FriendList from './Components/FriendList.jsx';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component{
