@@ -29,16 +29,16 @@ class FriendList extends Component {
                 mode: "register"
             });
             $(".card9").addClass("extend");
-		$("#login").removeClass("selected");
-		$("#register").addClass("selected");
+		$("#friend").removeClass("selected");
+		$("#request").addClass("selected");
         }
         else{
             this.setState({
                 mode: "login"
             });
             $(".card9").removeClass("extend");
-		$("#login").addClass("selected");
-		$("#register").removeClass("selected");
+		$("#friend").addClass("selected");
+		$("#request").removeClass("selected");
         }
     }
 
@@ -78,8 +78,9 @@ class FriendList extends Component {
                    
                     <div className="head">
                         <div></div>
-                        <a id="login" className="selected" onClick={this.changeMode}>Friend</a>
-                        <a id="register" onClick={this.changeMode}>Requests</a>
+                        <a id="friend" className="selected" onClick={this.changeMode}>Friend</a>
+                        <a id="request" onClick={this.changeMode}>Requests</a>
+                        <a id="feedback" onClick={this.changeMode}>Feedback</a>
                         <div></div>
                    </div>
 
@@ -87,9 +88,9 @@ class FriendList extends Component {
                         <div className="form">             
                          
                          <Row className="friend">
-                             <Col>
-                             <button  style={{marginTop:"25px", marginLeft:"25px",background: "#33adff" , height:"35px",width:"70px" , borderRadius:"5px", color:" #003B15", fontSize:"17px", fontWeight:"700", float:"left"}}>הסר</button>   
-                             <button  style={{marginTop:"25px", marginLeft:"15px", background: "#33adff" , height:"35px",width:"70px" , borderRadius:"5px", color:" #003B15", fontSize:"17px", fontWeight:"700", float:"left"}}>משובמפ</button>
+                             <Col xs={12}>
+                             <button  style={{marginTop:"25px", marginLeft:"25px",background: "#33adff" , height:"35px",width:"83px" , borderRadius:"5px", color:" #003B15", fontSize:"17px", fontWeight:"700", float:"left"}}>Remove</button>   
+                             <button  style={{marginTop:"25px", marginLeft:"15px", background: "#33adff" , height:"35px",width:"83px" , borderRadius:"5px", color:" #003B15", fontSize:"17px", fontWeight:"700", float:"left"}}>Feedback</button>
                              <p  style={{color:"white", float:"right", marginRight:"15px"}}><b style={{color:"white", float:"right"}}>Anael bar dahan</b></p> <br/>
                              </Col>
 
@@ -101,16 +102,13 @@ class FriendList extends Component {
                         <div className="form">
 
                         <Row className="friend">
-                             <Col>
-                             <button  style={{marginTop:"25px", marginLeft:"25px",background: "#33adff" , height:"35px",width:"70px" , borderRadius:"5px", color:" #003B15", fontSize:"17px", fontWeight:"700", float:"left"}}>דחה</button>   
-                             <button  style={{marginTop:"25px", marginLeft:"15px", background: "#33adff" , height:"35px",width:"70px" , borderRadius:"5px", color:" #003B15", fontSize:"17px", fontWeight:"700", float:"left"}}>אשר</button>
+                             <Col xs={12}>
+                             <button  style={{marginTop:"25px", marginLeft:"25px",background: "#33adff" , height:"35px",width:"83px" , borderRadius:"5px", color:" #003B15", fontSize:"17px", fontWeight:"700", float:"left"}}>Ignore</button>   
+                             <button  style={{marginTop:"25px", marginLeft:"15px", background: "#33adff" , height:"35px",width:"83px" , borderRadius:"5px", color:" #003B15", fontSize:"17px", fontWeight:"700", float:"left"}}>Accept</button>
                              <p  style={{color:"white", float:"right", marginRight:"15px"}}><b style={{color:"white", float:"right"}}>blabla blabla</b></p> <br/>                
                              </Col>
                          </Row>
-             
-                       
-                         
-                            <button onClick={this.register}>Register</button>
+            
                         </div>
                    </div>
                </div>
