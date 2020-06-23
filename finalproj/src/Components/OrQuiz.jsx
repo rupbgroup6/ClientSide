@@ -81,7 +81,7 @@ class OrQuiz extends Component {
                         console.log("fetch POST= ", result);
                         $("#4th").show();
                         window.scrollBy({
-                            top: 100,
+                            top: 120,
                             left: 0,
                             behavior: 'smooth'
                         });

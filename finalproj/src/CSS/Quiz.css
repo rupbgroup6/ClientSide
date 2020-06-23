@@ -222,6 +222,7 @@ label img {
 
 div.swal-text{
 	background: white;
+	text-align: right;
 
 }
 div.swal-footer{

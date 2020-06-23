@@ -17,11 +17,16 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            profile: this.props.match.params.profile,
+            id: this.props.match.params.id
         }
 
 
 
+    }
+
+    goResearch = () => {
+        window.open("https://www.emerald.com/insight/content/doi/10.1108/IMR-01-2018-0016/full/html");
     }
 
     render() {
@@ -46,8 +51,8 @@ class Home extends Component {
                                 <Col className="menu">
                                 <Row class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
-                                    <Col xs={5}><a href="https://www.emerald.com/insight/content/doi/10.1108/IMR-01-2018-0016/full/html"> <button type="button" style={{ float: "right" }}><img src={book} alt=""></img><h6>מחקר</h6></button></a></Col>
-                                    <Col xs={5}><Link to={"/friendList"}><button type="button" style={{ float: "left" }}><img src={friend} alt="" ></img><h6 style={{}}>רשימת חברים</h6></button></Link> </Col>
+                                    <Col xs={5}> <button onClick={this.goResearch} type="button" style={{ float: "right" }}><img src={book} alt=""></img><h6>מחקר</h6></button></Col>
+                                    <Col xs={5}><Link to={"/friendList/"+this.state.id+"/"+this.state.profile}><button type="button" style={{ float: "left" }}><img src={friend} alt="" ></img><h6 style={{}}>רשימת חברים</h6></button></Link> </Col>
                                     <Col xs={1}></Col>
                                 </Row>
                                 </Col>
@@ -69,7 +74,7 @@ class Home extends Component {
                                 <Row class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
                                     <Col xs={5}><Link to={'/findings'}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} src={glass} alt=""></img><h6>ממצאים ותובנות</h6></button></Link></Col>
-                                    <Col xs={5}><Link to={"/profile"}><button type="button" style={{ float: "left" }}><img style={{ paddingTop: "5px" }} src={profile} alt="" ></img><h6>סוגי פרופיל</h6></button></Link></Col>
+                                    <Col xs={5}><Link to={"/profile/"+this.state.id+"/"+this.state.profile}><button type="button" style={{ float: "left" }}><img style={{ paddingTop: "5px" }} src={profile} alt="" ></img><h6>סוגי פרופיל</h6></button></Link></Col>
                                     <Col xs={1}></Col>
                                 </Row>
                                 </Col>

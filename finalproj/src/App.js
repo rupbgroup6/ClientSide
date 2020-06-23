@@ -112,19 +112,19 @@ fetchGetQuestion = () =>{
                 <Route path="/intro/:email" >
                  <Intro getQuestions={this.fetchGetQuestion}/>
                 </Route>
-                <Route path="/game/:profile" >
+                <Route path="/game/:profile/:id" >
                  <Game />
                 </Route>
-                <Route exact path="/home" >
+                <Route exact path="/home/:id/:profile" >
                  <Home />
                 </Route>
                 <Route exact path="/findings" >
                  <Findings />
                 </Route>
-                <Route exact path="/profile" >
+                <Route exact path="/profile/:profile/:id" >
                  <Profile />
                 </Route>
-                <Route exact path="/friendList" >
+                <Route exact path="/friendList/:id/:profile" >
                  <FriendList />
                 </Route>
               </Switch>

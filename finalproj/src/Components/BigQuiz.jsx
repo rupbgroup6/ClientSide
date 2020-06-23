@@ -47,38 +47,38 @@ class BigQuiz extends Component {
       swal("לא בחרת את כל הפרמטרים");
     }
     else {
-        let counterA;
-        let counterB;
-        let counterC;
-        let counterD;
-        let counterE;
-        let sumA;
-        let sumB;
-        let sumC;
-        let sumD;
-        let sumE;
-        Object.keys(answers).map((key, index) => {
-            if(answers[key][1] === 1){
-              counterA++;
-              sumA += answers[key][0];
+        let counterA = 0;
+        let counterB = 0;
+        let counterC = 0;
+        let counterD = 0;
+        let counterE = 0;
+        let sumA = 0;
+        let sumB = 0;
+        let sumC = 0;
+        let sumD = 0;
+        let sumE = 0;
+        for(var key in answers){
+          if(answers[key][1] === 1){
+            counterA++;
+            sumA += answers[key][0];
+          }
+          else if(answers[key][1] === 2){
+            counterB++;
+            sumB += answers[key][0];
+          }
+          else if(answers[key][1] === 3){
+              counterC++;
+              sumC += answers[key][0];
             }
-            else if(answers[key][1] === 2){
-              counterB++;
-              sumB += answers[key][0];
+            else if(answers[key][1] === 4){
+              counterD++;
+              sumD += answers[key][0];
             }
-            else if(answers[key][1] === 3){
-                counterC++;
-                sumC += answers[key][0];
-              }
-              else if(answers[key][1] === 4){
-                counterD++;
-                sumD += answers[key][0];
-              }
-              else if(answers[key][1] === 5){
-                counterE++;
-                sumE += answers[key][0];
-              }
-          });
+            else if(answers[key][1] === 5){
+              counterE++;
+              sumE += answers[key][0];
+            }
+        }
       let avgSay1 = (parseInt(sumA) / parseInt(counterA));
       let avgSay2 = (parseInt(sumB) / parseInt(counterB));
       let avgSay3 = (parseInt(sumC) / parseInt(counterC));
@@ -205,6 +205,11 @@ class BigQuiz extends Component {
                   console.log("fetch POST= ", result);
                   this.setState({
                     allFull: true
+                  });
+                  window.scrollBy({
+                    top: 100,
+                    left: 0,
+                    behavior: 'smooth'
                   });
                 },
                 (error) => {
@@ -420,7 +425,7 @@ class BigQuiz extends Component {
                 <Col xs={5}></Col>
               </Row>{/*end of next */}
               <br></br>
-              {this.state.allFull ? <Row><Col style={{ textAlign: "center" }}><Link to={'/game/'+ this.props.refreshProfile() }> <button  style={{background: "#33adff" , height:"55px",width:"135px" ,margin:"15px", borderRadius:"12px", color:" #003B15", fontSize:"17px", fontWeight:"700"}}>Let's Continue</button></Link></Col></Row> : ""}
+              {this.state.allFull ? <Row><Col style={{ textAlign: "center" }}><Link to={'/game/'+ this.props.refreshProfile()+"/"+this.state.id }> <button  style={{background: "#33adff" , height:"55px",width:"135px" ,margin:"15px", borderRadius:"12px", color:" #003B15", fontSize:"17px", fontWeight:"700"}}>Let's Continue</button></Link></Col></Row> : ""}
             </Row>{/*end of card2 */}
             </div>
         )

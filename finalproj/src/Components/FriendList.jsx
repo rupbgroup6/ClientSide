@@ -15,7 +15,8 @@ class FriendList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            id:this.props.match.params.id,
+            profile: this.props.match.params.profile
         }
 
 
@@ -54,7 +55,7 @@ class FriendList extends Component {
                    </Col>
 
                    <Col xs={1}>
-                   <Link to={"/home"}> <img className="iconHome" src={IconHome}/></Link>
+                   <Link to={"/home/"+this.state.id+"/"+this.state.profile}> <img className="iconHome" src={IconHome}/></Link>
                    </Col>
                </Row>
                

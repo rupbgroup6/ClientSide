@@ -139,7 +139,7 @@ class LogAReg extends Component {
         let password = this.state.password;
             if(String(user.Password) === password){
                 let direction = "/intro/" + this.state.email;
-                this.props.history.push(direction);
+                this.props.history.replace(direction, "urlhistory");
             }
             else{
                 swal("!שגיאה", "משהו לא תקין \nאנא נסה שוב");
@@ -237,7 +237,7 @@ class LogAReg extends Component {
                                 </label>
                             </div>
                             <button onClick={this.btnFetchGetIfo}>Login</button>
-                            <Link to={'/home'}> <button  style={{background: "#33adff" , height:"55px",width:"135px" ,margin:"15px", borderRadius:"12px", color:" #003B15", fontSize:"17px", fontWeight:"700"}}>תפריט</button></Link>
+                            <Link to={'/home/1/השורד'}> <button  style={{background: "#33adff" , height:"55px",width:"135px" ,margin:"15px", borderRadius:"12px", color:" #003B15", fontSize:"17px", fontWeight:"700"}}>תפריט</button></Link>
                             <Link to={'/friendList'}> <button  style={{background: "#33adff" , height:"55px",width:"135px" ,margin:"15px", borderRadius:"12px", color:" #003B15", fontSize:"17px", fontWeight:"700"}}>חברים</button></Link>
                         
                         </div>
