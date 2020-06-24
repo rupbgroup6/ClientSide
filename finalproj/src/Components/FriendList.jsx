@@ -9,6 +9,7 @@ import friendList from '../Images/FriendList.png';
 import IconHome from '../Images/IconHome.png';
 import $ from "jquery";
 import swal from 'sweetalert';
+import Button from 'react-bootstrap/Button';
 
 
 class FriendList extends Component {
@@ -23,6 +24,9 @@ class FriendList extends Component {
 
     }
    
+    goHome = () => {
+        this.props.history.replace("/home/" + this.state.id+"/"+this.state.profile, "urlhistory");
+    }
 
     changeMode = () =>{// changing the mode from login to register
         if(this.state.mode === "login"){
@@ -50,13 +54,15 @@ class FriendList extends Component {
         return (
            <div className="align">
                <Row>
+                  <Col>
+                    <Link to={"/home/"+this.state.id+"/"+this.state.profile}><Button style={{float:"right"}} variant="secondary" onClick={this.goHome}><i className="fas fa-home"></i></Button></Link>
+                  </Col>
+               </Row>
+               <Row>
                    <Col xs={10}>
-                   <img className="logo9"  src={logo} style={{paddingTop:"15px"}}/>
+                   <img className="logo9"  src={logo}/>
                    </Col>
-
-                   <Col xs={1}>
-                   <Link to={"/home/"+this.state.id+"/"+this.state.profile}> <img className="iconHome" src={IconHome}/></Link>
-                   </Col>
+                   <Col xs={1}></Col>
                </Row>
                
   

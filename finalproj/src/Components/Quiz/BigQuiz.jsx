@@ -3,8 +3,8 @@ import { Switch, Route, Link, withRouter } from 'react-router-dom';
 import $ from "jquery";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import "../CSS/rest.css";
-import next from '../Images/next2.png';
+import "../../CSS/rest.css";
+import next from '../../Images/next2.png';
 import swal from 'sweetalert';
 import Button from 'react-bootstrap/Button';
 
@@ -164,7 +164,8 @@ class BigQuiz extends Component {
         AvgSay2: avgSay2,
         AvgSay3: avgSay3,
         AvgSay4: avgSay4,
-        AvgSay5: avgSay5
+        AvgSay5: avgSay5,
+        SecondTime: true
       }
       url += u.UserId;
       fetch(url, {//registering the user to the system

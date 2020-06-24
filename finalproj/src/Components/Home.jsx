@@ -12,6 +12,7 @@ import apostrophes from '../Images/Apostrophes.png';
 import glass from '../Images/glass2.png';
 import profile from '../Images/profile2.jpg';
 import quiz from '../Images/toQuiz.png';
+import Button from 'react-bootstrap/Button';
 
 class Home extends Component {
     constructor(props) {
@@ -29,11 +30,24 @@ class Home extends Component {
         window.open("https://www.emerald.com/insight/content/doi/10.1108/IMR-01-2018-0016/full/html");
     }
 
+    logOut = () => {
+        localStorage.removeItem("uName");
+        localStorage.removeItem("pass");
+        localStorage.removeItem("rememberMe");
+        let direction = "/";
+        this.props.history.replace(direction, "urlhistory");
+    }
+
     render() {
         return (
             <div className="align6">
                 <div className="card6" style={{ marginTop: "3%", marginBottom: "3%" }}>
                     <Col className="all">
+                        <Row>
+                            <Col>
+                                <Button onClick={this.logOut} variant="secondary" style={{float:"right"}}><i class="fas fa-sign-out-alt"></i></Button>
+                            </Col>
+                        </Row>
                         <Row className="header4">
                             <Col className="header4">
                                 <h6 className="header4"  style={{ textAlign: "center", paddingTop: "1px", color:"black"}}>HOME</h6>

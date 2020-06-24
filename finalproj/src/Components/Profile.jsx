@@ -7,7 +7,6 @@ import iooi from '../Images/ioLogo.png';
 import swal from 'sweetalert';
 import Button from 'react-bootstrap/Button';
 import $ from "jquery";
-import {browserHistory} from 'react-router';
 
 
 class Profile extends Component {
@@ -153,9 +152,9 @@ class Profile extends Component {
                 <div className="card4" style={{ marginTop: "3%", marginBottom: "3%" }}>
                     
                     <Row className="header3">
-                        <Col xs={2}><Button style={{float:"left"}} onClick={this.goHome}><i className="fas fa-home"></i></Button></Col>
-                        <Col xs={8}><img className="title" alt="" src={iooi} style={{ paddingTop: "10px" }} /></Col>
                         <Col xs={2}></Col>
+                        <Col xs={8}><img className="title" alt="" src={iooi} style={{ paddingTop: "10px" }} /></Col>
+                        <Col xs={2}><Button variant="secondary" onClick={this.goHome}><i className="fas fa-home"></i></Button></Col>
                     </Row>
 
                     <Row className="instructions">

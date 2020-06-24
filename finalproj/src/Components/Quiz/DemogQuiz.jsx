@@ -5,11 +5,11 @@ import swal from 'sweetalert';
 import Row from 'react-bootstrap/Row';
 import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 import Col from 'react-bootstrap/Col';
-import "../CSS/rest.css";
+import "../../CSS/rest.css";
 import RangeSlider from 'react-bootstrap-range-slider';
-import male from '../Images/Male.png';
-import female from '../Images/Female.png';
-import next from '../Images/next2.png';
+import male from '../../Images/Male.png';
+import female from '../../Images/Female.png';
+import next from '../../Images/next2.png';
 
 class DemogQuiz extends Component {
 

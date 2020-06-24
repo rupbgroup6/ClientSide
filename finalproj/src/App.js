@@ -6,7 +6,7 @@ import {
 } from 'react-transition-group';
 import "./CSS/App.css";
 import LogAReg  from "./Components/LoginAReg.jsx";
-import Quiz from "./Components/Quiz.jsx";
+import Quiz from "./Components/Quiz/Quiz.jsx";
 import Intro from './Components/intro.jsx';
 import Game from './Components/Game.jsx';
 import Findings from './Components/Findings.jsx';
