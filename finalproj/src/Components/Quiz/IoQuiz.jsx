@@ -3,8 +3,8 @@ import { Switch, Route, Link, withRouter } from 'react-router-dom';
 import $ from "jquery";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import "../CSS/rest.css";
-import next from '../Images/next2.png';
+import "../../CSS/rest.css";
+import next from '../../Images/next2.png';
 import swal from 'sweetalert';
 
 class IoQuiz extends Component {
@@ -63,7 +63,7 @@ class IoQuiz extends Component {
             profile = "השורד"
           }
           else if (avgA < 3.51 && 3.2 < avgB < 3.66) {//2
-            profile = "המחפש"
+            profile = "המאמין"
           }
           else if (avgA < 3.51 && 3.66 < avgB) {//3
             profile = "המהפכן"
@@ -78,7 +78,7 @@ class IoQuiz extends Component {
             profile = "המחושב"
           }
           else if (3.95 < avgA && avgB < 3.2) {//7
-            profile = "המגיב"
+            profile = "המתאים"
           }
           else if (3.95 < avgA && 3.2 < avgB < 3.66) {//8
             profile = "המעז"
@@ -118,7 +118,7 @@ class IoQuiz extends Component {
                 console.log("fetch POST= ", result);
                 $("#3rd").show();
                 window.scrollBy({
-                  top: 100,
+                  top: 120,
                   left: 0,
                   behavior: 'smooth'
                 });

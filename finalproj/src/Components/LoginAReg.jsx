@@ -27,7 +27,7 @@ class LogAReg extends Component {
         }
     }
 
-    btnFetchGetIfo = () => {//get all users and match info before login
+    btnFetchGetIfo = () => {
         let url = this.apiUrl + this.state.email;
         fetch(url, {
           method: 'GET',
@@ -138,8 +138,29 @@ class LogAReg extends Component {
       checkMatch = (user) =>{// checking that passwords matche
         let password = this.state.password;
             if(String(user.Password) === password){
-                let direction = "/intro/" + this.state.email;
-                this.props.history.push(direction);
+                if($('#rememberMe').is(":checked")){
+                    let uName = this.state.email;
+                    let password = this.state.password;
+                    localStorage.uName = uName;
+                    localStorage.pass = password;
+                    localStorage.rememberMe = true;
+                }
+                else{
+                    localStorage.removeItem("uName");
+                    localStorage.removeItem("pass");
+                    localStorage.removeItem("rememberMe");
+                }
+                if(user.SecondTime === true){
+                    let id = user.UserId;
+                    let profile = user.Profile;
+                    let direction = "/home/" + id + "/" + profile;
+                    this.props.history.replace(direction, "urlhistory");
+                }
+                else{
+                    let direction = "/intro/" + this.state.email;
+                    this.props.history.replace(direction, "urlhistory");
+                }
+                
             }
             else{
                 swal("!שגיאה", "משהו לא תקין \nאנא נסה שוב");
@@ -203,6 +224,18 @@ class LogAReg extends Component {
         }
     }
 
+    componentDidMount(){
+        if(localStorage.rememberMe){
+            $( "#rememberMe" ).prop( "checked", true );
+            $("#email").val(localStorage.uName);
+            $("#password").val(localStorage.pass);
+            this.setState({
+                email: localStorage.uName,
+                password: localStorage.pass
+            })
+        }
+    }
+
    
   
     render() {
@@ -220,7 +253,7 @@ class LogAReg extends Component {
                         <div className="form">
                             <div className="inputs" style={{paddingBottom:"15px"}}>
                                 <div className="input">
-                                    <input type="text" placeholder="Email" onChange={this.changeEmail}/>
+                                    <input type="text" id="email" placeholder="Email" onChange={this.changeEmail}/>
                                     <img src={email}/>
                                 </div>
                                 <div className="input">
@@ -228,7 +261,7 @@ class LogAReg extends Component {
                                     <img src={password}/>
                                 </div>
                                 <label className="checkbox" style={{float:"left"}}>
-                                    <input type="checkbox"/>
+                                    <input type="checkbox" id="rememberMe"/>
                                     <span>Remember me</span>
                                 </label>
                                 <label className="checkbox" style={{float:"right"}} >
@@ -237,7 +270,7 @@ class LogAReg extends Component {
                                 </label>
                             </div>
                             <button onClick={this.btnFetchGetIfo}>Login</button>
-                            <Link to={'/home'}> <button  style={{background: "#33adff" , height:"55px",width:"135px" ,margin:"15px", borderRadius:"12px", color:" #003B15", fontSize:"17px", fontWeight:"700"}}>תפריט</button></Link>
+                            <Link to={'/home/1/השורד'}> <button  style={{background: "#33adff" , height:"55px",width:"135px" ,margin:"15px", borderRadius:"12px", color:" #003B15", fontSize:"17px", fontWeight:"700"}}>תפריט</button></Link>
                             <Link to={'/friendList'}> <button  style={{background: "#33adff" , height:"55px",width:"135px" ,margin:"15px", borderRadius:"12px", color:" #003B15", fontSize:"17px", fontWeight:"700"}}>חברים</button></Link>
                         
                         </div>

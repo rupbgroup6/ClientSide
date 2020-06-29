@@ -98,14 +98,16 @@ html, body {
 	background: none;
 	width: 100%;
 	border: 3px solid black;
-		
-	
+	height:100%;
+	width:100%;
 }
 
 
 
 .table p{
 	text-align: center;
-	margin-top: 15px;
+	padding:0;
+	margin:0;
 }
+
 	

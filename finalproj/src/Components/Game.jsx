@@ -16,55 +16,149 @@ import typeOfManager from '../Images/typeOfManager.png';
 class Game extends Component {
     constructor(props) {
         super(props);
+        this.state ={
+            profile: this.props.match.params.profile,
+            id: this.props.match.params.id
+        }
     }
 
-    
-  
+    CheckProfileOI = () => {
+        let profile = this.state.profile;
+        if(profile === "המנתח" || profile === "המתאים" || profile === "המעיז"){
+            swal({
+                title: "!מצוין",
+                text: "בחירה נכונה",
+                buttons: {
+                    cancel: "ביטול",
+                    ok :{
+                    text: "אישור",
+                    value: "ok"
+                    }
+                }
+              })
+              .then((value) =>{
+                switch(value){
+                    case "ok":{
+                        let direction = "/profile/" + this.state.profile +"/" + this.state.id;
+                        this.props.history.push(direction);
+                    }
+                }
+              });
+        }
+        else{
+            swal({
+                title: "!טעות",
+                text: "בחירה לא נכונה",
+                buttons: {
+                    cancel: "ביטול",
+                    ok :{
+                    text: "אישור",
+                    value: "ok"
+                    }
+                }
+              })
+              .then((value) =>{
+                switch(value){
+                    case "ok":{
+                        let direction = "/profile/" + this.state.profile + "/" + this.state.id;
+                        this.props.history.push(direction);
+                    }
+                }
+              });
+        }
+    }
+
+    CheckProfileIO = () => {
+        let profile = this.state.profile;
+        if(profile === "המאמין" || profile === "המהפכן" || profile === "המחושב"){
+            swal({
+                title: "!מצוין",
+                text: "בחירה נכונה",
+                buttons: {
+                    cancel: "ביטול",
+                    ok :{
+                    text: "אישור",
+                    value: "ok"
+                    }
+                }
+              })
+              .then((value) =>{
+                switch(value){
+                    case "ok":{
+                        let direction = "/profile/" + this.state.profile + "/" + this.state.id;
+                        this.props.history.push(direction);
+                    }
+                }
+              });
+        }
+        else{
+            swal({
+                title: "!טעות",
+                text: "בחירה לא נכונה",
+                buttons: {
+                    cancel: "ביטול",
+                    ok :{
+                    text: "אישור",
+                    value: "ok"
+                    }
+                }
+              })
+              .then((value) =>{
+                switch(value){
+                    case "ok":{
+                        let direction = "/profile/" + this.state.profile + "/" + this.state.id;
+                        this.props.history.push(direction);
+                    }
+                }
+              });
+        }
+    }
+
     render() {
         return (
             <div className="cont">
-            <div className="align" >
-                
-                <div className="card3" style={{ marginTop: "3%",marginBottom:"3%" }}>
+                <div className="align" >
 
-                <Row className="header2">    
-                <Col xs={2}></Col>
-                <Col xs={8}><img className="title" alt="" src={iooi} style={{ paddingTop: "10px" }} /></Col>   
-                <Col xs={2}></Col>         
-               </Row>
+                    <div className="card3" style={{ marginTop: "3%", marginBottom: "3%" }}>
 
-                    <Row style={{paddingBottom: "10%"}}>
+                        <Row className="header2">
+                            <Col xs={2}></Col>
+                            <Col xs={8}><img className="title" alt="" src={iooi} style={{ paddingTop: "10px" }} /></Col>
+                            <Col xs={2}></Col>
+                        </Row>
 
-<Col xs={12}>
-                        <img alt="" className="typeOfManager" src={typeOfManager} style={{ paddingTop: "10px" }} />
-                        </Col>
-                    </Row>
+                        <Row style={{ paddingBottom: "10%" }}>
 
-                    <Row className="game">
-                        <Col xs={12}>
-                            <div class="btn-group" role="group" aria-label="Basic example" >
-                                <div><button id="btnGame"  onMouseOver={this.mouseOver} type="button" ><img classNama={blue} src={blue} alt="" ></img></button></div>
-                                <div><img classNama={logovs} src={logovs} alt=""></img></div>
-                                <div><button type="button"><img classNama={red} src={red} alt=""></img></button></div>
-                            </div>
-                        </Col>
-                    </Row>
+                            <Col xs={12}>
+                                <img alt="" className="typeOfManager" src={typeOfManager} style={{ paddingTop: "10px" }} />
+                            </Col>
+                        </Row>
 
-                    <Row className="type">
-                        
-                        <Col><button><h5>Outside - in </h5><h6>
-                            אתם רוצים להצליח בשווקים
-בינלאומיים</h6></button></Col>
-                        <Col xs={6} style={{marginRight:"5px"}}><button><h5>                       Inside-out </h5><h6>
-                            פיתוח חדשנות פורצת דרך הבנת השוק
-וצרכיו</h6></button></Col>
-                    </Row>
+                        <Row className="game">
+                            <Col xs={12}>
+                                <div class="btn-group" role="group" aria-label="Basic example" >
+                                    <div><img src={blue} alt="" ></img></div>
+                                    <div><img src={logovs} alt=""></img></div>
+                                    <div><img src={red} alt=""></img></div>
+                                </div>
+                            </Col>
+                        </Row>
 
-                </div>
+                        <Row className="type">
+
+                            <Col><button onClick={this.CheckProfileOI}><h5>Outside - in </h5><h6>
+                                אתם רוצים להצליח בשווקים
+                                בינלאומיים</h6></button></Col>
+                            <Col xs={6} style={{ marginRight: "5px" }}><button onClick={this.CheckProfileIO}><h5>                       Inside-out </h5><h6>
+                                פיתוח חדשנות פורצת דרך הבנת השוק
+                                וצרכיו</h6></button></Col>
+                        </Row>
+
+                    </div>
+                </div >
             </div >
-        </div >
-    );
-}
+        );
+    }
 }
 
 export default withRouter(Game);

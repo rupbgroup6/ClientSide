@@ -3,8 +3,8 @@ import { Switch, Route, Link, withRouter } from 'react-router-dom';
 import $ from "jquery";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import "../CSS/rest.css";
-import next from '../Images/next2.png';
+import "../../CSS/rest.css";
+import next from '../../Images/next2.png';
 import swal from 'sweetalert';
 
 class OrQuiz extends Component {
@@ -81,7 +81,7 @@ class OrQuiz extends Component {
                         console.log("fetch POST= ", result);
                         $("#4th").show();
                         window.scrollBy({
-                            top: 100,
+                            top: 120,
                             left: 0,
                             behavior: 'smooth'
                         });

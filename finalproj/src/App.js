@@ -6,7 +6,7 @@ import {
 } from 'react-transition-group';
 import "./CSS/App.css";
 import LogAReg  from "./Components/LoginAReg.jsx";
-import Quiz from "./Components/Quiz.jsx";
+import Quiz from "./Components/Quiz/Quiz.jsx";
 import Intro from './Components/intro.jsx';
 import Game from './Components/Game.jsx';
 import Findings from './Components/Findings.jsx';
@@ -112,19 +112,19 @@ fetchGetQuestion = () =>{
                 <Route path="/intro/:email" >
                  <Intro getQuestions={this.fetchGetQuestion}/>
                 </Route>
-                <Route path="/game/:profile" >
+                <Route path="/game/:profile/:id" >
                  <Game />
                 </Route>
-                <Route exact path="/home" >
+                <Route exact path="/home/:id/:profile" >
                  <Home />
                 </Route>
                 <Route exact path="/findings" >
                  <Findings />
                 </Route>
-                <Route exact path="/profile" >
+                <Route exact path="/profile/:profile/:id" >
                  <Profile />
                 </Route>
-                <Route exact path="/friendList" >
+                <Route exact path="/friendList/:id/:profile" >
                  <FriendList />
                 </Route>
               </Switch>
