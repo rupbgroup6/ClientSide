@@ -37,7 +37,6 @@ class OrQuiz extends Component {
             Object.keys(answers).map((key, index) => {
                 combinedOrs.push(answers[key]);
             })
-
             let url = "";
             if (this.state.local) {
                 url = "http://localhost:51298/api/answers";
