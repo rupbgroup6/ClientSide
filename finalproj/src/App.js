@@ -117,7 +117,7 @@ fetchGetQuestion = () =>{
                 <Route path="/game/:profile/:id" >
                  <Game />
                 </Route>
-                <Route  path="/home/:id/:profile" >
+                <Route  path="/home/:id/:profile/:secondTime" >
                  <Home />
                 </Route>
                 <Route  path="/findings" >

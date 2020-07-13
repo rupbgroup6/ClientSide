@@ -19,7 +19,8 @@ class Home extends Component {
         super(props);
         this.state = {
             profile: this.props.match.params.profile,
-            id: this.props.match.params.id
+            id: this.props.match.params.id,
+            secondTime: this.props.match.params.secondTime
         }
 
 
