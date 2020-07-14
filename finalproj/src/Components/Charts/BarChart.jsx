@@ -11,36 +11,6 @@ import { schemeCategory10 } from 'd3-scale-chromatic';
 //BarChart
 const colors1 = scaleOrdinal(schemeCategory10).range();
 
-const data1 = [
-  {
-    name: 'השורד', uv: 0, 
-  },
-  {
-    name: 'המחפש', uv: 3000, 
-  },
-  {
-    name: 'המהפכן', uv: 2000, 
-  },
-  {
-    name: 'המנתח', uv: 2780, 
-  },
-  {
-    name: 'המאזן', uv: 1890,
-  },
-  {
-    name: 'המחושב', uv: 2390,
-  },
-  {
-    name: 'המגיב', uv: 3490,
-  },
-  {
-    name: 'המעז', uv: 3490,
-  },
-  {
-    name: 'האלוף', uv: 3490,
-  },
-];
-
 const getPath = (x, y, width, height) => `M${x},${y + height}
           C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3} ${x + width / 2}, ${y}
           C${x + width / 2},${y + height / 3} ${x + 2 * width / 3},${y + height} ${x + width}, ${y + height}
@@ -69,7 +39,7 @@ class BarCharts extends PureComponent {
       super(props);
       this.state = {
         counter: [],
-        local:false,
+        local:true,
         data:[]
       }
       this.apiUrl = 'http://localhost:51298/api/users/';
@@ -195,39 +165,39 @@ class BarCharts extends PureComponent {
           }//end of for
 
           if(counter["השורד"]!= undefined){
-            survivorAvg = (counter["השורד"]/totalcount) *100; 
+            survivorAvg = Math.floor((counter["השורד"]/totalcount) *100); 
           }
           else survivorAvg = 0;
           if(counter["המאמין"]!= undefined){
-            believerAvg = (counter["המאמין"]/totalcount) *100; 
+            believerAvg = Math.floor((counter["המאמין"]/totalcount) *100); 
           }
           else believerAvg = 0;
           if(counter["המהפכן"]!= undefined){
-            revolAvg = (counter["המהפכן"]/totalcount) *100; 
+            revolAvg = Math.floor((counter["המהפכן"]/totalcount) *100); 
           }
           else revolAvg = 0;
           if(counter["המנתח"]!= undefined){
-            analystAvg = (counter["המנתח"]/totalcount) *100; 
+            analystAvg = Math.floor((counter["המנתח"]/totalcount) *100); 
           }
           else analystAvg = 0;
           if(counter["המאזן"]!= undefined){
-            balancedAvg = (counter["המאזן"]/totalcount) *100; 
+            balancedAvg = Math.floor((counter["המאזן"]/totalcount) *100); 
           }
           else balancedAvg = 0;
           if(counter["המחושב"]!= undefined){
-            calcAvg = (counter["המחושב"]/totalcount) *100; 
+            calcAvg = Math.floor((counter["המחושב"]/totalcount) *100); 
           }
           else calcAvg = 0;
           if(counter["המתאים"]!= undefined){
-            fitAvg = (counter["המתאים"]/totalcount) *100; 
+            fitAvg = Math.floor((counter["המתאים"]/totalcount) *100); 
           }
           else fitAvg = 0;
           if(counter["המעז"]!= undefined){
-            daredevilAvg = (counter["המעז"]/totalcount) *100; 
+            daredevilAvg = Math.floor((counter["המעז"]/totalcount) *100); 
           }
           else daredevilAvg = 0;
           if(counter["האלוף"]!= undefined){
-            champAvg = (counter["האלוף"]/totalcount) *100; 
+            champAvg = Math.floor((counter["האלוף"]/totalcount) *100); 
           }
           else champAvg = 0;
 
