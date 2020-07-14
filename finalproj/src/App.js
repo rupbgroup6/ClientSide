@@ -108,7 +108,7 @@ fetchGetQuestion = () =>{
                 <Route exact path="/" >
                  <LogAReg />
                 </Route>
-                <Route path="/quiz/:id"  >
+                <Route path="/quiz/:id/:secondTime"  >
                  <Quiz bigQuestions={this.state.bigQuestions}  orQuestions={this.state.orQuestions} ioQuestions={this.state.ioQuestions}/>
                 </Route>
                 <Route path="/intro/:email" >
@@ -117,10 +117,10 @@ fetchGetQuestion = () =>{
                 <Route path="/game/:profile/:id" >
                  <Game />
                 </Route>
-                <Route  path="/home/:id/:profile/:secondTime" >
+                <Route  path="/home/:id/:profile/" >
                  <Home />
                 </Route>
-                <Route  path="/findings" >
+                <Route  path="/findings/:profile/:id" >
                  <Findings />
                 </Route>
                 <Route  path="/profile/:profile/:id" >

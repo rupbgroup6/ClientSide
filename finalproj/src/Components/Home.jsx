@@ -20,7 +20,6 @@ class Home extends Component {
         this.state = {
             profile: this.props.match.params.profile,
             id: this.props.match.params.id,
-            secondTime: this.props.match.params.secondTime
         }
 
 
@@ -77,7 +76,7 @@ class Home extends Component {
                                 <Col className="menu">
                                 <Row className="menu" class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
-                                    <Col xs={5}><Link to={'/quiz/' + this.state.id}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} src={quiz} alt=""></img><h6>שאלונים</h6></button></Link></Col>
+                                    <Col xs={5}><Link to={'/quiz/' + this.state.id + "/" + true}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} src={quiz} alt=""></img><h6>שאלונים</h6></button></Link></Col>
                                     <Col xs={5}><button type="button" style={{ float: "left" }}><img src={apostrophes} alt="" ></img><h6>ציטטות מנהלים</h6></button> </Col>
                                     <Col xs={1}></Col>
                                 </Row >
@@ -88,7 +87,7 @@ class Home extends Component {
                                 <Col className="menu">
                                 <Row class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
-                                    <Col xs={5}><Link to={'/findings'}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} src={glass} alt=""></img><h6>ממצאים ותובנות</h6></button></Link></Col>
+                                    <Col xs={5}><Link to={'/findings/' + this.state.profile + "/" + this.state.id}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} src={glass} alt=""></img><h6>ממצאים ותובנות</h6></button></Link></Col>
                                     <Col xs={5}><Link to={"/profile/"+this.state.profile+"/"+ this.state.id}><button type="button" style={{ float: "left" }}><img style={{ paddingTop: "5px" }} src={profile} alt="" ></img><h6>סוגי פרופיל</h6></button></Link></Col>
                                     <Col xs={1}></Col>
                                 </Row>

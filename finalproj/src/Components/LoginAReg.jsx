@@ -43,7 +43,7 @@ class LogAReg extends Component {
                     let notExists = false;
                     for (var i = 0; i < result.length; i++) {
                         if (this.state.email === result[i].Email) {
-                            this.checkMatch(result[0]);
+                            this.checkMatch(result[i]);
                             break;
                         }
                         if(this.state.email != result[i].Email && i === result.length-1){

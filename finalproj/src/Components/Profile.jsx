@@ -127,7 +127,7 @@ class Profile extends Component {
                 revolAvg = (revol/counter)*100 + "%";
                 calcAvg = (calc/counter)*100 + "%";
                 champAvg = (champ/counter)*100 + "%";
-                $('#survivor').css({'height': '50%','background':'linear-gradient(to left, rgba(255,0,0,0), rgba(50,150,50,0.7))'})
+                $('#survivor').css({'height': survivorAvg,'background':'linear-gradient(to left, rgba(255,0,0,0), rgba(50,150,50,0.7))'})
                 $('#fit').css({'height': fitAvg,'background':'linear-gradient(to left, rgba(255,0,0,0), rgba(120,0,50,1))'})
                 $('#analyst').css({'height': analystAvg,'background':'linear-gradient(to left, rgba(255,0,0,0), rgba(300,200,200,1))'})
                 $('#balanced').css({'height': balancedAvg,'background':'linear-gradient(to left, rgba(255,0,0,0), rgba(50,50,0,1))'})
