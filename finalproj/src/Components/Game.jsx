@@ -24,7 +24,7 @@ class Game extends Component {
 
     CheckProfileOI = () => {
         let profile = this.state.profile;
-        if(profile === "המנתח" || profile === "המתאים" || profile === "המעיז"){
+        if(profile === "המנתח" || profile === "המתאים" || profile === "המעיז" || profile === "השורד" || profile === "המאזן" || profile === "האלוף" ){
             swal({
                 title: "!מצוין",
                 text: "בחירה נכונה",
@@ -70,7 +70,7 @@ class Game extends Component {
 
     CheckProfileIO = () => {
         let profile = this.state.profile;
-        if(profile === "המאמין" || profile === "המהפכן" || profile === "המחושב"){
+        if(profile === "המאמין" || profile === "המהפכן" || profile === "המחושב" || profile === "השורד" ||profile === "המאזן" ||profile === "האלוף"){
             swal({
                 title: "!מצוין",
                 text: "בחירה נכונה",

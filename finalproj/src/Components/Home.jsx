@@ -41,7 +41,7 @@ class Home extends Component {
     render() {
         return (
             <div className="align6">
-                <div className="card6" style={{ marginTop: "3%", marginBottom: "3%" }}>
+                <div className="card6">
                     <Col className="all">
                         <Row>
                             <Col>

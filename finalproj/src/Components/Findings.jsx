@@ -38,7 +38,7 @@ class Findings extends Component {
                     <Col xs={2}></Col>
                 </Row>
 
-                <div className="card8" style={{ marginTop: "3%", marginBottom: "3%" }}>
+                <div className="card8">
 
 
 
