@@ -46,7 +46,8 @@ html, body {
 	margin-left: 3px;
 	margin-right: 2px;
 	padding-bottom: 15px;
-
+	margin-top: 0;
+	margin-bottom: 0;
 	}
 
 
@@ -71,12 +72,6 @@ html, body {
 		padding-top:5px;
 		font-size: 13.4px;
 	   
-	}
-
-	.text p{
-	
-	
-		
 	}
 
 

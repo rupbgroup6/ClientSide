@@ -32,7 +32,7 @@ class Intro extends Component {
     }
 
     componentDidMount(){//take the current user info and all the question for next component
-      let url = this.apiUrl + this.state.email;
+      let url = this.apiUrl;
         fetch(url, {//get the user id
             method: 'GET',
             headers: new Headers({
@@ -44,8 +44,15 @@ class Intro extends Component {
             })
             .then(
               (result) => {
+                let id = "";
+                for (var i = 0; i < result.length; i++) {
+                  if (this.state.email === result[i].Email) {
+                      id = result[i].UserId;
+                      break;
+                  }
+              }
                this.setState({
-                 id: result[0].UserId
+                 id: id
                });
                 this.fetchQuestions();
               },
@@ -62,7 +69,7 @@ class Intro extends Component {
         <Container>
         
           
-            <div className="card6" style={{ marginTop: "3%", marginBottom: "3%" }}>
+            <div className="card6">
             
               <Row>
                 <Col xs={12} >
@@ -110,7 +117,7 @@ class Intro extends Component {
 
                 <Row style={{ backgroundColor: "black", paddingTop: "10px" }}>
                   <Col xs={2} style={{ backgroundColor: "black" }}></Col>
-                  <Col xs={8} style={{ backgroundColor: "black", textAlign: "center" }}><Link to={'/quiz/' + this.state.id}> <button  style={{background: "#33adff" , height:"55px",width:"135px" ,margin:"15px", borderRadius:"12px", color:" #003B15", fontSize:"17px", fontWeight:"700"}}>Let's start</button></Link></Col>
+                  <Col xs={8} style={{ backgroundColor: "black", textAlign: "center" }}><Link to={'/quiz/' + this.state.id + "/" + false}> <button  style={{background: "#33adff" , height:"55px",width:"135px" ,margin:"15px", borderRadius:"12px", color:" #003B15", fontSize:"17px", fontWeight:"700"}}>Let's start</button></Link></Col>
                   <Col xs={2} style={{ backgroundColor: "black" }}></Col>
                 </Row>
 

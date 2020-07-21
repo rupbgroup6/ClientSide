@@ -13,6 +13,8 @@ import Findings from './Components/Findings.jsx';
 import Home from './Components/Home.jsx';
 import Profile from './Components/Profile.jsx';
 import FriendList from './Components/FriendList.jsx';
+import BarChart from './Components/Charts/BarChart.jsx';
+import PieChart from './Components/Charts/PieChart.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component{
@@ -106,7 +108,7 @@ fetchGetQuestion = () =>{
                 <Route exact path="/" >
                  <LogAReg />
                 </Route>
-                <Route path="/quiz/:id"  >
+                <Route path="/quiz/:id/:secondTime"  >
                  <Quiz bigQuestions={this.state.bigQuestions}  orQuestions={this.state.orQuestions} ioQuestions={this.state.ioQuestions}/>
                 </Route>
                 <Route path="/intro/:email" >
@@ -115,16 +117,22 @@ fetchGetQuestion = () =>{
                 <Route path="/game/:profile/:id" >
                  <Game />
                 </Route>
-                <Route exact path="/home/:id/:profile" >
+                <Route  path="/home/:id/:profile/" >
                  <Home />
                 </Route>
-                <Route exact path="/findings" >
+                <Route  path="/findings/:profile/:id" >
                  <Findings />
                 </Route>
-                <Route exact path="/profile/:profile/:id" >
+                <Route  path="/profile/:profile/:id" >
                  <Profile />
                 </Route>
-                <Route exact path="/friendList/:id/:profile" >
+                <Route path="/BarChart" >
+                  <BarChart />
+                </Route>
+                <Route  path="/PieChart" >
+                 <PieChart />
+                </Route>
+                <Route path="/friendList/:id/:profile" >
                  <FriendList />
                 </Route>
               </Switch>

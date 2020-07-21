@@ -6,6 +6,8 @@
 	outline: none;
 	border: none;
 	color:rgb(238, 236, 236);	
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 b.rtl {
@@ -42,6 +44,8 @@ html, body {
 	border-radius: 1px;
 	overflow: hidden;
 	transition: max-height 0.2s;
+	margin-top: 0;
+	margin-bottom: 0;
 	}
 
 
@@ -62,6 +66,8 @@ html, body {
 h4{
     text-align: center;
 }
+
+
 
 
 
