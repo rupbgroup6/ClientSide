@@ -42,7 +42,7 @@ class Home extends Component {
         return (
             <div className="align6">
                 <div className="card6" style={{ marginTop: "3%", marginBottom: "3%" }}>
-                    <Col className="all">
+                    <Col>
                         <Row>
                             <Col>
                                 <Button onClick={this.logOut} variant="secondary" style={{float:"right"}}><i class="fas fa-sign-out-alt"></i></Button>
