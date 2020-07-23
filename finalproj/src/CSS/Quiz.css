@@ -223,7 +223,7 @@ label img {
 div.swal-text{
 	background: white;
 	text-align: right;
-
+	direction: rtl;
 }
 div.swal-footer{
 	background: white;
@@ -245,6 +245,14 @@ div.swal-icon--success__ring{
 }
 div.swal-button-container{
 	background: white;
+}
+div.swal-icon--success__ring{
+	background: none;
+}
+
+.swal-content__input{
+	direction: rtl;
+	color: black;
 }
 
 #multi-explain{

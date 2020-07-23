@@ -22,7 +22,7 @@ class Profile extends Component {
     }
 
     goHome = () => {
-        this.props.history.replace("/home/" + this.state.id + "/" + this.state.profile, "urlhistory");
+        this.props.history.replace("/home/" + this.state.id + "/" + this.state.profile + "/" + true, "urlhistory");
     }
 
     Survivor = () => {
