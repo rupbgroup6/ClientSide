@@ -15,12 +15,6 @@ class Findings extends Component {
             profile: this.props.match.params.profile,
             id: this.props.match.params.id,
         }
-
-
-
-    }
-    goHome = () => {
-        this.props.history.replace("/home/" + this.state.id+"/"+this.state.profile, "urlhistory");
     }
 
     render() {
@@ -29,7 +23,7 @@ class Findings extends Component {
             <div className="align" >
                 <Row>
                     <Col>
-                        <Link to={"/home/" + this.state.id + "/" + this.state.profile}><Button style={{ float: "right" }} variant="secondary" onClick={this.goHome}><i className="fas fa-home"></i></Button></Link>
+                        <Link to={"/home/" + this.state.id + "/" + this.state.profile + "/" + true}><Button style={{ float: "right" }} variant="secondary" onClick={this.goHome}><i className="fas fa-home"></i></Button></Link>
                     </Col>
                 </Row>
                 <Row className="header8">

@@ -289,9 +289,6 @@ class LogAReg extends Component {
                                 </label>
                             </div>
                             <button onClick={this.btnFetchGetIfo}>Login</button>
-                            <Link to={'/BarChart'}> <button style={{ background: "#33adff", height: "55px", width: "135px", margin: "15px", borderRadius: "12px", color: " #003B15", fontSize: "17px", fontWeight: "700" }}>Charts</button></Link>
-                            <Link to={'/home/1/השורד'}> <button style={{ background: "#33adff", height: "55px", width: "135px", margin: "15px", borderRadius: "12px", color: " #003B15", fontSize: "17px", fontWeight: "700" }}>תפריט</button></Link>
-                            <Link to={'/friendList'}> <button style={{ background: "#33adff", height: "55px", width: "135px", margin: "15px", borderRadius: "12px", color: " #003B15", fontSize: "17px", fontWeight: "700" }}>חברים</button></Link>
 
                         </div>
 
