@@ -15,6 +15,7 @@ import Profile from './Components/Profile.jsx';
 import FriendList from './Components/Friends/FriendsList.jsx';
 import BarChart from './Components/Charts/BarChart.jsx';
 import PieChart from './Components/Charts/PieChart.jsx';
+import HomeAdmin from './Components/Charts/HomeAdmin.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
@@ -198,6 +199,9 @@ class App extends Component {
                 </Route>
                 <Route path="/friendList/:id/:profile" >
                   <FriendList friends={this.state.friends} req={this.state.req} renderFriends={this.fetchFriends}/>
+                </Route>
+                <Route path="/HomeAdmin" >
+                  <HomeAdmin />
                 </Route>
               </Switch>
             </CSSTransition>

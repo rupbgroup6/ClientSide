@@ -213,6 +213,7 @@ class BarCharts extends PureComponent {
     }
     render() {
       return (
+        
         <BarChart
           width={700}
           height={400}
