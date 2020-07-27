@@ -15,6 +15,7 @@ import Profile from './Components/Profile.jsx';
 import FriendList from './Components/FriendList.jsx';
 import BarChart from './Components/Charts/BarChart.jsx';
 import PieChart from './Components/Charts/PieChart.jsx';
+import ExcelReport from './Components/Charts/ExcelReport.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component{
@@ -131,6 +132,9 @@ fetchGetQuestion = () =>{
                 </Route>
                 <Route  path="/PieChart" >
                  <PieChart />
+                </Route>
+                <Route  path="/ExcelReport" >
+                 <ExcelReport />
                 </Route>
                 <Route path="/friendList/:id/:profile" >
                  <FriendList />
