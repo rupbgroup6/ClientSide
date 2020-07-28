@@ -41,3 +41,17 @@ html{
     width: 10%;
     background-color: #fff;
 }
+ .guessOption{
+     color: black;
+ } 
+ 
+ #guess{
+    direction: rtl;
+    width: 100%;
+ }
+
+ #profileGuess{
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+ }

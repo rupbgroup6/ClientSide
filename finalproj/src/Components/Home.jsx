@@ -20,9 +20,13 @@ class Home extends Component {
         this.state = {
             profile: this.props.match.params.profile,
             id: this.props.match.params.id,
+            local: true
         }
 
-
+        this.apiUrl = 'http://localhost:51298/api/Friends/GetFriendReq/' + this.state.id;
+        if (!this.state.local) {
+            this.apiUrl = 'http://proj.ruppin.ac.il/bgroup6/prod/api/Friends/GetFriendReq/' + this.state.id;
+        }
 
     }
 
@@ -38,63 +42,88 @@ class Home extends Component {
         this.props.history.replace(direction, "urlhistory");
     }
 
+    componentDidMount() {
+        this.props.getUsersId(this.state.id);
+        fetch(this.apiUrl, {
+            method: 'GET',
+            headers: new Headers({
+                'Content-Type': 'application/json; charset=UTF-8',
+            })
+        })
+            .then(res => {
+                return res.json()
+            })
+            .then(
+                (result) => {
+                    if (result.length > 0) {
+                        setTimeout(() => {
+                            swal("יש לך בקשות חברות פתוחות")
+                        }, 1000);
+                    }
+                    this.props.getFriends();
+                },
+                (error) => {
+                    console.log("err post=", error);
+                });
+    }
+
     render() {
         return (
             <div className="align6">
-                <div className="card6" style={{ marginTop: "3%", marginBottom: "3%" }}>
+                <div className="card6">
                     <Col className="all">
                         <Row>
                             <Col>
-                                <Button onClick={this.logOut} variant="secondary" style={{float:"right"}}><i class="fas fa-sign-out-alt"></i></Button>
+                                <Button onClick={this.logOut} variant="secondary" style={{ float: "right" }}><i class="fas fa-sign-out-alt"></i></Button>
                             </Col>
                         </Row>
                         <Row className="header4">
                             <Col className="header4">
-                                <h6 className="header4"  style={{ textAlign: "center", paddingTop: "1px", color:"black"}}>HOME</h6>
+                                <h6 className="header4" style={{ textAlign: "center", paddingTop: "1px", color: "black" }}>HOME</h6>
                             </Col>
                         </Row>
 
                         <Row className="logo6">
-                            <Col xs={12}  className="logo6">
+                            <Col xs={12} className="logo6">
                                 <img className="homeLogo" alt="" src={home} style={{ paddingTop: "10px" }} />
                             </Col>
                         </Row>
 
-                       
-                            <Row className="menu">
-                                <Col className="menu">
+
+                        <Row className="menu" style={{ paddingTop: "40px" }}>
+                            <Col className="menu">
                                 <Row class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
                                     <Col xs={5}> <button onClick={this.goResearch} type="button" style={{ float: "right" }}><img src={book} alt=""></img><h6>מחקר</h6></button></Col>
-                                    <Col xs={5}><Link to={"/friendList/"+this.state.id+"/"+this.state.profile}><button type="button" style={{ float: "left" }}><img src={friend} alt="" ></img><h6 style={{}}>רשימת חברים</h6></button></Link> </Col>
+                                    <Col xs={5}><Link to={"/friendList/" + this.state.id + "/" + this.state.profile}><button type="button" style={{ float: "left" }}><img src={friend} alt="" ></img><h6 style={{}}>רשימת חברים</h6></button></Link> </Col>
                                     <Col xs={1}></Col>
                                 </Row>
-                                </Col>
-                            </Row>
+                            </Col>
+                        </Row>
 
-                            <Row className="menu" style={{ marginTop: "20px" }} >
-                                <Col className="menu">
+                        <Row className="menu" style={{ marginTop: "20px" }} >
+                            <Col className="menu">
                                 <Row className="menu" class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
                                     <Col xs={5}><Link to={'/quiz/' + this.state.id + "/" + true}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} src={quiz} alt=""></img><h6>שאלונים</h6></button></Link></Col>
                                     <Col xs={5}><button type="button" style={{ float: "left" }}><img src={apostrophes} alt="" ></img><h6>ציטטות מנהלים</h6></button> </Col>
                                     <Col xs={1}></Col>
                                 </Row >
-                                </Col>
-                            </Row>
+                            </Col>
+                        </Row>
 
-                            <Row className="menu" style={{ marginTop: "20px" }}>
-                                <Col className="menu">
+                        <Row className="menu" style={{ marginTop: "20px" }}>
+                            <Col className="menu">
                                 <Row class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
                                     <Col xs={5}><Link to={'/findings/' + this.state.profile + "/" + this.state.id}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} src={glass} alt=""></img><h6>ממצאים ותובנות</h6></button></Link></Col>
-                                    <Col xs={5}><Link to={"/profile/"+this.state.profile+"/"+ this.state.id}><button type="button" style={{ float: "left" }}><img style={{ paddingTop: "5px" }} src={profile} alt="" ></img><h6>סוגי פרופיל</h6></button></Link></Col>
+                                    <Col xs={5}><Link to={"/profile/" + this.state.profile + "/" + this.state.id}><button type="button" style={{ float: "left" }}><img style={{ paddingTop: "5px" }} src={profile} alt="" ></img><h6>סוגי פרופיל</h6></button></Link></Col>
                                     <Col xs={1}></Col>
                                 </Row>
-                                </Col>
-                            </Row>
-
                             </Col>
+                        </Row>
+
+                    </Col>
 
                 </div>
             </div >
