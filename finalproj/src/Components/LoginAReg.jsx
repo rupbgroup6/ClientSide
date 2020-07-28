@@ -290,7 +290,8 @@ class LogAReg extends Component {
                             </div>
                             <button onClick={this.btnFetchGetIfo}>Login</button>
                             <Link to={'/HomeAdmin'}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} ></img><h6>יואל</h6></button></Link>
-
+                            <Link to={'/BarChart'}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} ></img><h6>גרף</h6></button></Link>
+                            <Link to={'/PieChart'}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} ></img><h6>עוגה</h6></button></Link>
                         </div>
 
                         <div className="form">

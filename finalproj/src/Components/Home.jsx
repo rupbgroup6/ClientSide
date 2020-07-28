@@ -79,7 +79,7 @@ class Home extends Component {
                         </Row>
                         <Row className="header4">
                             <Col className="header4">
-                                <h6 className="header4" style={{ textAlign: "center", paddingTop: "1px", color: "black" }}>HOME</h6>
+                                <h6 className="header4" style={{ textAlign: "center", paddingTop: "1px", color: "black" }}>תפריט</h6>
                             </Col>
                         </Row>
 
@@ -95,7 +95,7 @@ class Home extends Component {
                                 <Row class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
                                     <Col xs={5}> <button onClick={this.goResearch} type="button" style={{ float: "right" }}><img src={book} alt=""></img><h6>מחקר</h6></button></Col>
-                                    <Col xs={5}><Link to={"/friendList/" + this.state.id + "/" + this.state.profile}><button type="button" style={{ float: "left" }}><img src={friend} alt="" ></img><h6 style={{}}>רשימת חברים</h6></button></Link> </Col>
+                                    <Col xs={5}><Link to={"/friendList/" + this.state.id + "/" + this.state.profile}><button type="button" style={{ float: "left" }}><img style={{marginTop:"5px" , width:"90%"}} src={friend} alt="" ></img><h6 style={{marginTop:"7px"}}>רשימת חברים</h6></button></Link> </Col>
                                     <Col xs={1}></Col>
                                 </Row>
                             </Col>
@@ -105,8 +105,8 @@ class Home extends Component {
                             <Col className="menu">
                                 <Row className="menu" class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
-                                    <Col xs={5}><Link to={'/quiz/' + this.state.id + "/" + true}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} src={quiz} alt=""></img><h6>שאלונים</h6></button></Link></Col>
-                                    <Col xs={5}><button type="button" style={{ float: "left" }}><img src={apostrophes} alt="" ></img><h6>ציטטות מנהלים</h6></button> </Col>
+                                    <Col xs={5}><Link to={'/quiz/' + this.state.id + "/" + true}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "10px", width:"65%" }} src={quiz} alt=""></img><h6>שאלונים</h6></button></Link></Col>
+                                    <Col xs={5}><button type="button" style={{ float: "left" }}><img style={{width:"80%"}} src={apostrophes} alt="" ></img><h6>ציטטות מנהלים</h6></button> </Col>
                                     <Col xs={1}></Col>
                                 </Row >
                             </Col>
@@ -117,7 +117,7 @@ class Home extends Component {
                                 <Row class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
                                     <Col xs={5}><Link to={'/findings/' + this.state.profile + "/" + this.state.id}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} src={glass} alt=""></img><h6>ממצאים ותובנות</h6></button></Link></Col>
-                                    <Col xs={5}><Link to={"/profile/" + this.state.profile + "/" + this.state.id}><button type="button" style={{ float: "left" }}><img style={{ paddingTop: "5px" }} src={profile} alt="" ></img><h6>סוגי פרופיל</h6></button></Link></Col>
+                                    <Col xs={5}><Link to={"/profile/" + this.state.profile + "/" + this.state.id}><button type="button" style={{ float: "left" }}><img style={{ paddingTop: "7px", width:"65%" }}  src={profile} alt="" ></img><h6 style={{marginTop:"5px"}}>סוגי פרופיל</h6></button></Link></Col>
                                     <Col xs={1}></Col>
                                 </Row>
                             </Col>

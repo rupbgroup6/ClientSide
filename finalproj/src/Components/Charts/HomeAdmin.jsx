@@ -53,24 +53,24 @@ class HomeAdmin extends Component {
                         <Col className="menu">
                             <Row class="btn-group" role="group" aria-label="Basic example" >
                                 <Col xs={4}></Col>
-                                <Col xs={4}> <button type="button" style={{ height:"120%", width:"120%" }}><img src={quiz} alt=""></img><h6>הורדת קבצי אקסל</h6></button></Col>
+                                <Col xs={4}> <button type="button" style={{ height:"120%", width:"120%" }}><img style={{marginLeft:"5px"}} src={quiz} alt=""></img><h6>הורדת קבצי אקסל</h6></button></Col>
                                 <Col xs={4}></Col>
                             </Row>
                         </Col>
                     </Row>
 
                     
-                    <Row className="menu" style={{ paddingTop: "30px" }}>
+                    <Row className="menu" style={{ paddingTop: "40px" }}>
                         <Col className="menu">
                             <Row class="btn-group" role="group" aria-label="Basic example" >
                                 <Col xs={4}></Col>
-                                <Col xs={4}><Link to={"/BarChart"}> <button type="button" style={{ height:"120%", width:"120%" }}><img src={profile} alt=""></img><h6>ממוצע פרופילים</h6></button></Link></Col>
+                                <Col xs={4}><Link to={"/BarChart"}> <button type="button" style={{ height:"120%", width:"120%" }}><img src={profile} alt=""></img><h6 style={{marginTop:"5px"}}>ממוצע פרופילים</h6></button></Link></Col>
                                 <Col xs={4}></Col>
                             </Row>
                         </Col>
                     </Row>
 
-                    <Row className="menu" style={{ paddingTop: "30px" }}>
+                    <Row className="menu" style={{ paddingTop: "40px" }}>
                         <Col className="menu">
                             <Row class="btn-group" role="group" aria-label="Basic example" >
                                 <Col xs={4}></Col>
