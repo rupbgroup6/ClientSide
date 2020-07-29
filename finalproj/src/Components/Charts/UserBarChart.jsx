@@ -7,6 +7,7 @@ import iooi from '../../Images/ioLogo.png';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import '../../CSS/excelReport.css';
 
 class UserBarChart extends PureComponent {
     static jsfiddleUrl = 'https://jsfiddle.net/alidingling/30763kr7/';
@@ -85,7 +86,7 @@ class UserBarChart extends PureComponent {
             <div>
                 <Row>
                     <Col>
-                        <Link to={"/HomeAdmin"}> <Button variant="secondary" style={{ float: "right" }}><i class="fa fa-home"></i></Button></Link>
+                        <Link to={"/home/:id/:profile/:secondTime"}> <Button variant="secondary" style={{ float: "right" }}><i class="fa fa-home"></i></Button></Link>
                     </Col>
                 </Row>
 
@@ -95,17 +96,18 @@ class UserBarChart extends PureComponent {
                     <Col xs={2}></Col>
                 </Row>
 
-                <Row>
-                    <Col><h2>נתונים להצלחה בשיווק בינלאומי על בסיס 4 המימדים</h2></Col>
+                <Row className="title5">
+                    <Col><h4 className="title5">נתונים להצלחה בשיווק בינלאומי על בסיס 4 המימדים</h4></Col>
                 </Row>
-                <Row className="">
-                    <Col className="" >
+
+                <Row className="chartUser">
+                    <Col className="chartUser" >
                         <BarChart
-                            width={500}
-                            height={300}
+                            width={480}
+                            height={400}
                             data={this.state.data}
                             margin={{
-                                top: 5, right: 30, left: 20, bottom: 5,
+                                top: 50, right: 30, left: 20, bottom: 5,
                             }}
                         >
                             <CartesianGrid strokeDasharray="3 3" />
