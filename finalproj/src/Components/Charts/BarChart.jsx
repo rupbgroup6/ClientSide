@@ -231,7 +231,7 @@ class BarCharts extends PureComponent {
       <Col xs={2}></Col>
     </Row>
 
-    <Row>
+       <Row>
           <Col><h2>ממוצע פרופילים</h2></Col>
         </Row>
      <Row className="align11">
@@ -245,7 +245,7 @@ class BarCharts extends PureComponent {
               }}
          >
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
+              <XAxis dataKey="name" angle={60}/>
               <YAxis />
               <Bar dataKey="uv" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
                 {
