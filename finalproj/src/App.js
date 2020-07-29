@@ -17,13 +17,14 @@ import BarChart from './Components/Charts/BarChart.jsx';
 import PieChart from './Components/Charts/PieChart.jsx';
 import ExcelReport from './Components/Charts/ExcelReport.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import HomeAdmin from './Components/Charts/HomeAdmin.jsx';
+import HomeAdmin from './Components/Charts/HomeAdmin.jsx'; 
+import UserBarChart from './Components/Charts/UserBarChart.jsx';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      local: true,
+      local: false,
       ioQuestions: [],
       bigQuestions: [],
       orQuestions: [],
@@ -206,6 +207,9 @@ class App extends Component {
                 </Route>
                 <Route path="/HomeAdmin" >
                   <HomeAdmin />
+                </Route>
+                <Route path="/UserBarChart/:id" >
+                  <UserBarChart />
                 </Route>
               </Switch>
             </CSSTransition>

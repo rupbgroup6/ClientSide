@@ -1,6 +1,7 @@
 import { Switch, Route, Link, withRouter, Redirect } from 'react-router-dom';
 import React from "react";
 import ReactExport from "react-export-excel";
+import Button from 'react-bootstrap/Button';
 
 const ExcelFile = ReactExport.ExcelFile;
 const ExcelSheet = ReactExport.ExcelFile.ExcelSheet;
@@ -12,7 +13,7 @@ class ExcelReport extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      local:true
+      local:false
     }
     this.apiUrl = 'http://localhost:51298/api/users/';
     if (!this.state.local) {
@@ -51,7 +52,7 @@ componentDidMount(){
 }
     render() {
         return (
-            <ExcelFile element={<button>Download ExcelFile</button>}>
+            <ExcelFile element={<Button >Download ExcelFile <i class="fa fa-download" aria-hidden="true"></i> </Button>}>
                 <ExcelSheet data={this.state.data} name="Students">
                     <ExcelColumn label="UserId" value="UserId"/>
                     <ExcelColumn label="Age" value="Age"/>

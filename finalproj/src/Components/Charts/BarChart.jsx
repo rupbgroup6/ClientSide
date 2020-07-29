@@ -2,11 +2,12 @@ import React, { PureComponent } from 'react';
 import { Switch, Route, Link, withRouter, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
-   BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend
+  BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend
 } from 'recharts';
 import { scaleOrdinal } from 'd3-scale';
 import { schemeCategory10 } from 'd3-scale-chromatic';
-
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 //BarChart
 const colors1 = scaleOrdinal(schemeCategory10).range();
@@ -33,22 +34,22 @@ TriangleBar.propTypes = {
 };
 
 class BarCharts extends PureComponent {
-    static jsfiddleUrl = 'https://jsfiddle.net/alidingling/rnywhbu8/';
+  static jsfiddleUrl = 'https://jsfiddle.net/alidingling/rnywhbu8/';
 
-    constructor(props) {
-      super(props);
-      this.state = {
-        counter: [],
-        local:true,
-        data:[]
-      }
-      this.apiUrl = 'http://localhost:51298/api/users/';
-      if (!this.state.local) {
-        this.apiUrl = 'http://proj.ruppin.ac.il/bgroup6/prod/api/users/';//Dont forget to change
-      }
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: [],
+      local: false,
+      data: []
+    }
+    this.apiUrl = 'http://localhost:51298/api/users/';
+    if (!this.state.local) {
+      this.apiUrl = 'http://proj.ruppin.ac.il/bgroup6/prod/api/users/';//Dont forget to change
+    }
   }
 
- componentDidMount(){
+  componentDidMount() {
     let url = this.apiUrl;
     let counter = [];
     let totalcount = 0;
@@ -64,7 +65,7 @@ class BarCharts extends PureComponent {
       .then(
         (result) => {
           let survivorAvg = 0;
-          let fitAvg= 0;
+          let fitAvg = 0;
           let analystAvg = 0;
           let balancedAvg = 0;
           let daredevilAvg = 0;
@@ -72,169 +73,175 @@ class BarCharts extends PureComponent {
           let revolAvg = 0;
           let champAvg = 0;
           let calcAvg = 0;
-          for(var i =0 ; i< result.length ; i++){//Dont forgte to change the name of the var!!
-              if(result[i].Profile === "השורד"){
-                if(counter["השורד"] === undefined){
-                  counter["השורד"]= 1;
-                }
-                else {
-                  let current = counter["השורד"];
-                  counter["השורד"] = ++current;
-                }
+          for (var i = 0; i < result.length; i++) {//Dont forgte to change the name of the var!!
+            if (result[i].Profile === "השורד") {
+              if (counter["השורד"] === undefined) {
+                counter["השורד"] = 1;
               }
-              else if (result[i].Profile === "המאמין") {
-                if(counter["המאמין"] === undefined){
-                  counter["המאמין"]= 1;
-                }
-                else {
-                  let current = counter["המאמין"];
-                  counter["המאמין"] = ++current;
-                }
+              else {
+                let current = counter["השורד"];
+                counter["השורד"] = ++current;
               }
-              
-              else if (result[i].Profile === "המהפכן" ) {
-                if(counter["המהפכן"] === undefined){
-                  counter["המהפכן"]= 1;
-                }
-                else {
-                  let current = counter["המהפכן"];
-                  counter["המהפכן"] = ++current;
-                }
+            }
+            else if (result[i].Profile === "המאמין") {
+              if (counter["המאמין"] === undefined) {
+                counter["המאמין"] = 1;
               }
-              
-              else if (result[i].Profile === "המנתח") {
-                if(counter["המנתח"] === undefined){
-                  counter["המנתח"]= 1;
-                }
-                else {
-                  let current = counter["המנתח"];
-                  counter["המנתח"] = ++current;
-                }
+              else {
+                let current = counter["המאמין"];
+                counter["המאמין"] = ++current;
               }
-              
-              else if (result[i].Profile === "המאזן") {
-                if(counter["המאזן"] === undefined){
-                  counter["המאזן"]= 1;
-                }
-                else {
-                  let current = counter["המאזן"];
-                  counter["המאזן"] = ++current;
-                }
+            }
+
+            else if (result[i].Profile === "המהפכן") {
+              if (counter["המהפכן"] === undefined) {
+                counter["המהפכן"] = 1;
               }
-              
-              else if (result[i].Profile === "המחושב") {
-                if(counter["המחושב"] === undefined){
-                  counter["המחושב"]= 1;
-                }
-                else {
-                  let current = counter["המחושב"];
-                  counter["המחושב"] = ++current;
-                }
+              else {
+                let current = counter["המהפכן"];
+                counter["המהפכן"] = ++current;
               }
-              
-              else if (result[i].Profile === "המתאים") {
-                if(counter["המתאים"] === undefined){
-                  counter["המתאים"]= 1;
-                }
-                else {
-                  let current = counter["המתאים"];
-                  counter["המתאים"] = ++current;
-                }
+            }
+
+            else if (result[i].Profile === "המנתח") {
+              if (counter["המנתח"] === undefined) {
+                counter["המנתח"] = 1;
               }
-              
-              else if (result[i].Profile === "המעז") {
-                if(counter["המעז"] === undefined){
-                  counter["המעז"]= 1;
-                }
-                else {
-                  let current = counter["המעז"];
-                  counter["המעז"] = ++current;
-                }
+              else {
+                let current = counter["המנתח"];
+                counter["המנתח"] = ++current;
               }
-              
-              else if (result[i].Profile === "האלוף") {
-                if(counter["האלוף"] === undefined){
-                  counter["האלוף"]= 1;
-                }
-                else {
-                  let current = counter["האלוף"];
-                  counter["האלוף"] = ++current;
-                }
+            }
+
+            else if (result[i].Profile === "המאזן") {
+              if (counter["המאזן"] === undefined) {
+                counter["המאזן"] = 1;
               }
-              totalcount++;
+              else {
+                let current = counter["המאזן"];
+                counter["המאזן"] = ++current;
+              }
+            }
+
+            else if (result[i].Profile === "המחושב") {
+              if (counter["המחושב"] === undefined) {
+                counter["המחושב"] = 1;
+              }
+              else {
+                let current = counter["המחושב"];
+                counter["המחושב"] = ++current;
+              }
+            }
+
+            else if (result[i].Profile === "המתאים") {
+              if (counter["המתאים"] === undefined) {
+                counter["המתאים"] = 1;
+              }
+              else {
+                let current = counter["המתאים"];
+                counter["המתאים"] = ++current;
+              }
+            }
+
+            else if (result[i].Profile === "המעז") {
+              if (counter["המעז"] === undefined) {
+                counter["המעז"] = 1;
+              }
+              else {
+                let current = counter["המעז"];
+                counter["המעז"] = ++current;
+              }
+            }
+
+            else if (result[i].Profile === "האלוף") {
+              if (counter["האלוף"] === undefined) {
+                counter["האלוף"] = 1;
+              }
+              else {
+                let current = counter["האלוף"];
+                counter["האלוף"] = ++current;
+              }
+            }
+            totalcount++;
           }//end of for
 
-          if(counter["השורד"]!= undefined){
-            survivorAvg = Math.floor((counter["השורד"]/totalcount) *100); 
+          if (counter["השורד"] != undefined) {
+            survivorAvg = Math.floor((counter["השורד"] / totalcount) * 100);
           }
           else survivorAvg = 0;
-          if(counter["המאמין"]!= undefined){
-            believerAvg = Math.floor((counter["המאמין"]/totalcount) *100); 
+          if (counter["המאמין"] != undefined) {
+            believerAvg = Math.floor((counter["המאמין"] / totalcount) * 100);
           }
           else believerAvg = 0;
-          if(counter["המהפכן"]!= undefined){
-            revolAvg = Math.floor((counter["המהפכן"]/totalcount) *100); 
+          if (counter["המהפכן"] != undefined) {
+            revolAvg = Math.floor((counter["המהפכן"] / totalcount) * 100);
           }
           else revolAvg = 0;
-          if(counter["המנתח"]!= undefined){
-            analystAvg = Math.floor((counter["המנתח"]/totalcount) *100); 
+          if (counter["המנתח"] != undefined) {
+            analystAvg = Math.floor((counter["המנתח"] / totalcount) * 100);
           }
           else analystAvg = 0;
-          if(counter["המאזן"]!= undefined){
-            balancedAvg = Math.floor((counter["המאזן"]/totalcount) *100); 
+          if (counter["המאזן"] != undefined) {
+            balancedAvg = Math.floor((counter["המאזן"] / totalcount) * 100);
           }
           else balancedAvg = 0;
-          if(counter["המחושב"]!= undefined){
-            calcAvg = Math.floor((counter["המחושב"]/totalcount) *100); 
+          if (counter["המחושב"] != undefined) {
+            calcAvg = Math.floor((counter["המחושב"] / totalcount) * 100);
           }
           else calcAvg = 0;
-          if(counter["המתאים"]!= undefined){
-            fitAvg = Math.floor((counter["המתאים"]/totalcount) *100); 
+          if (counter["המתאים"] != undefined) {
+            fitAvg = Math.floor((counter["המתאים"] / totalcount) * 100);
           }
           else fitAvg = 0;
-          if(counter["המעז"]!= undefined){
-            daredevilAvg = Math.floor((counter["המעז"]/totalcount) *100); 
+          if (counter["המעז"] != undefined) {
+            daredevilAvg = Math.floor((counter["המעז"] / totalcount) * 100);
           }
           else daredevilAvg = 0;
-          if(counter["האלוף"]!= undefined){
-            champAvg = Math.floor((counter["האלוף"]/totalcount) *100); 
+          if (counter["האלוף"] != undefined) {
+            champAvg = Math.floor((counter["האלוף"] / totalcount) * 100);
           }
           else champAvg = 0;
 
-          let allavg = [{name:"השורד",uv: survivorAvg}, {name:"המאמין",uv: believerAvg}, {name:"המהפכן",uv: revolAvg}, {name:"המנתח",uv: analystAvg}, {name:"המאזן",uv: balancedAvg}, {name:"המחושב",uv: calcAvg}, {name:"המתאים",uv: fitAvg}, {name:"המעז",uv: daredevilAvg}, {name:"האלוף",uv: champAvg}]
+          let allavg = [{ name: "השורד", uv: survivorAvg }, { name: "המאמין", uv: believerAvg }, { name: "המהפכן", uv: revolAvg }, { name: "המנתח", uv: analystAvg }, { name: "המאזן", uv: balancedAvg }, { name: "המחושב", uv: calcAvg }, { name: "המתאים", uv: fitAvg }, { name: "המעז", uv: daredevilAvg }, { name: "האלוף", uv: champAvg }]
           this.setState({
             data: allavg
           })
-       },
+        },
         (error) => {
           console.log("err post=", error);
         }
       );
-    }
-    render() {
-      return (
-        
-        <BarChart
-          width={700}
-          height={400}
-          data={this.state.data}
-          margin={{
-            top: 20, right: 10, left: 20, bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Bar dataKey="uv" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
-            {
-              this.state.data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={colors1[index % 20]} />
-              ))
-            }
-          </Bar>
-        </BarChart>
-      );
-    }
-}export default withRouter(BarCharts);
+  }
+  render() {
+    let width = "100%";
+    let height = "100%";
+    return (
+      <Row>
+        <Col xs={12}></Col>
+        <Col xs={12}>
+          <BarChart
+            width={400}
+            height={200}
+            data={this.state.data}
+            margin={{
+              top: 20, right: 10, left: 20, bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Bar dataKey="uv" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+              {
+                this.state.data.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={colors1[index % 20]} />
+                ))
+              }
+            </Bar>
+          </BarChart></Col>
+      </Row>
 
-  
+    );
+  }
+} export default withRouter(BarCharts);
+
+
