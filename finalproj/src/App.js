@@ -19,6 +19,10 @@ import ExcelReport from './Components/Charts/ExcelReport.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HomeAdmin from './Components/Charts/HomeAdmin.jsx'; 
 import UserBarChart from './Components/Charts/UserBarChart.jsx';
+import RadialChart from './Components/Charts/RadialChart.jsx';
+import VComposedChart from './Components/Charts/VComposedChart.jsx';
+
+
 
 class App extends Component {
   constructor(props) {
@@ -208,8 +212,14 @@ class App extends Component {
                 <Route path="/HomeAdmin" >
                   <HomeAdmin />
                 </Route>
-                <Route path="/UserBarChart/:id" >
+                <Route path="/UserBarChart/:id" >  
                   <UserBarChart />
+                </Route>
+                <Route path="/RadialChart" > 
+                  <RadialChart />
+                </Route>
+                <Route path="/VComposedChart" >
+                  <VComposedChart />
                 </Route>
               </Switch>
             </CSSTransition>

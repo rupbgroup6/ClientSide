@@ -78,3 +78,8 @@ html{
      color: #33adff;
      direction: rtl;
  }
+
+ .DPicker{
+     text-align: center;
+     float: inherit;
+ }

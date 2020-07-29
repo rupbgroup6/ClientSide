@@ -77,7 +77,7 @@ class HomeAdmin extends Component {
                                 <Col className="menu">
                                     <Row class="btn-group" role="group" aria-label="Basic example" >
                                         <Col xs={4}></Col>
-                                        <Col xs={4}><Link to={"/BarChart"}> <button type="button" style={{ height: "120%", width: "120%" }}><img src={profile} alt=""></img><h6 style={{ marginTop: "5px" }}>ממוצע פרופילים</h6></button></Link></Col>
+                                        <Col xs={4}><Link to={"/RadialChart"}> <button type="button" style={{ height: "120%", width: "120%" }}><img src={profile} alt=""></img><h6 style={{ marginTop: "5px" }}>ממוצע פרופילים</h6></button></Link></Col>
                                         <Col xs={4}></Col>
                                     </Row>
                                 </Col>
@@ -87,7 +87,7 @@ class HomeAdmin extends Component {
                                 <Col className="menu">
                                     <Row class="btn-group" role="group" aria-label="Basic example" >
                                         <Col xs={4}></Col>
-                                        <Col xs={4}><Link to={"/PieChart"}> <button type="button" style={{ height: "120%", width: "120%" }}><img style={{ height: "120%" }} src={users} alt=""></img><h6>כמות פרופילים</h6></button></Link></Col>
+                                        <Col xs={4}><Link to={"/VComposedChart"}> <button type="button" style={{ height: "120%", width: "120%" }}><img style={{ height: "120%" }} src={users} alt=""></img><h6>כמות פרופילים</h6></button></Link></Col>
                                         <Col xs={4}></Col>
                                     </Row>
                                 </Col>
