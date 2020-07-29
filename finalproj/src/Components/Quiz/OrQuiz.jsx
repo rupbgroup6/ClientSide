@@ -15,7 +15,8 @@ class OrQuiz extends Component {
       id: this.props.id,
       orQuestions: this.props.orQuestions,
       orAnswers: this.props.orAnswers,
-      secondTime: this.props.match.params.secondTime
+      secondTime: this.props.match.params.secondTime,
+      local: false
     }
 
   }
@@ -64,7 +65,7 @@ class OrQuiz extends Component {
 
         orAnswers.push(ans);
       }
-      if (this.state.secondTime) {
+      if (this.state.secondTime === "true") {
         $("#4th").show();
         window.scrollBy({
           top: 120,

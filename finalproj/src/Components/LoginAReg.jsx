@@ -18,13 +18,18 @@ class LogAReg extends Component {
             showPassword: "false",
             rememberMe: "false",
             mode: "login",
-            local: true,
+            local: false,
+            profile: this.props.profile
         }
 
         this.apiUrl = 'http://localhost:51298/api/users';
         if (!this.state.local) {
             this.apiUrl = 'http://proj.ruppin.ac.il/bgroup6/prod/api/users';//Dont forget to change
         }
+    }
+
+    goHome = () => {
+        this.props.history.replace("/home/" + this.state.id + "/" + this.state.profile + "/" + true, "urlhistory");
     }
 
     btnFetchGetIfo = () => {
@@ -167,6 +172,7 @@ class LogAReg extends Component {
             }
             else {
                 if (user.SecondTime === true) {
+                    this.props.getQuestions();
                     let secondTime = user.SecondTime;
                     let id = user.UserId;
                     let profile = user.Profile;
@@ -290,8 +296,6 @@ class LogAReg extends Component {
                             </div>
                             <button onClick={this.btnFetchGetIfo}>Login</button>
                             <Link to={'/HomeAdmin'}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} ></img><h6>יואל</h6></button></Link>
-                            <Link to={'/BarChart'}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} ></img><h6>גרף</h6></button></Link>
-                            <Link to={'/PieChart'}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} ></img><h6>עוגה</h6></button></Link>
                         </div>
 
                         <div className="form">

@@ -213,7 +213,7 @@ class BigQuiz extends Component {
         AvgSay5: avgSay5,
         SecondTime: true
       }
-      if (this.state.secondTime) {
+      if (this.state.secondTime === "true") {
         this.setState({
           allFull: true
         });

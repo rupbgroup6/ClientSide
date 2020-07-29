@@ -10,6 +10,7 @@ import RangeSlider from 'react-bootstrap-range-slider';
 import male from '../../Images/Male.png';
 import female from '../../Images/Female.png';
 import next from '../../Images/next2.png';
+import Button from 'react-bootstrap/Button';
 
 class DemogQuiz extends Component {
 
@@ -21,10 +22,16 @@ class DemogQuiz extends Component {
       gender: "",
       education: "",
       job: "",
-      age: ""
+      age: "",
+      profile: this.props.profile,
+      secondTime: this.props.match.params.secondTime
     }
 
   }
+
+  goHome = () => {
+    this.props.history.replace("/home/" + this.state.id + "/" + this.state.profile + "/" + true, "urlhistory");
+}
 
   handleEduc = (e) => {
     this.setState({
@@ -110,7 +117,12 @@ class DemogQuiz extends Component {
     return (
       <div>
         <Row className="card2">
-          <h6 style={{ textAlign: "left", paddingLeft: "10px", margin: "0", background: "#0A0A0A", width: "100%" }}> 1 / 4</h6>
+          <Row>
+            <Col xs={2}><h6 style={{ textAlign: "left", margin: "0", background: "#0A0A0A", width: "100%" }}> 1 / 4</h6></Col>
+            <Col xs={8}></Col>
+            {this.state.secondTime === "true"?(<Col xs={2}><Button variant="secondary" onClick={this.goHome}><i className="fas fa-home"></i></Button></Col>):(<Col xs={2}></Col>)}
+            
+          </Row>
           <Row className="gender">
             <Col>
               <Row>

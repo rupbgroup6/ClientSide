@@ -25,7 +25,7 @@ class Quiz extends Component {
       orAnswers: [],
       id: this.props.match.params.id,//get the id from params
       dateStamp: "", //can be deleted later. not needed
-      profile: "",
+      profile: this.props.match.params.profile,
       secondTime: this.props.match.params.secondTime,//take the val of secondTime
       allFull: false
     }
@@ -63,7 +63,7 @@ class Quiz extends Component {
       <Container>
         <Row className="align">
           <img className="about" alt="" src={about} style={{ paddingTop: "10px", width: "100px", height: "40px", background: "#0A0A0A" }} />
-          <DemogQuiz id={this.state.id} secondTime = {this.state.secondTime}/>
+          <DemogQuiz id={this.state.id} secondTime = {this.state.secondTime} profile={this.state.profile}/>
           <br></br>
           <Row id="2nd">
             <img className="about" alt="" src={iooi} style={{ paddingTop: "10px", height: "50px", width: "80%", background: "#0A0A0A" }} />

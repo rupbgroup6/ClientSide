@@ -6,8 +6,12 @@ import {
 } from 'recharts';
 import { scaleOrdinal } from 'd3-scale';
 import { schemeCategory10 } from 'd3-scale-chromatic';
+import iooi from '../../Images/ioLogo.png';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import '../../CSS/excelReport.css';
+
 
 //BarChart
 const colors1 = scaleOrdinal(schemeCategory10).range();
@@ -213,33 +217,47 @@ class BarCharts extends PureComponent {
       );
   }
   render() {
-    let width = "100%";
-    let height = "100%";
     return (
+      <div>
       <Row>
-        <Col xs={12}></Col>
-        <Col xs={12}>
-          <BarChart
-            width={400}
-            height={200}
-            data={this.state.data}
-            margin={{
-              top: 20, right: 10, left: 20, bottom: 5,
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Bar dataKey="uv" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
-              {
-                this.state.data.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={colors1[index % 20]} />
-                ))
-              }
-            </Bar>
-          </BarChart></Col>
-      </Row>
+          <Col>
+          <Link to={"/HomeAdmin"}> <Button variant="secondary" style={{ float: "right" }}><i class="fa fa-home"></i></Button></Link>
+          </Col>
+        </Row>
 
+    <Row className="header2">
+      <Col xs={2}></Col>
+      <Col xs={8}><img className="title" alt="" src={iooi} style={{ }} /></Col>
+      <Col xs={2}></Col>
+    </Row>
+
+    <Row>
+          <Col><h2>ממוצע פרופילים</h2></Col>
+        </Row>
+     <Row className="align11">
+          <Col className="chart" >
+            <BarChart 
+              width={370}
+              height={400}
+              data={this.state.data}
+              margin={{
+                top: 50, right: 0, left: 0, bottom: 5,
+              }}
+         >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Bar dataKey="uv" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+                {
+                  this.state.data.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={colors1[index % 20]} />
+                  ))
+                }
+              </Bar>
+            </BarChart>
+          </Col>
+          </Row>
+      </div>
     );
   }
 } export default withRouter(BarCharts);

@@ -173,9 +173,9 @@ class App extends Component {
             >
               <Switch location={location}>
                 <Route exact path="/" >
-                  <LogAReg />
+                  <LogAReg getQuestions={this.fetchGetQuestion} />
                 </Route>
-                <Route path="/quiz/:id/:secondTime"  >
+                <Route path="/quiz/:id/:secondTime/:profile"  >
                   <Quiz bigQuestions={this.state.bigQuestions} orQuestions={this.state.orQuestions} ioQuestions={this.state.ioQuestions} />
                 </Route>
                 <Route path="/intro/:email" >
