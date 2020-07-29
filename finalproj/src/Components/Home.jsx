@@ -20,7 +20,7 @@ class Home extends Component {
         this.state = {
             profile: this.props.match.params.profile,
             id: this.props.match.params.id,
-            local: true
+            local: false
         }
 
         this.apiUrl = 'http://localhost:51298/api/Friends/GetFriendReq/' + this.state.id;
@@ -105,8 +105,8 @@ class Home extends Component {
                             <Col className="menu">
                                 <Row className="menu" class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
-                                    <Col xs={5}><Link to={'/quiz/' + this.state.id + "/" + true}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "10px", width:"65%" }} src={quiz} alt=""></img><h6>שאלונים</h6></button></Link></Col>
-                                    <Col xs={5}><button type="button" style={{ float: "left" }}><img style={{width:"80%"}} src={apostrophes} alt="" ></img><h6>ציטטות מנהלים</h6></button> </Col>
+                                    <Col xs={5}><Link to={'/quiz/' + this.state.id + "/" + true}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "10px", width:"65%", height:"30%" }} src={quiz} alt=""></img><h6>שאלונים</h6></button></Link></Col>
+                                    <Col xs={5}><button type="button" style={{ float: "left" }}><img style={{width:"80%", height:"30%"}} src={apostrophes} alt="" ></img><h6>ציטטות מנהלים</h6></button> </Col>
                                     <Col xs={1}></Col>
                                 </Row >
                             </Col>
@@ -117,7 +117,7 @@ class Home extends Component {
                                 <Row class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
                                     <Col xs={5}><Link to={'/findings/' + this.state.profile + "/" + this.state.id}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} src={glass} alt=""></img><h6>ממצאים ותובנות</h6></button></Link></Col>
-                                    <Col xs={5}><Link to={"/profile/" + this.state.profile + "/" + this.state.id}><button type="button" style={{ float: "left" }}><img style={{ paddingTop: "7px", width:"65%" }}  src={profile} alt="" ></img><h6 style={{marginTop:"5px"}}>סוגי פרופיל</h6></button></Link></Col>
+                                    <Col xs={5}><Link to={"/profile/" + this.state.profile + "/" + this.state.id}><button type="button" style={{ float: "left" }}><img style={{ paddingTop: "7px", width:"65%" }}  src={profile} alt="" ></img><h6 style={{marginTop:"5px",height:"30%"}}>סוגי פרופיל</h6></button></Link></Col>
                                     <Col xs={1}></Col>
                                 </Row>
                             </Col>

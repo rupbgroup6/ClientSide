@@ -20,7 +20,7 @@ class FriendL extends Component {
         this.state = {
             id: this.props.id,
             profile: this.props.profile,
-            local: true,
+            local: false,
             loading: false,
             friends: this.props.friends,
             friendId: ""

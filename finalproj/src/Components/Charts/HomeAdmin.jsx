@@ -12,6 +12,7 @@ import quiz from '../../Images/toQuiz.png';
 import users from '../../Images/users.png';
 import Button from 'react-bootstrap/Button';
 
+
 class HomeAdmin extends Component {
     constructor(props) {
         super(props);
@@ -19,9 +20,19 @@ class HomeAdmin extends Component {
          
         }
 
-    
+     
+        }
+        
+        logOut = () => {
+            localStorage.removeItem("uName");
+            localStorage.removeItem("pass");
+            localStorage.removeItem("rememberMe");
+            let direction = "/";
+            this.props.history.replace(direction, "urlhistory");
 
     }
+
+
 
   
     
@@ -49,11 +60,12 @@ class HomeAdmin extends Component {
                     </Row>
 
 
-                    <Row className="menu" style={{ paddingTop: "30px" }}>
+                    <Row className="menu" style={{ paddingTop: "10px" }}>
                         <Col className="menu">
                             <Row class="btn-group" role="group" aria-label="Basic example" >
                                 <Col xs={4}></Col>
-                                <Col xs={4}> <button type="button" style={{ height:"120%", width:"120%" }}><img style={{marginLeft:"5px"}} src={quiz} alt=""></img><h6>הורדת קבצי אקסל</h6></button></Col>
+                                <Col xs={4}> <Link to={"/ExcelReport"}>  <button type="button" style={{ height:"120%", width:"120%" }}><img style={{marginLeft:"5px"}} src={quiz} alt=""></img><h6>הורדת קבצי אקסל</h6></button></Link></Col>
+
                                 <Col xs={4}></Col>
                             </Row>
                         </Col>
