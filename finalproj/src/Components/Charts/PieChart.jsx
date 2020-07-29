@@ -106,7 +106,7 @@ class PieCharts extends PureComponent {
 
         <Row className="pie">
           <Col className="pie">
-            <PieChart style={{ background: "black" }} width={400} height={500}>
+            <PieChart id="pieChart" style={{ background: "black" }} width={400} height={500}>
               <Pie style={{ background: "black" }} dataKey="value" isAnimationActive={false} data={this.state.data} cx={200} cy={200} outerRadius={150} fill="blue" label />
               <Pie style={{ background: "black" }} dataKey="value" data={this.state.data} cx={200} cy={200} innerRadius={40} outerRadius={80} fill="black" />
               <Tooltip />
