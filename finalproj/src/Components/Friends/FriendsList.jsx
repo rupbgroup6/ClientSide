@@ -210,13 +210,13 @@ class FriendList extends Component {
 
                 <Row>
                     <Col>
-                        <h6 style={{ direction: "rtl" }}>מספר ה ID שלך הוא: {this.state.id}</h6>
+                        <h6 style={{ direction: "rtl"}}>מספר ה ID שלך הוא: {this.state.id}</h6>
                     </Col>
                 </Row>
 
                 <Row>
                     <Col xs={12} className="input" >
-                        <Button style={{ margin: "auto" }} variant="primary" onClick={this.AddToFriends}>הוסף חבר</Button>
+                        <Button style={{ margin: "auto", backgroundColor:"#33adff" }} variant="primary" onClick={this.AddToFriends}>הוסף חבר</Button>
                     </Col>
                 </Row>
 
@@ -225,7 +225,7 @@ class FriendList extends Component {
                         <div></div>
                         <a id="friend" onClick={this.changeModeToFriend}>Friends</a>
                         <a id="request" onClick={this.changeModeToReq}>Requests</a>
-                        <a id="feedback" onClick={this.changeModeToFeed}>Feedback</a>
+                        <a id="feedback" style={{paddingLeft:"5px"}} onClick={this.changeModeToFeed}>Feedback</a>
                         <div></div>
                     </div>
 

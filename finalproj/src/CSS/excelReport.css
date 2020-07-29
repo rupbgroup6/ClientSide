@@ -1,0 +1,47 @@
+
+.download{
+    margin: auto;
+    padding-top: 90px;
+    
+    
+         
+}
+
+.pie{
+    top: 20px;
+    right: 25px;
+}
+
+.chart{
+    right: 25px;
+   
+}
+.recharts-tooltip-item-name,
+.recharts-tooltip-item-separator,
+.recharts-tooltip-item-value
+{
+    
+    background: black;
+    border-radius: 2px;
+    height: 100%;
+    width: 100%;
+}
+
+.recharts-layer > text{
+    fill: gray;
+    font-size:17px;
+}
+
+path{
+    stroke: gray;
+}
+
+.recharts-default-tooltip{
+    background: black;
+}
+
+h2{
+    text-align: center;
+    color: gray;
+    padding-top: 15px;
+}

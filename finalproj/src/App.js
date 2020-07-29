@@ -15,7 +15,9 @@ import Profile from './Components/Profile.jsx';
 import FriendList from './Components/Friends/FriendsList.jsx';
 import BarChart from './Components/Charts/BarChart.jsx';
 import PieChart from './Components/Charts/PieChart.jsx';
+import ExcelReport from './Components/Charts/ExcelReport.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import HomeAdmin from './Components/Charts/HomeAdmin.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -196,8 +198,14 @@ class App extends Component {
                 <Route path="/PieChart" >
                   <PieChart />
                 </Route>
+                <Route  path="/ExcelReport" >
+                 <ExcelReport />
+                </Route>
                 <Route path="/friendList/:id/:profile" >
                   <FriendList friends={this.state.friends} req={this.state.req} renderFriends={this.fetchFriends}/>
+                </Route>
+                <Route path="/HomeAdmin" >
+                  <HomeAdmin />
                 </Route>
               </Switch>
             </CSSTransition>

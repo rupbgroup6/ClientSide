@@ -28,14 +28,11 @@ class Findings extends Component {
                 </Row>
                 <Row className="header8">
                     <Col xs={2}></Col>
-                    <Col xs={8}><img className="title8" alt="" src={iooi} style={{ paddingTop: "10px" }} /></Col>
+                    <Col xs={8}><img className="title8" alt="" src={iooi} style={{ paddingTop: "5px" }} /></Col>
                     <Col xs={2}></Col>
                 </Row>
 
                 <div className="card8">
-
-
-
                     <Row className="headerImg">
                         <Col xs={12} >
                             <img alt="" src={headerImg} style={{ width: "100%", height: '200px', marginTop: "15px" }} />
