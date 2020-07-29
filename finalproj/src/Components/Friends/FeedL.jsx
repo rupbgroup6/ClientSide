@@ -15,7 +15,7 @@ class FeedL extends Component {
         this.state = {
             id: this.props.id,
             profile: this.props.profile,
-            local: true,
+            local: false,
             feeds: this.props.feeds
         }
         this.apiUrl = 'http://localhost:51298/api/Friends/GetFeeds/';

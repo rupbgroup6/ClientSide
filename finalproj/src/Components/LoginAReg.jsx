@@ -19,12 +19,17 @@ class LogAReg extends Component {
             rememberMe: "false",
             mode: "login",
             local: false,
+            profile: this.props.profile
         }
 
         this.apiUrl = 'http://localhost:51298/api/users';
         if (!this.state.local) {
             this.apiUrl = 'http://proj.ruppin.ac.il/bgroup6/prod/api/users';//Dont forget to change
         }
+    }
+
+    goHome = () => {
+        this.props.history.replace("/home/" + this.state.id + "/" + this.state.profile + "/" + true, "urlhistory");
     }
 
     btnFetchGetIfo = () => {
@@ -167,6 +172,7 @@ class LogAReg extends Component {
             }
             else {
                 if (user.SecondTime === true) {
+                    this.props.getQuestions();
                     let secondTime = user.SecondTime;
                     let id = user.UserId;
                     let profile = user.Profile;

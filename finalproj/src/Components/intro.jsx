@@ -117,7 +117,7 @@ class Intro extends Component {
 
                 <Row style={{ backgroundColor: "black", paddingTop: "10px" }}>
                   <Col xs={2} style={{ backgroundColor: "black" }}></Col>
-                  <Col xs={8} style={{ backgroundColor: "black", textAlign: "center" }}><Link to={'/quiz/' + this.state.id + "/" + false}> <button  style={{background: "#33adff" , height:"55px",width:"135px" ,margin:"15px", borderRadius:"12px", color:" #003B15", fontSize:"17px", fontWeight:"700"}}>Let's start</button></Link></Col>
+                  <Col xs={8} style={{ backgroundColor: "black", textAlign: "center" }}><Link to={'/quiz/' + this.state.id + "/" + false + "/" + "a"}> <button  style={{background: "#33adff" , height:"55px",width:"135px" ,margin:"15px", borderRadius:"12px", color:" #003B15", fontSize:"17px", fontWeight:"700"}}>Let's start</button></Link></Col>
                   <Col xs={2} style={{ backgroundColor: "black" }}></Col>
                 </Row>
 

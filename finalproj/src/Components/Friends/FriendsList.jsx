@@ -20,7 +20,7 @@ class FriendList extends Component {
         this.state = {
             id: this.props.match.params.id,
             profile: this.props.match.params.profile,
-            local: true,
+            local: false,
             friends: this.props.friends,
             feeds: [],
             req: this.props.req,

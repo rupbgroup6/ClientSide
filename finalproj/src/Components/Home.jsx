@@ -20,7 +20,7 @@ class Home extends Component {
         this.state = {
             profile: this.props.match.params.profile,
             id: this.props.match.params.id,
-            local: true
+            local: false
         }
 
         this.apiUrl = 'http://localhost:51298/api/Friends/GetFriendReq/' + this.state.id;
@@ -105,7 +105,7 @@ class Home extends Component {
                             <Col className="menu">
                                 <Row className="menu" class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
-                                    <Col xs={5}><Link to={'/quiz/' + this.state.id + "/" + true}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} src={quiz} alt=""></img><h6>שאלונים</h6></button></Link></Col>
+                                    <Col xs={5}><Link to={'/quiz/' + this.state.id + "/" + true + "/" + this.state.profile}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} src={quiz} alt=""></img><h6>שאלונים</h6></button></Link></Col>
                                     <Col xs={5}><button type="button" style={{ float: "left" }}><img src={apostrophes} alt="" ></img><h6>ציטטות מנהלים</h6></button> </Col>
                                     <Col xs={1}></Col>
                                 </Row >

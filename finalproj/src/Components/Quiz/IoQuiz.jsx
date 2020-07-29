@@ -100,7 +100,7 @@ class IoQuiz extends Component {
         ScoreB: avgB,
         Profile: profile
       }
-      if (this.state.secondTime) {
+      if (this.state.secondTime === "true") {
         $("#3rd").show();
               window.scrollBy({
                 top: 120,
