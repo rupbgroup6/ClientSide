@@ -184,6 +184,8 @@ class FriendList extends Component {
         }, 1000)
     }
 
+    
+
     render() {
         return (
             <div className="align9">
@@ -240,7 +242,7 @@ class FriendList extends Component {
                                 )
                                 :
                                 (
-                                    <Fl id={this.state.id} profile={this.state.profile} friends={this.state.friends} renderFriends={this.renderFriends} />
+                                    <Fl id={this.state.id} profile={this.state.profile} friends={this.state.friends} renderFriends={this.props.renderFriends} />
                                 )}
 
                         </div>
@@ -255,7 +257,7 @@ class FriendList extends Component {
                                 )
                                 :
                                 (
-                                    <ReqL id={this.state.id} profile={this.state.profile} req={this.state.req} renderFriends={this.renderFriends} />
+                                    <ReqL id={this.state.id} profile={this.state.profile} req={this.state.req} renderFriends={this.props.renderFriends} />
                                 )}
 
                         </div>
