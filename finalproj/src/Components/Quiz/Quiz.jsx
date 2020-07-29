@@ -11,6 +11,7 @@ import DemogQuiz from './DemogQuiz';
 import IoQuiz from './IoQuiz';
 import OrQuiz from './OrQuiz';
 import BigQuiz from './BigQuiz';
+import swal from 'sweetalert';
 
 class Quiz extends Component {
   constructor(props) {
@@ -55,6 +56,9 @@ class Quiz extends Component {
     $("#2nd").hide();
     $("#3rd").hide();
     $("#4th").hide();
+    if(this.state.secondTime === "true"){
+      swal("תוצאות השאלון לא ישתנו מאחר וזאת פעם שניה, אתה מוזמן למלא שוב כדי לראות איך תשובות שונות ישפיעו על התוצאה")
+    }
   }
 
   render() {
