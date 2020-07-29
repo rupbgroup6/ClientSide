@@ -181,7 +181,7 @@ class App extends Component {
                 <Route path="/intro/:email" >
                   <Intro getQuestions={this.fetchGetQuestion} />
                 </Route>
-                <Route path="/game/:profile/:id" >
+                <Route path="/game/:profile/:id/:secondTime" >
                   <Game />
                 </Route>
                 <Route path="/home/:id/:profile/:secondTime" >
@@ -190,7 +190,7 @@ class App extends Component {
                 <Route path="/findings/:profile/:id" >
                   <Findings />
                 </Route>
-                <Route path="/profile/:profile/:id" >
+                <Route path="/profile/:profile/:id/:secondTime/:fromHome" >
                   <Profile />
                 </Route>
                 <Route path="/BarChart" >

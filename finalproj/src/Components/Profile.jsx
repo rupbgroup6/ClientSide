@@ -15,6 +15,9 @@ class Profile extends Component {
         this.state = {
             profile: this.props.match.params.profile,
             id: this.props.match.params.id,
+            realProfile: "",
+            secondTime: this.props.match.params.secondTime,
+            fromHome: this.props.match.params.fromHome
         }
 
 
@@ -88,6 +91,11 @@ class Profile extends Component {
                     let calcAvg = 0;
 
                     for (var i = 0; i < result.length; i++) {
+                        if (result[i].UserId === parseInt(this.state.id)) {
+                            this.setState({
+                                realProfile: result[i].Profile
+                            })
+                        }
                         let profile = result[i].Profile;
                         if (profile === "השורד") {
                             survivor++;
@@ -130,15 +138,15 @@ class Profile extends Component {
                     revolAvg = (revol / counter) * 100 + "%";
                     calcAvg = (calc / counter) * 100 + "%";
                     champAvg = (champ / counter) * 100 + "%";
-                    $('#survivor').css({ 'height': survivorAvg, 'background': 'linear-gradient(to left, rgba(255,0,0,0), rgba(50,150,50,0.7))','width':'100%','position':'absolute','bottom':'0'})
-                    $('#fit').css({ 'height': fitAvg, 'background': 'linear-gradient(to left, rgba(255,0,0,0), rgba(120,0,50,1))','width':'100%','position':'absolute','bottom':'0' })
-                    $('#analyst').css({ 'height': analystAvg, 'background': 'linear-gradient(to left, rgba(255,0,0,0), rgba(300,200,200,1))','width':'100%','position':'absolute','bottom':'0' })
-                    $('#balanced').css({ 'height': balancedAvg, 'background': 'linear-gradient(to left, rgba(255,0,0,0), rgba(50,50,0,1))','width':'100%','position':'absolute','bottom':'0' })
-                    $('#daredevil').css({ 'height': daredevilAvg, 'background': 'linear-gradient(to left, rgba(255,0,0,0), rgba(300,300,0,1))','width':'100%','position':'absolute','bottom':'0' })
-                    $('#believer').css({ 'height': believerAvg, 'background': 'linear-gradient(to left, rgba(255,0,0,0), rgba(300,0,50,1))','width':'100%','position':'absolute','bottom':'0' })
-                    $('#revol').css({ 'height': revolAvg, 'background': 'linear-gradient(to left, rgba(255,0,0,0), rgba(300,100,0,1))','width':'100%','position':'absolute','bottom':'0' })
-                    $('#champ').css({ 'height': champAvg, 'background': 'linear-gradient(to left, rgba(255,0,0,0), rgba(0,100,100,1))','width':'100%','position':'absolute','bottom':'0' })
-                    $('#calc').css({ 'height': calcAvg, 'background': 'linear-gradient(to left, rgba(255,0,0,0), rgba(0,300,50,1))','width':'100%','position':'absolute','bottom':'0' })
+                    $('#survivor').css({ 'height': survivorAvg, 'background': 'linear-gradient(to left, rgba(255,0,0,0), rgba(50,150,50,0.7))', 'width': '100%', 'position': 'absolute', 'bottom': '0' })
+                    $('#fit').css({ 'height': fitAvg, 'background': 'linear-gradient(to left, rgba(255,0,0,0), rgba(120,0,50,1))', 'width': '100%', 'position': 'absolute', 'bottom': '0' })
+                    $('#analyst').css({ 'height': analystAvg, 'background': 'linear-gradient(to left, rgba(255,0,0,0), rgba(300,200,200,1))', 'width': '100%', 'position': 'absolute', 'bottom': '0' })
+                    $('#balanced').css({ 'height': balancedAvg, 'background': 'linear-gradient(to left, rgba(255,0,0,0), rgba(50,50,0,1))', 'width': '100%', 'position': 'absolute', 'bottom': '0' })
+                    $('#daredevil').css({ 'height': daredevilAvg, 'background': 'linear-gradient(to left, rgba(255,0,0,0), rgba(300,300,0,1))', 'width': '100%', 'position': 'absolute', 'bottom': '0' })
+                    $('#believer').css({ 'height': believerAvg, 'background': 'linear-gradient(to left, rgba(255,0,0,0), rgba(300,0,50,1))', 'width': '100%', 'position': 'absolute', 'bottom': '0' })
+                    $('#revol').css({ 'height': revolAvg, 'background': 'linear-gradient(to left, rgba(255,0,0,0), rgba(300,100,0,1))', 'width': '100%', 'position': 'absolute', 'bottom': '0' })
+                    $('#champ').css({ 'height': champAvg, 'background': 'linear-gradient(to left, rgba(255,0,0,0), rgba(0,100,100,1))', 'width': '100%', 'position': 'absolute', 'bottom': '0' })
+                    $('#calc').css({ 'height': calcAvg, 'background': 'linear-gradient(to left, rgba(255,0,0,0), rgba(0,300,50,1))', 'width': '100%', 'position': 'absolute', 'bottom': '0' })
 
                 },
                 (error) => {
@@ -165,7 +173,14 @@ class Profile extends Component {
                                 <h6>.טבלה זו מציגה את חתך אחוזי כלל המשתמשים באפליקציה עד היום</h6>
                                 <h6> דרכה תוכל לראות באיזו קטגוריה אתה נכלל ולקרוא על שאר הקטגוריות האחרות</h6>
                                 <h6>כמו כן, באפשרותך לחזור לשאלון ולראות איך כל שינוי מאפיין ישפיע בצורה שונה על התוצאה<br /></h6>
-                                <h6>"סוג הפרופיל שלך הוא "{this.state.profile}<br /></h6>
+                                {this.state.fromHome === "true" ?
+                                    (<h6 id="boldProf">סוג הפרופיל שלך הוא "{this.state.profile}"<br /></h6>)
+                                    : (this.state.secondTime === "true" ?
+                                        (<div><h6 id="boldProf">"סוג הפרופיל שיצא לאחר מילוי השאלון בפעם השניה הוא: "{this.state.profile}",</h6><h6 id="boldProf"> והפרופיל האמיתי שלך הוא "{this.state.realProfile}"</h6></div>)
+                                        :
+                                        (<h6 id="boldProf">סוג הפרופיל שלך הוא "{this.state.profile}"<br /></h6>))}
+
+
                             </Col>
                         </Row>
 

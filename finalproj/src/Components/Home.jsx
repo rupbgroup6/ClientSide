@@ -117,7 +117,7 @@ class Home extends Component {
                                 <Row class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
                                     <Col xs={5}><Link to={'/findings/' + this.state.profile + "/" + this.state.id}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} src={glass} alt=""></img><h6>ממצאים ותובנות</h6></button></Link></Col>
-                                    <Col xs={5}><Link to={"/profile/" + this.state.profile + "/" + this.state.id}><button type="button" style={{ float: "left" }}><img style={{ paddingTop: "7px", width:"65%" }}  src={profile} alt="" ></img><h6 style={{marginTop:"5px",height:"30%"}}>סוגי פרופיל</h6></button></Link></Col>
+                                    <Col xs={5}><Link to={"/profile/" + this.state.profile + "/" + this.state.id + "/" + true + "/" + true}><button type="button" style={{ float: "left" }}><img style={{ paddingTop: "7px", width:"65%" }}  src={profile} alt="" ></img><h6 style={{marginTop:"5px",height:"30%"}}>סוגי פרופיל</h6></button></Link></Col>
                                     <Col xs={1}></Col>
                                 </Row>
                             </Col>

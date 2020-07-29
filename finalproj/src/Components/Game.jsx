@@ -18,7 +18,8 @@ class Game extends Component {
         super(props);
         this.state ={
             profile: this.props.match.params.profile,
-            id: this.props.match.params.id
+            id: this.props.match.params.id,
+            secondTime: this.props.match.params.secondTime
         }
     }
 
@@ -39,8 +40,15 @@ class Game extends Component {
               .then((value) =>{
                 switch(value){
                     case "ok":{
-                        let direction = "/profile/" + this.state.profile +"/" + this.state.id;
-                        this.props.history.push(direction);
+                        if(this.state.secondTime === "true"){
+                            let direction = "/profile/" + this.state.profile +"/" + this.state.id + "/" + true + "/" + false;
+                            this.props.history.push(direction);
+                        }
+                        else{
+                            let direction = "/profile/" + this.state.profile +"/" + this.state.id + "/" + false + "/" + false;
+                            this.props.history.push(direction);
+                        }
+                        
                     }
                 }
               });
@@ -60,8 +68,14 @@ class Game extends Component {
               .then((value) =>{
                 switch(value){
                     case "ok":{
-                        let direction = "/profile/" + this.state.profile + "/" + this.state.id;
-                        this.props.history.push(direction);
+                        if(this.state.secondTime === "true"){
+                            let direction = "/profile/" + this.state.profile +"/" + this.state.id + "/" + true + "/" + false;
+                            this.props.history.push(direction);
+                        }
+                        else{
+                            let direction = "/profile/" + this.state.profile +"/" + this.state.id + "/" + false + "/" + false;
+                            this.props.history.push(direction);
+                        }
                     }
                 }
               });
@@ -85,8 +99,14 @@ class Game extends Component {
               .then((value) =>{
                 switch(value){
                     case "ok":{
-                        let direction = "/profile/" + this.state.profile + "/" + this.state.id;
-                        this.props.history.push(direction);
+                        if(this.state.secondTime === "true"){
+                            let direction = "/profile/" + this.state.profile +"/" + this.state.id + "/" + true + "/" + false;
+                            this.props.history.push(direction);
+                        }
+                        else{
+                            let direction = "/profile/" + this.state.profile +"/" + this.state.id + "/" + false + "/" + false;
+                            this.props.history.push(direction);
+                        }
                     }
                 }
               });
@@ -106,8 +126,14 @@ class Game extends Component {
               .then((value) =>{
                 switch(value){
                     case "ok":{
-                        let direction = "/profile/" + this.state.profile + "/" + this.state.id;
-                        this.props.history.push(direction);
+                        if(this.state.secondTime === "true"){
+                            let direction = "/profile/" + this.state.profile +"/" + this.state.id + "/" + true +"/" + false;
+                            this.props.history.push(direction);
+                        }
+                        else{
+                            let direction = "/profile/" + this.state.profile +"/" + this.state.id + "/" + false + "/" + false;
+                            this.props.history.push(direction);
+                        }
                     }
                 }
               });
