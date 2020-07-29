@@ -105,8 +105,8 @@ class Home extends Component {
                             <Col className="menu">
                                 <Row className="menu" class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
-                                    <Col xs={5}><Link to={'/quiz/' + this.state.id + "/" + true + "/" + this.state.profile}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} src={quiz} alt=""></img><h6>שאלונים</h6></button></Link></Col>
-                                    <Col xs={5}><Link to={'/UserBarChart/' + this.state.id}> <button type="button" style={{ float: "left" }}><img src={apostrophes} alt="" ></img><h6>מאפיינים להצלחה בינלאומית</h6></button></Link> </Col>
+                                    <Col xs={5}><Link to={'/quiz/' + this.state.id + "/" + true + "/" + this.state.profile}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "10px" ,height:"70px" }} src={quiz} alt=""></img><h6 style={{paddingTop:"5px"}}>שאלונים</h6></button></Link></Col>
+                                    <Col xs={5}><Link to={'/UserBarChart/' + this.state.id}> <button type="button" style={{ float: "left" }}><img style={{ height:"70px" }} src={apostrophes} alt="" ></img><h6 style={{}}>מאפיינים להצלחה בינלאומית</h6></button></Link> </Col>
                                     <Col xs={1}></Col>
                                 </Row >
                             </Col>

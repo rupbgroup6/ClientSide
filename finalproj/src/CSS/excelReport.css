@@ -9,7 +9,7 @@
 
 .pie{
     top: 20px;
-    right: 25px;
+    right: 5px;
 }
 
 .chart{
@@ -21,11 +21,11 @@
 .recharts-tooltip-item-value
 {
     
-    background: black;
+    
     border-radius: 2px;
     height: 100%;
     width: 100%;
-    color:white
+    color:blue
     
 }
 
@@ -38,9 +38,6 @@ path{
     stroke: gray;
 }
 
-.recharts-default-tooltip{
-    background-color: black;
-}
 
 h2{
     text-align: center;
@@ -48,6 +45,13 @@ h2{
     padding-top: 15px;
 }
 
-#pieChart div{
-    background-color: black;
+
+.chartUser{
+    right: 60px;
+    padding-top: 50px;
+}
+
+.title5 {
+    text-align: center;
+    margin-top: 20px;
 }

@@ -13,67 +13,67 @@ import '../CSS/intro.css';
 
 
 class Intro extends Component {
-    constructor(props) {
-        super(props);
-        this.state  ={
-            email: this.props.match.params.email,
-            id: "",
-            local: false
-        }
-
-        this.apiUrl = 'http://localhost:51298/api/users/login/';
-        if (!this.state.local) {
-          this.apiUrl = 'http://proj.ruppin.ac.il/bgroup6/prod/api/users/login/';//Dont forget to change
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: this.props.match.params.email,
+      id: "",
+      local: false
     }
 
-    fetchQuestions = () =>{
-      this.props.getQuestions();
+    this.apiUrl = 'http://localhost:51298/api/users/login/';
+    if (!this.state.local) {
+      this.apiUrl = 'http://proj.ruppin.ac.il/bgroup6/prod/api/users/login/';//Dont forget to change
     }
+  }
 
-    componentDidMount(){//take the current user info and all the question for next component
-      let url = this.apiUrl;
-        fetch(url, {//get the user id
-            method: 'GET',
-            headers: new Headers({
-              'Content-Type': 'application/json; charset=UTF-8',
-            })
-          })
-            .then(res => {
-              return res.json()
-            })
-            .then(
-              (result) => {
-                let id = "";
-                for (var i = 0; i < result.length; i++) {
-                  if (this.state.email === result[i].Email) {
-                      id = result[i].UserId;
-                      break;
-                  }
-              }
-               this.setState({
-                 id: id
-               });
-                this.fetchQuestions();
-              },
-              (error) => {
-                console.log("err post=", error);
-              });
-    }
+  fetchQuestions = () => {
+    this.props.getQuestions();
+  }
 
-  
-    render() {
-        return (
-          <div className="cont2">
+  componentDidMount() {//take the current user info and all the question for next component
+    let url = this.apiUrl;
+    fetch(url, {//get the user id
+      method: 'GET',
+      headers: new Headers({
+        'Content-Type': 'application/json; charset=UTF-8',
+      })
+    })
+      .then(res => {
+        return res.json()
+      })
+      .then(
+        (result) => {
+          let id = "";
+          for (var i = 0; i < result.length; i++) {
+            if (this.state.email === result[i].Email) {
+              id = result[i].UserId;
+              break;
+            }
+          }
+          this.setState({
+            id: id
+          });
+          this.fetchQuestions();
+        },
+        (error) => {
+          console.log("err post=", error);
+        });
+  }
+
+
+  render() {
+    return (
+      <div className="cont2">
         <div className="align" >
-        <Container>
-        
-          
-            <div className="card6">
-            
+          <Container>
+
+
+            <div className="card6" style={{ marginTop: "5px" }}>
+
               <Row>
                 <Col xs={12} >
-                  <img className="pic" alt="" src={welcomePic} style={{ width: "100%", height:"100%", paddingBottom:"10px"}} />
+                  <img className="pic" alt="" src={welcomePic} style={{ width: "100%", height: "90%", paddingBottom: "0px", paddingTop: "10px" }} />
                 </Col>
               </Row>
 
@@ -82,15 +82,15 @@ class Intro extends Component {
                 <Col xs={12}>
                   <Row className="title">
                     <Col xs={2}></Col>
-                   
+
                     <Col xs={8}>
                       <Row>
                         <Col> <h4 style={{ color: "gray" }}>About </h4> </Col>
                       </Row>
 
                       <Row>
-                        <Col>  <h6 style={{ color: "gray" }}> Outside-In - Inside-Out </h6> </Col>
-                      </Row> 
+                        <Col><h6 style={{ color: "#33adff" }}> Outside-In - Inside-Out </h6> </Col>
+                      </Row>
                     </Col>
 
                     <Col xs={2}></Col>
@@ -98,26 +98,31 @@ class Intro extends Component {
 
                 </Col>
 
-                <Row className="text1"> 
-                <Col xs={12}>
-                                <p><b className="rtl" style={{color:"white", paddingLeft:"10px", paddingTop:"5px",fontSize:"13.4px"}}>  
-                                שלום! 
-
-אפליקציה זו מבוססת על מחקר אקדמי של ד"ר יואל אסרף מהמרכז האקדמי רופין ופרופ' אביב שהם מאוניברסיטת חיפה שהתפרסם בכתב העת International Marketing Review. במסך הבא תתבקש לענות על מספר שאלות שיסייעו לך לאבחן איזה סוג מנהל אתה? מנהל שנוקט בגישה אסטרטגית מסוג Outside-in או מנהל בעל גישת Inside-out. לאחר מילוי השאלון תוכל להעמיק את הלמידה בנושא, לבדוק היכן אתה מממוקם יחסית לאוכלוסיית המנהלים במחקר ולהבין את המשמעויות והדגשים השונים של כל גישה החל מפיתוח היכולות האסטרטגיות ועד ליחסים עם לקוחות, חדשנות ולקיחת סיכונים. חשוב להדגיש שאין תשובות נכונות או לא נכונות ולכן אנא סמן את התשובה המתארת במידה הטובה ביותר את הסכמתך עם ההיגדים. הפרטים שלך ימסרו בסודיות מוחלטת. 
-
-בהצלחה!
-
+                <Row className="text1">
+                  <Col xs={12}>
+                    <p><b className="rtl" style={{ color: "white", paddingLeft: "10px", paddingTop: "0px", fontSize: "13.7px" }}>
+                    
+                      שלום, אפליקציה זו מבוססת על מחקר אקדמי של ד"ר יואל אסרף מהמרכז האקדמי רופין ופרופ' אביב
+ שהם מאוניברסיטת חיפה שהתפרסם בכתב העת<br />
+ .International Marketing Review<br />
+ במסך הבא תתבקש לענות על מספר שאלות שיסייעו<br />
+  : לך לאבחן איזה סוג מנהל אתה <br />
+  Outside-in מנהל שנוקט בשישה אסטרטגית מסוג
+  .Inside-out או מנהל בעל גישת<br />
+    לאחר מילוי השאלון תוכל להעמיק את הלמידה בנושא, 
+    לבדוק היכן אתה מממוקם יחסית לאוכלוסיית המנהלים במחקר ולהבין את המשמעויות והדגשים השונים של כל גישה החל מפיתוח היכולות האסטרטגיות ועד ליחסים עם לקוחות, חדשנות ולקיחת סיכונים.
+     חשוב להדגיש שאין תשובות נכונות או לא נכונות <br/>
+     ולכן, אנא סמן את התשובה המתארת במידה הטובה ביותר את הסכמתך עם ההיגדים <br/>
+     !הפרטים שלך ימסרו בסודיות מוחלטת. בהצלחה
+     
+  
                                 </b></p>
-                            </Col>
+                  </Col>
 
                 </Row>
-
-
-
-
-                <Row style={{ backgroundColor: "black", paddingTop: "10px" }}>
+                <Row style={{ backgroundColor: "black", paddingTop: "0px" }}>
                   <Col xs={2} style={{ backgroundColor: "black" }}></Col>
-                  <Col xs={8} style={{ backgroundColor: "black", textAlign: "center" }}><Link to={'/quiz/' + this.state.id + "/" + false + "/" + "a"}> <button  style={{background: "#33adff" , height:"55px",width:"135px" ,margin:"15px", borderRadius:"12px", color:" #003B15", fontSize:"17px", fontWeight:"700"}}>Let's start</button></Link></Col>
+                  <Col xs={8} style={{ backgroundColor: "black", textAlign: "center" }}><Link to={'/quiz/' + this.state.id + "/" + false + "/" + "a"}> <button style={{ background: "#33adff", height: "55px", width: "135px", margin: "15px", borderRadius: "12px", color: " #003B15", fontSize: "17px", fontWeight: "700" }}>Let's start</button></Link></Col>
                   <Col xs={2} style={{ backgroundColor: "black" }}></Col>
                 </Row>
 

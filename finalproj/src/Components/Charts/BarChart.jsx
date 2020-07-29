@@ -237,8 +237,8 @@ class BarCharts extends PureComponent {
      <Row className="align11">
           <Col className="chart" >
             <BarChart 
-              width={370}
-              height={400}
+              width={420}
+              height={450}
               data={this.state.data}
               margin={{
                 top: 50, right: 0, left: 0, bottom: 5,
