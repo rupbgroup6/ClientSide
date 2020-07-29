@@ -25,6 +25,8 @@
     border-radius: 2px;
     height: 100%;
     width: 100%;
+    color:white
+    
 }
 
 .recharts-layer > text{
@@ -37,11 +39,15 @@ path{
 }
 
 .recharts-default-tooltip{
-    background: black;
+    background-color: black;
 }
 
 h2{
     text-align: center;
     color: gray;
     padding-top: 15px;
+}
+
+#pieChart div{
+    background-color: black;
 }
