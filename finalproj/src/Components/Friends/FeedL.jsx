@@ -49,11 +49,11 @@ class FeedL extends Component {
 
         let feeds = this.state.feeds.map((f, index) => {
             let feed = "";
-            if(f.FriendGuess === undefined){
+            if(f.FriendsGuess === undefined){
                 feed = "עדיין לא ניחש"
             }
             else{
-                feed = f.FriendGuess
+                feed = f.FriendsGuess
             }
             if(f.Status === "Verified"){
                 return (
