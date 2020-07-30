@@ -138,17 +138,21 @@ class VComposedChart extends PureComponent {
       </ComposedChart>
       </Col>
     </Row>
-
-        <Row className="DPicker">
-          <Col >
-          <DatePicker
-        selected={this.state.startDate} onChange={this.handleChange1} />
-      </Col>
-      <Col>
-      <DatePicker
-        selected={this.state.endDate} onChange={this.handleChange2} />
-      </Col>
-        </Row>
+    <div>
+<Row className="Dater">
+  <Col>
+          <label className="lbl" for="SDate">:תאריך התחלה</label>
+          <input type="date" id="SDate" name="SDate"></input>
+  </Col>
+  </Row>
+  <Row className="Dater">
+  <Col>
+          <label className="lbl" for="EDate">:תאריך סיום</label>
+          <input type="date" id="EDate" name="EDate"></input>
+  </Col>
+</Row>
+</div>
+          
 
     </div>
 

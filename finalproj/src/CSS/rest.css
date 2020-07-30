@@ -79,7 +79,24 @@ html{
      direction: rtl;
  }
 
- .DPicker{
-     text-align: center;
-     float: inherit;
- }
+ .lbl {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+.Dater{
+    float: center;
+    text-align: center;
+    display: block;
+}
+
+#EDate{
+padding-right: 90px;
+padding-bottom: 10px;
+}
+
+#SDate{
+    padding-right: 90px;
+    padding-bottom: 10px;
+}
+
