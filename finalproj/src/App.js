@@ -212,7 +212,7 @@ class App extends Component {
                 <Route path="/HomeAdmin" >
                   <HomeAdmin />
                 </Route>
-                <Route path="/UserBarChart/:id" >  
+                <Route path="/UserBarChart/:id/:profile" >  
                   <UserBarChart />
                 </Route>
                 <Route path="/RadialChart" > 
