@@ -17,9 +17,9 @@ class UserBarChart extends PureComponent {
             local: false,
             id: this.props.match.params.id
         }
-        this.apiUrl = 'http://localhost:51298/api/answers/id';
+        this.apiUrl = 'http://localhost:51298/api/answers/';
         if (!this.state.local) {
-            this.apiUrl = 'http://proj.ruppin.ac.il/bgroup6/prod/api/answers/id';//Dont forget to change
+            this.apiUrl = 'http://proj.ruppin.ac.il/bgroup6/prod/api/answers/';//Dont forget to change
         }
     }
 
