@@ -15,12 +15,17 @@ class UserBarChart extends PureComponent {
         super(props);
         this.state = {
             local: false,
-            id: this.props.match.params.id
+            id: this.props.match.params.id,
+            profile: this.props.match.params.profile
         }
-        this.apiUrl = 'http://localhost:51298/api/answers/id';
+        this.apiUrl = 'http://localhost:51298/api/answers/';
         if (!this.state.local) {
-            this.apiUrl = 'http://proj.ruppin.ac.il/bgroup6/prod/api/answers/id';//Dont forget to change
+            this.apiUrl = 'http://proj.ruppin.ac.il/bgroup6/prod/api/answers/';//Dont forget to change
         }
+    }
+
+    goHome = () => {
+        this.props.history.replace("/home/" + this.state.id + "/" + this.state.profile + "/" + true, "urlhistory");
     }
 
     componentDidMount() {
@@ -86,7 +91,9 @@ class UserBarChart extends PureComponent {
             <div>
                 <Row>
                     <Col>
-                        <Link to={"/home/:id/:profile/:secondTime"}> <Button variant="secondary" style={{ float: "right" }}><i class="fa fa-home"></i></Button></Link>
+                        <Col xs={2}></Col>
+                        <Col xs={8}></Col>
+                        <Col style={{float:"right"}} xs={2}><Button variant="secondary" onClick={this.goHome}><i className="fas fa-home"></i></Button></Col>
                     </Col>
                 </Row>
 
