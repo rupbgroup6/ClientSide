@@ -24,17 +24,9 @@ class FeedL extends Component {
         }
     }
     componentDidMount(){
-        let url = "";
-        if(this.state.local){
-            url = "http://localhost:51298/api/Friends/GetFeeds/" + this.state.id;
-        }
-        else{
-            url = "http://proj.ruppin.ac.il/bgroup6/prod/api/Friends/GetFeeds/" + this.state.id;
-        }
-        
-
+        let url = this.apiUrl + this.state.id;
         fetch(url, {
-            method: 'Post',
+            method: 'Get',
             headers: new Headers({
               'Content-Type': 'application/json; charset=UTF-8',
             })
