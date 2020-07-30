@@ -82,6 +82,8 @@ html{
  .lbl {
     display: block;
     font: 1rem 'Fira Sans', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .Dater{
@@ -90,17 +92,20 @@ html{
     display: block;
 }
 
-#EDate{
-padding-right: 90px;
-padding-bottom: 10px;
-}
 
-#SDate{
+
+#SDate, #EDate{
     padding-right: 90px;
     padding-bottom: 10px;
+    background: lightgrey;
+    color: black;
 }
 
 .recharts-surface{
     padding-left: 15px;
+}
+
+#getInfoBTN{
+    background-color: #33adff;
 }
 
