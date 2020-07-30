@@ -8,7 +8,7 @@ import Col from 'react-bootstrap/Col';
 import home from '../Images/homeLogo.png';
 import book from '../Images/book.png';
 import friend from '../Images/friend.png';
-import apostrophes from '../Images/Apostrophes.png';
+import barChart from '../Images/barChart.jpeg';
 import glass from '../Images/glass2.png';
 import profile from '../Images/profile2.jpg';
 import quiz from '../Images/toQuiz.png';
@@ -106,7 +106,7 @@ class Home extends Component {
                                 <Row className="menu" class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
                                     <Col xs={5}><Link to={'/quiz/' + this.state.id + "/" + true + "/" + this.state.profile}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "10px" ,height:"70px" }} src={quiz} alt=""></img><h6 style={{paddingTop:"5px"}}>שאלונים</h6></button></Link></Col>
-                                    <Col xs={5}><Link to={'/UserBarChart/' + this.state.id + "/" + this.state.profile}> <button type="button" style={{ float: "left" }}><img style={{ height:"70px" }} src={apostrophes} alt="" ></img><h6 style={{}}>מאפיינים להצלחה בינלאומית</h6></button></Link> </Col>
+                                    <Col xs={5}><Link to={'/UserBarChart/' + this.state.id + "/" + this.state.profile}> <button type="button" style={{ float: "left" }}><img style={{ height:"70px" }} src={barChart} alt="" ></img><h6 style={{}}>מאפיינים להצלחה בינלאומית</h6></button></Link> </Col>
                                     <Col xs={1}></Col>
                                 </Row >
                             </Col>
