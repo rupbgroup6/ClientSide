@@ -121,11 +121,11 @@ class VComposedChart extends PureComponent {
           <Col className="chart" >
       <ComposedChart
         layout="vertical"
-        width={500}
+        width={390}
         height={400}
         data={this.state.data}
         margin={{
-          top: 20, right: 20, bottom: 20, left: 20,
+          top: 20, right:0 , bottom: 20, left: 27,
         }}
       >
         <CartesianGrid stroke="#f5f5f5" />
@@ -133,7 +133,7 @@ class VComposedChart extends PureComponent {
         <YAxis dataKey="name" type="category" />
         <Tooltip />
         {/* <Area dataKey="av" fill="#8884d8" stroke="#8884d8" /> */}
-        <Bar dataKey="value" barSize={20} fill="#413ea0" />
+        <Bar dataKey="value" barSize={20} fill="blue" />
         {/* <Line dataKey="lv" stroke="#ff7300" /> */}
       </ComposedChart>
       </Col>

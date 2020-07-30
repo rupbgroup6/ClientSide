@@ -5,6 +5,8 @@ import iooi from '../../Images/ioLogo.png';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import '../../CSS/RadialChart.css';
+
 
 
 const style = {
@@ -183,7 +185,7 @@ class RadialChart extends PureComponent {
           }
           else champAvg = 0;
 
-          let allavg = [{ name: "השורד", uv: survivorAvg, fill: '#8884d8'}, { name: "המאמין", uv: believerAvg, fill: '#83a6ed' }, { name: "המהפכן", uv: revolAvg, fill: '#8dd1e1' }, { name: "המנתח", uv: analystAvg, fill: '#82ca9d' }, { name: "המאזן", uv: balancedAvg, fill:'#a4de6c' }, { name: "המחושב", uv: calcAvg, fill:'#d0ed57' }, { name: "המתאים", uv: fitAvg, fill:'#ffc658' }, { name: "המעז", uv: daredevilAvg, fill: '#f0c620' }, { name: "האלוף", uv: champAvg, fill:'#ffc600' }]
+          let allavg = [{ name: "השורד", uv: survivorAvg, fill: '#8884d8' }, { name: "המאמין", uv: believerAvg, fill: '#83a6ed' }, { name: "המהפכן", uv: revolAvg, fill: '#8dd1e1' }, { name: "המנתח", uv: analystAvg, fill: '#82ca9d' }, { name: "המאזן", uv: balancedAvg, fill: '#a4de6c' }, { name: "המחושב", uv: calcAvg, fill: '#d0ed57' }, { name: "המתאים", uv: fitAvg, fill: '#ffc658' }, { name: "המעז", uv: daredevilAvg, fill: '#f0c620' }, { name: "האלוף", uv: champAvg, fill: '#ffc600' }]
           this.setState({
             data: allavg
           })
@@ -196,31 +198,35 @@ class RadialChart extends PureComponent {
   render() {
     return (
       <div>
-      <Row>
+        <Row>
           <Col>
-          <Link to={"/HomeAdmin"}> <Button variant="secondary" style={{ float: "right" }}><i class="fa fa-home"></i></Button></Link>
+            <Link to={"/HomeAdmin"}> <Button variant="secondary" style={{ float: "right" }}><i class="fa fa-home"></i></Button></Link>
           </Col>
         </Row>
 
-    <Row className="header2">
-      <Col xs={2}></Col>
-      <Col xs={8}><img className="title" alt="" src={iooi} style={{ }} /></Col>
-      <Col xs={2}></Col>
-    </Row>
+        <Row className="header2">
+          <Col xs={2}></Col>
+          <Col xs={8}><img className="title" alt="" src={iooi} style={{}} /></Col>
+          <Col xs={2}></Col>
+        </Row>
 
-       <Row>
+        <Row>
           <Col><h2>ממוצע פרופילים</h2></Col>
+        </Row>
+
+        <Row>
           <Col><h6>(מוצג באחוזים)</h6></Col>
         </Row>
-     <Row className="align11">
+
+        <Row className="align12" style={{marginTop:"30px"}}>
           <Col className="chart" >
-      <RadialBarChart width={500} height={300} cx={150} cy={150} innerRadius={20} outerRadius={140} barSize={10} data={this.state.data}>
-        <RadialBar minAngle={15} label={{ position: 'insideStart', fill: '#fff' }} background clockWise dataKey="uv" />
-        <Legend iconSize={10} width={120} height={140} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
-      </RadialBarChart>
-      </Col>
-      </Row>
+            <RadialBarChart width={350} height={500} cx={180} cy={200} innerRadius={20} outerRadius={160} barSize={30} data={this.state.data}>
+              <RadialBar minAngle={30} label={{ position: 'insideStart', fill: 'black' }} background clockWise dataKey="uv" />
+              <Legend iconSize={15} width={120} height={160} layout="vertical"  wrapperStyle={style} />
+            </RadialBarChart>
+          </Col>
+        </Row>
       </div>
     );
   }
-}export default withRouter(RadialChart);
+} export default withRouter(RadialChart);

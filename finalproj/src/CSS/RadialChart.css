@@ -1,0 +1,17 @@
+.recharts-layer > text{
+    
+    fill: white;
+}
+
+.recharts-layer recharts-area{
+    background-color: black;
+}
+
+.recharts-layer{
+    background-color: black;
+}
+
+.chart{
+  right: 10px;
+
+}
