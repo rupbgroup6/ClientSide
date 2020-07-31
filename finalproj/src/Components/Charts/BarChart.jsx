@@ -207,6 +207,7 @@ class BarCharts extends PureComponent {
           else champAvg = 0;
 
           let allavg = [{ name: "השורד", uv: survivorAvg }, { name: "המאמין", uv: believerAvg }, { name: "המהפכן", uv: revolAvg }, { name: "המנתח", uv: analystAvg }, { name: "המאזן", uv: balancedAvg }, { name: "המחושב", uv: calcAvg }, { name: "המתאים", uv: fitAvg }, { name: "המעז", uv: daredevilAvg }, { name: "האלוף", uv: champAvg }]
+          
           this.setState({
             data: allavg
           })

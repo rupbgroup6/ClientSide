@@ -21,7 +21,7 @@ class VComposedChart extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      local: true,
+      local: false,
       sDate: "",
       eDate: "",
       loading: false
@@ -141,7 +141,10 @@ class VComposedChart extends PureComponent {
           <Col xs={2}></Col>
         </Row>
         <Row>
-          <Col><h2 style={{ margin: "0" }}>סה"כ פרופילים</h2></Col>
+          <Col><h2 style={{ margin: "0" }}> סה"כ פרופילים</h2></Col>
+        </Row>
+        <Row>
+          <Col><h2 style={{ margin: "0" }}> שנוצרו בין התאריכים</h2></Col>
         </Row>
         <Row className="Dater">
           <Col>
@@ -149,6 +152,7 @@ class VComposedChart extends PureComponent {
             <input onChange={this.handleChange1} type="date" id="SDate" name="SDate"></input>
           </Col>
         </Row>
+        
         <Row className="Dater">
           <Col>
             <label className="lbl" for="EDate">:תאריך סיום</label>

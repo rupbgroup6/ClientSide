@@ -21,6 +21,7 @@ import HomeAdmin from './Components/Charts/HomeAdmin.jsx';
 import UserBarChart from './Components/Charts/UserBarChart.jsx';
 import RadialChart from './Components/Charts/RadialChart.jsx';
 import VComposedChart from './Components/Charts/VComposedChart.jsx';
+import BChart from './Components/Charts/BChart.jsx';
 
 
 
@@ -218,8 +219,11 @@ class App extends Component {
                 <Route path="/RadialChart" > 
                   <RadialChart />
                 </Route>
-                <Route path="/VComposedChart" >
+                <Route path="/VComposedChart" > 
                   <VComposedChart />
+                </Route>
+                <Route path="/BChart" > 
+                  <BChart />
                 </Route>
               </Switch>
             </CSSTransition>

@@ -215,7 +215,11 @@ class FriendList extends Component {
                         <h6 style={{ direction: "rtl"}}>מספר ה ID שלך הוא: {this.state.id}</h6>
                     </Col>
                 </Row>
-
+                <Row>
+                    <Col>
+                        <h6 style={{ direction: "rtl"}}>החליפו את מספר ה-ID עם חבריכם, נחשו איזה סוג מנהל הם וגלו מה הם חושבים עליכם </h6>
+                    </Col>
+                </Row>
                 <Row>
                     <Col xs={12} className="input" >
                         <Button style={{ margin: "auto", backgroundColor:"#33adff" }} variant="primary" onClick={this.AddToFriends}>הוסף חבר</Button>

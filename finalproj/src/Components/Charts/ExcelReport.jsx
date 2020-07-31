@@ -44,7 +44,7 @@ class ExcelReport extends React.Component {
             all[i] = {
               UserId: result[i].UserId, Age: result[i].Age, Gender: result[i].Gender, Education: result[i].Education, Job: result[i].Job,
               Profile: result[i].Profile, ScoreA: result[i].ScoreA, ScoreB: result[i].ScoreB, AvgSay1: result[i].AvgSay1, AvgSay2: result[i].AvgSay2,
-              AvgSay3: result[i].AvgSay3, AvgSay4: result[i].AvgSay4, AvgSay5: result[i].AvgSay5, DateStamp: result[i].DateStamp
+              AvgSay3: result[i].AvgSay3, AvgSay4: result[i].AvgSay4, AvgSay5: result[i].AvgSay5, DateStamp: result[i].DateStamp, Email: result[i].Email
             }
           }//end of for
 
@@ -77,6 +77,7 @@ class ExcelReport extends React.Component {
             <Row >
               <Col xs={6} className="download">  <ExcelFile element={<Button type="button" style={{ backgroundColor:"#33adff"  }}  ><i class="fa fa-download" aria-hidden="true"></i> הורד קבצי אקסל  </Button>}>
                 <ExcelSheet data={this.state.data} name="Students">
+                <ExcelColumn label="Email" value="Email" />
                   <ExcelColumn label="UserId" value="UserId" />
                   <ExcelColumn label="Age" value="Age" />
                   <ExcelColumn label="Gender" value="Gender" />
