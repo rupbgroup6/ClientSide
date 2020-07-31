@@ -297,7 +297,7 @@ class BChart extends PureComponent {
         </Row>
 
         <Row>
-          <Col><h2>חוזק קשרי חברויות בין פרופילים</h2></Col>
+          <Col><h2>חוזק קורלציות חברויות בין פרופילים</h2></Col>
         </Row>
 
    <Row className="align12" style={{marginTop:"30px"}}>
@@ -311,13 +311,17 @@ class BChart extends PureComponent {
         }}
         width={500}
         height={300}
+        border= {{
+          color: '#fff',
+
+        }}
         padding={0} // optional value, number that set the padding between bubbles
-        showLegend={false} // optional value, pass false to disable the legend.
+        showLegend={true} // optional value, pass false to disable the legend.
         legendPercentage={20} // number that represent the % of with that legend going to use.
         legendFont={{
           family: 'Arial',
           size: 12,
-          color: '#000',
+          color: '#fff',
           weight: 'bold',
         }}
         valueFont={{
