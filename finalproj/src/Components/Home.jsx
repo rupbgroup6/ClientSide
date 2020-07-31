@@ -5,13 +5,6 @@ import $ from "jquery";
 import swal from 'sweetalert';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import home from '../Images/homeLogo.png';
-import book from '../Images/book.png';
-import friend from '../Images/friend.png';
-import barChart from '../Images/barChart.jpeg';
-import glass from '../Images/glass2.png';
-import profile from '../Images/profile2.jpg';
-import quiz from '../Images/toQuiz.png';
 import Button from 'react-bootstrap/Button';
 
 class Home extends Component {

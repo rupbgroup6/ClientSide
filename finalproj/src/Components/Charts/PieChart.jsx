@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import {
   PieChart, Pie, Tooltip, Legend,
 } from 'recharts';
-import iooi from '../../Images/ioLogo.png';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';

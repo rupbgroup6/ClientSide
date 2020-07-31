@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { Switch, Route, Link, withRouter, Redirect } from 'react-router-dom';
 import { browserHistory } from "react-router";
 import '../CSS/Login.css';
-import logo from '../Images/logo.png';
-import email from '../Images/mail.svg';
-import password from '../Images/pass.svg';
 import $ from "jquery";
 import swal from 'sweetalert';
 

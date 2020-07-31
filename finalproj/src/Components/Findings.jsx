@@ -3,9 +3,6 @@ import { Switch, Route, Link, withRouter, Redirect } from 'react-router-dom';
 import '../CSS/Findings.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import iooi from '../Images/ioLogo.png';
-import headerImg from '../Images/findingImg.png';
-import Implications from '../Images/Implications.png';
 import Button from 'react-bootstrap/Button';
 
 class Findings extends Component {

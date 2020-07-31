@@ -3,7 +3,6 @@ import {
     BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 import { Switch, Route, Link, withRouter, Redirect } from 'react-router-dom';
-import iooi from '../../Images/ioLogo.png';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';

@@ -7,9 +7,6 @@ import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 import Col from 'react-bootstrap/Col';
 import "../../CSS/rest.css";
 import RangeSlider from 'react-bootstrap-range-slider';
-import male from '../../Images/Male.png';
-import female from '../../Images/Female.png';
-import next from '../../Images/next2.png';
 import Button from 'react-bootstrap/Button';
 
 class DemogQuiz extends Component {

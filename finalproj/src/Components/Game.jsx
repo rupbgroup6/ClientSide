@@ -7,11 +7,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import blue from '../Images/blue.png';
-import logovs from '../Images/logoVs.jpg';
-import red from '../Images/red.png';
-import iooi from '../Images/ioLogo.png';
-import typeOfManager from '../Images/typeOfManager.png';
 
 class Game extends Component {
     constructor(props) {

@@ -3,8 +3,6 @@ import { Switch, Route, Link, withRouter, Redirect } from 'react-router-dom';
 import '../../CSS/FriendList.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import logo from '../../Images/ioLogo.png';
-import friendList from '../../Images/FriendList.png';
 import $ from "jquery";
 import swal from 'sweetalert';
 import Button from 'react-bootstrap/Button';

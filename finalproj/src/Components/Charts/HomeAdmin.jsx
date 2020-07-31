@@ -5,12 +5,8 @@ import $ from "jquery";
 import swal from 'sweetalert';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import home from '../../Images/homeLogo.png';
-import friend from '../../Images/friend.png';
-import profile from '../../Images/profile2.jpg';
-import quiz from '../../Images/toQuiz.png';
-import users from '../../Images/users.png';
 import Button from 'react-bootstrap/Button';
+
 
 
 class HomeAdmin extends Component {

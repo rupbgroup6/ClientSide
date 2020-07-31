@@ -179,7 +179,7 @@ html, body {
 }
 
 .checkbox input:checked ~ span:before {
-	background-image: url(../Images/checked.png);
+	background-image: url("..//Images/checked.png");
 	background-size: cover;
 }
 

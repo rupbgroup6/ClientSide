@@ -4,7 +4,6 @@ import { browserHistory } from "react-router";
 import '../../CSS/FriendList.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import logo from '../../Images/ioLogo.png';
 import $ from "jquery";
 import swal from 'sweetalert';
 import Button from 'react-bootstrap/Button';

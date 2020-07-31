@@ -4,7 +4,6 @@ import $ from "jquery";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import "../../CSS/rest.css";
-import next from '../../Images/next2.png';
 import swal from 'sweetalert';
 import Button from 'react-bootstrap/Button';
 
