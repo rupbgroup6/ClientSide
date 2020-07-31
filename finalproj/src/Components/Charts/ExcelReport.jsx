@@ -19,7 +19,8 @@ class ExcelReport extends React.Component {
     this.state = {
       local: false,
       dataA:[],
-      dataB:[]
+      dataB:[],
+      dataC:[]
     }
     this.apiUrl = 'http://localhost:51298/api/users/';
     if (!this.state.local) {
@@ -277,10 +278,15 @@ class ExcelReport extends React.Component {
                   }
                 }
       
+                for (var i = 0; i < ac.length; i++) {
+                  let temp = ac[i].value;
+                  ac[i].percent = Math.floor((temp / res.length) * 100);
+                }
       
       
                 this.setState({
-                  dataB: conec2
+                  dataB: conec2,
+                  dataC: ac
                 })
               },
               (error) => {
@@ -310,7 +316,7 @@ class ExcelReport extends React.Component {
         <div className="align10" >
           <Col xs={12}>
             <Row >
-              <Col xs={6} className="download">  <ExcelFile element={<Button type="button" style={{ backgroundColor:"#33adff"  }}  ><i class="fa fa-download" aria-hidden="true"></i> הורד נתוני משתמשים</Button>}>
+              <Col xs={6} className="download">  <ExcelFile filename="All Users Data" element={<Button type="button" style={{ backgroundColor:"#33adff"  }}  ><i class="fa fa-download" aria-hidden="true"></i> הורד נתוני משתמשים</Button>}>
                 <ExcelSheet data={this.state.dataA} name="Students">
                 <ExcelColumn label="Email" value="Email" />
                   <ExcelColumn label="UserId" value="UserId" />
@@ -333,17 +339,21 @@ class ExcelReport extends React.Component {
             </Row>
           </Col>
           <br/>
-          <br/>
           <Col xs={12}>
           <Row >
-            <Col xs={6} className="download">  <ExcelFile element={<Button type="button" style={{ backgroundColor: "#33adff" }}  ><i class="fa fa-download" aria-hidden="true"></i> הורד קובץ קורלציה בין חברים  </Button>}>
-              <ExcelSheet data={this.state.dataB} name="Students">
+            <Col xs={6} className="download">  <ExcelFile filename="Profiles Correlations" element={<Button type="button" style={{ backgroundColor: "#33adff" }}  ><i class="fa fa-download" aria-hidden="true"></i> הורד קובץ קורלציה בין חברים  </Button>}>
+              <ExcelSheet data={this.state.dataB} name="RawData">
                 <ExcelColumn label="Email A" value="EmailA" />
                 <ExcelColumn label="Email B" value="EmailB" />
                 <ExcelColumn label="User A" value="UserA" />
                 <ExcelColumn label="User B" value="UserB" />
                 <ExcelColumn label="Profile A" value="ProfileA" />
                 <ExcelColumn label="Profile B" value="ProfileA" />
+              </ExcelSheet>
+              <ExcelSheet data={this.state.dataC} name="Profiles-Friends connections">
+                <ExcelColumn label="Relation" value="label" />
+                <ExcelColumn style="column.sortable = true" label="Value" value="value" />
+                <ExcelColumn label="Percent" value="percent" />
               </ExcelSheet>
             </ExcelFile>
             </Col>

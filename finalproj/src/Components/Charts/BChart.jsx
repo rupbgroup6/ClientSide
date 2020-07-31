@@ -77,7 +77,6 @@ class BChart extends PureComponent {
           for (var i = 0; i < res.length; i++) {
             conec2.push({ EmailA: res[i].EmailA, EmailB: res[i].EmailB, ProfileA: res[i].ProfileA, ProfileB: res[i].ProfileB, UserA: res[i].UserA, UserB: res[i].UserB });
           }
-
           for (var i = 0; i < res.length; i++) {
             if (res[i].ProfileA === "השורד" && res[i].ProfileB === "השורד") {
               let current = conec["השורד-השורד"];
@@ -260,7 +259,7 @@ class BChart extends PureComponent {
               conec["האלוף-האלוף"] = parseInt(current + 1);
             }
           }
-          var ac = [];
+          var ac = [];  //Math.floor((counter["האלוף"] / totalcount) * 100);
           for (var key in conec) {
             if (conec[key] != 0) {
               //ac = [{ label: Object.values(conec), value: Object.values(conec)} ]
@@ -268,7 +267,11 @@ class BChart extends PureComponent {
               ac.push({ label: key, value: conec[key] })
             }
           }
-
+          
+          for (var i = 0; i < ac.length; i++) {
+            let temp = ac[i].value;
+            ac[i].value = Math.floor((temp / res.length) * 100);
+          }
 
 
           this.setState({
@@ -300,6 +303,9 @@ class BChart extends PureComponent {
 
           <Row>
             <Col><h2>חוזק קורלציות חברויות בין פרופילים</h2></Col>
+          </Row>
+          <Row>
+            <Col><h6>(מוצג באחוזים)</h6></Col>
           </Row>
 
           <Row className="align12" style={{ marginTop: "30px" }}>
