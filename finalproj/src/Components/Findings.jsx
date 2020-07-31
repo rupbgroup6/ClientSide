@@ -31,12 +31,12 @@ class Findings extends Component {
                 </Row>
                 <Row className="header8">
                     <Col xs={2}></Col>
-                    <Col xs={8}><img className="title8" alt="" src={iooi} style={{ paddingTop: "5px" }} /></Col>
+                    <Col xs={8}><img className="title8" alt="" src={process.env.PUBLIC_URL + "/Images/ioLogo.png"} style={{ paddingTop: "5px" }} /></Col>
                     <Col xs={2}></Col>
                 </Row>
                     <Row className="headerImg">
                         <Col xs={12} >
-                            <img alt="" src={headerImg} style={{ width: "100%", height: '200px', marginTop: "15px" }} />
+                            <img alt="" src={process.env.PUBLIC_URL + "/Images/findingImg.png"} style={{ width: "100%", height: '200px', marginTop: "15px" }} />
                         </Col>
                     </Row>
 
@@ -98,7 +98,7 @@ class Findings extends Component {
 
                     <Row className="headerImg">
                         <Col xs={12} >
-                            <img alt="" src={Implications} style={{ width: "100%", height: '200px', marginTop: "15px" }} />
+                            <img alt="" src={process.env.PUBLIC_URL + "/Images/Implications.png"} style={{ width: "100%", height: '200px', marginTop: "15px" }} />
                         </Col>
                     </Row>
 

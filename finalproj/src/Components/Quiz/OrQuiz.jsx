@@ -156,7 +156,7 @@ class OrQuiz extends Component {
           <Row className="next">
             <Col xs={5}></Col>
             <Col style={{ textAlign: "center" }}>
-              <button onClick={this.next}><img style={{ height: "35px", width: "40px" }} src={next} alt=""></img></button>
+              <button onClick={this.next}><img style={{ height: "35px", width: "40px" }} src={process.env.PUBLIC_URL + "/Images/next2.png"} alt=""></img></button>
             </Col>
             <Col xs={5}></Col>
           </Row>{/*end of next */}

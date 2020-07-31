@@ -266,7 +266,7 @@ class LogAReg extends Component {
     render() {
         return (
             <div className="align">
-                <img className="logo" src={logo} style={{ paddingTop: "15px" }} />
+                <img className="logo" src={process.env.PUBLIC_URL + "/Images/logo.png"} style={{ paddingTop: "15px" }} />
                 <div className="card" style={{ paddingTop: "0", backgroundColor: "#0A0A0A" }}>
                     <div className="head">
                         <div></div>
@@ -279,11 +279,11 @@ class LogAReg extends Component {
                             <div className="inputs" style={{ paddingBottom: "15px" }}>
                                 <div className="input">
                                     <input type="text" id="email" placeholder="Email" onChange={this.changeEmail} />
-                                    <img src={email} />
+                                    <img src={process.env.PUBLIC_URL + "/Images/mail.svg"} />
                                 </div>
                                 <div className="input">
                                     <input type="password" placeholder="Password" id="password" onChange={this.changePassword} />
-                                    <img src={password} />
+                                    <img src={process.env.PUBLIC_URL + "/Images/pass.svg"} />
                                 </div>
                                 <label className="checkbox" style={{ float: "left" }}>
                                     <input type="checkbox" id="rememberMe" />
@@ -301,15 +301,15 @@ class LogAReg extends Component {
                             <div className="inputs">
                                 <div className="input">
                                     <input type="email" placeholder="Email" onChange={this.changeEmail} autoComplete="off" />
-                                    <img src={email} />
+                                    <img src={process.env.PUBLIC_URL + "/Images/mail.svg"} />
                                 </div>
                                 <div className="input">
                                     <input type="password" placeholder="Password" onChange={this.changePassword} />
-                                    <img src={password} />
+                                    <img src={process.env.PUBLIC_URL + "/Images/pass.svg"} />
                                 </div>
                                 <div className="input">
                                     <input type="password" placeholder="Confirm Passwrod" onChange={this.changeSPassword} />
-                                    <img src={password} />
+                                    <img src={process.env.PUBLIC_URL + "/Images/pass.svg"} />
                                 </div>
                             </div>
                             <button onClick={this.register}>Register</button>

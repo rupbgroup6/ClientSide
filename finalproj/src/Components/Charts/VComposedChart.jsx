@@ -137,7 +137,7 @@ class VComposedChart extends PureComponent {
 
         <Row className="header2">
           <Col xs={2}></Col>
-          <Col xs={8}><img className="title" alt="" src={iooi} style={{}} /></Col>
+          <Col xs={8}><img className="title" alt="" src={process.env.PUBLIC_URL + "/Images/ioLogo.png"} style={{}} /></Col>
           <Col xs={2}></Col>
         </Row>
         <Row>

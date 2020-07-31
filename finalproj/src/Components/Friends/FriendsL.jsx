@@ -5,8 +5,6 @@ import '../../CSS/FriendList.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import logo from '../../Images/ioLogo.png';
-import friendList from '../../Images/FriendList.png';
-import IconHome from '../../Images/IconHome.png';
 import $ from "jquery";
 import swal from 'sweetalert';
 import Button from 'react-bootstrap/Button';

@@ -66,11 +66,11 @@ class Quiz extends Component {
     return (
       <Container>
         <Row className="align">
-          <img className="about" alt="" src={about} style={{ paddingTop: "10px", width: "100px", height: "40px", background: "#0A0A0A" }} />
+          <img className="about" alt="" src={process.env.PUBLIC_URL + "/Images/about.png"} style={{ paddingTop: "10px", width: "100px", height: "40px", background: "#0A0A0A" }} />
           <DemogQuiz id={this.state.id} secondTime = {this.state.secondTime} profile={this.state.profile}/>
           <br></br>
           <Row id="2nd">
-            <img className="about" alt="" src={iooi} style={{ paddingTop: "10px", height: "50px", width: "80%", background: "#0A0A0A" }} />
+            <img className="about" alt="" src={process.env.PUBLIC_URL + "/Images/io-oi.png"} style={{ paddingTop: "10px", height: "50px", width: "80%", background: "#0A0A0A" }} />
             <IoQuiz ioQuestions={this.state.ioQuestions} ioAnswers={this.state.ioAnswers} handleIoAnswers={this.handleIoAnswers} id={this.state.id} handleProfile={this.handleProfile} secondTime = {this.state.secondTime}/>
           </Row>{/*end of io questions */}
           <br></br>
@@ -79,7 +79,7 @@ class Quiz extends Component {
           </Row>{/*end of 3rd */}
           <br></br>
           <Row id="4th">
-            <img className="about" alt="" src={userchar} style={{ paddingTop: "10px", height: "50px", width: "80%", background: "#0A0A0A" }} />
+            <img className="about" alt="" src={process.env.PUBLIC_URL + "/Images/userChar.png"} style={{ paddingTop: "10px", height: "50px", width: "80%", background: "#0A0A0A" }} />
             <BigQuiz secondTime = {this.state.secondTime} bigQuestions={this.state.bigQuestions} ioQuestions={this.state.ioQuestions} bigAnswers={this.state.bigAnswers} refreshIoAnswers={this.refreshIoAnswers} id={this.state.id} refreshProfile={this.refreshProfile} />
           </Row>{/*end of 4th */}
         </Row >{/*end of align */}

@@ -304,7 +304,7 @@ class ExcelReport extends React.Component {
         
         <Row className="header2" style={{ paddingTop: "15px" }}>
           <Col xs={2}></Col>
-          <Col xs={8}><img className="title" alt="" src={iooi} style={{ paddingTop: "10px" }} /></Col>
+          <Col xs={8}><img className="title" alt="" src={process.env.PUBLIC_URL + "/Images/ioLogo.png"} style={{ paddingTop: "10px" }} /></Col>
           <Col xs={2}></Col>
         </Row>
 

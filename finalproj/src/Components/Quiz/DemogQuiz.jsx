@@ -136,14 +136,14 @@ class DemogQuiz extends Component {
                     <Col xs={6}>
                       <label>
                         <input className="gender-radio" type="radio" name="gender" value="אישה" id="female" onClick={this.handleGender} />
-                        <img src={female} alt="" />
+                        <img src={process.env.PUBLIC_URL + "/Images/Female.png"} alt="" />
                         <h5 style={{ float: "center" }}>אישה</h5>
                       </label>
                     </Col>
                     <Col xs={6}>
                       <label>
                         <input className="gender-radio" type="radio" name="gender" value="גבר" id="male" onClick={this.handleGender} />
-                        <img src={male} alt="" />
+                        <img src={process.env.PUBLIC_URL + "/Images/Male.png"} alt="" />
                         <h5 style={{ float: "center" }}>גבר</h5>
                       </label>
                     </Col>
@@ -255,7 +255,7 @@ class DemogQuiz extends Component {
           <Row className="next">
             <Col xs={5}></Col>
             <Col style={{ textAlign: "center" }}>
-              <button onClick={this.next}><img style={{ height: "35px", width: "40px" }} src={next} alt=""></img></button>
+              <button onClick={this.next}><img style={{ height: "35px", width: "40px" }} src={process.env.PUBLIC_URL + "/Images/next2.png"} alt=""></img></button>
             </Col>
             <Col xs={5}></Col>
           </Row>{/*end of next */}

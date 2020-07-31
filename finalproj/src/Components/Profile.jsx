@@ -164,7 +164,7 @@ class Profile extends Component {
 
                         <Row className="header3">
                             <Col xs={2}></Col>
-                            <Col xs={8}><img className="title" alt="" src={iooi} style={{ paddingTop: "10px" }} /></Col>
+                            <Col xs={8}><img className="title" alt="" src={process.env.PUBLIC_URL + "/Images/ioLogo.png"} style={{ paddingTop: "10px" }} /></Col>
                             <Col xs={2}><Button variant="secondary" onClick={this.goHome}><i className="fas fa-home"></i></Button></Col>
                         </Row>
 

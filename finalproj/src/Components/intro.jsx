@@ -6,8 +6,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import "../CSS/rest.css";
-import welcomePic from '../Images/IntroImage.png';
-import iooi from '../Images/ioLogo.png';
 import Button from 'react-bootstrap/Button';
 import '../CSS/intro.css';
 
@@ -73,7 +71,7 @@ class Intro extends Component {
 
               <Row>
                 <Col xs={12} >
-                  <img className="pic" alt="" src={welcomePic} style={{ width: "100%", height: "90%", paddingBottom: "0px", paddingTop: "10px" }} />
+                  <img className="pic" alt="" src={process.env.PUBLIC_URL + "/Images/IntoImage.png"} style={{ width: "100%", height: "90%", paddingBottom: "0px", paddingTop: "10px" }} />
                 </Col>
               </Row>
 

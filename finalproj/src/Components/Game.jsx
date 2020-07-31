@@ -149,23 +149,23 @@ class Game extends Component {
 
                         <Row className="header2">
                             <Col xs={2}></Col>
-                            <Col xs={8}><img className="title" alt="" src={iooi} style={{ paddingTop: "10px" }} /></Col>
+                            <Col xs={8}><img className="title" alt="" src={process.env.PUBLIC_URL + "/Images/ioLogo.png"} style={{ paddingTop: "10px" }} /></Col>
                             <Col xs={2}></Col>
                         </Row>
 
                         <Row style={{ paddingBottom: "10%" }}>
 
                             <Col xs={12}>
-                                <img alt="" className="typeOfManager" src={typeOfManager} style={{ paddingTop: "10px" }} />
+                                <img alt="" className="typeOfManager" src={process.env.PUBLIC_URL + "/Images/typeOfManager.png"} style={{ paddingTop: "10px" }} />
                             </Col>
                         </Row>
 
                         <Row className="game">
                             <Col xs={12}>
                                 <div class="btn-group" role="group" aria-label="Basic example" >
-                                    <div><img src={blue} alt="" ></img></div>
-                                    <div><img src={logovs} alt=""></img></div>
-                                    <div><img src={red} alt=""></img></div>
+                                    <div><img src={process.env.PUBLIC_URL + "/Images/blue.png"} alt="" ></img></div>
+                                    <div><img src={process.env.PUBLIC_URL + "/Images/logoVs.png"} alt=""></img></div>
+                                    <div><img src={process.env.PUBLIC_URL + "/Images/red.png"} alt=""></img></div>
                                 </div>
                             </Col>
                         </Row>

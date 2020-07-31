@@ -199,14 +199,14 @@ class FriendList extends Component {
                 </Row>
                 <Row>
                     <Col xs={10}>
-                        <img className="logo9" src={logo} />
+                        <img className="logo9" src={process.env.PUBLIC_URL + "/Images/ioLogo.png"} />
                     </Col>
                     <Col xs={1}></Col>
                 </Row>
 
                 <Row>
                     <Col xs={2}></Col>
-                    <Col xs={8}><button><img className="friendLogo" src={friendList} style={{ paddingTop: "15px" }} /></button></Col>
+                    <Col xs={8}><button><img className="friendLogo" src={process.env.PUBLIC_URL + "/Images/FriendList.png"} style={{ paddingTop: "15px" }} /></button></Col>
                     <Col xs={2}></Col>
                 </Row>
 

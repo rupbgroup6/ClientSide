@@ -85,7 +85,7 @@ class Home extends Component {
 
                         <Row className="logo6">
                             <Col xs={12} className="logo6">
-                                <img className="homeLogo" alt="" src={home} style={{ paddingTop: "10px" }} />
+                                <img className="homeLogo" alt="" src={process.env.PUBLIC_URL + "/Images/homeLogo.png"} style={{ paddingTop: "10px" }} />
                             </Col>
                         </Row>
 
@@ -94,8 +94,8 @@ class Home extends Component {
                             <Col className="menu">
                                 <Row class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
-                                    <Col xs={5}> <button onClick={this.goResearch} type="button" style={{ float: "right" }}><img src={book} alt=""></img><h6>מחקר</h6></button></Col>
-                                    <Col xs={5}><Link to={"/friendList/" + this.state.id + "/" + this.state.profile}><button type="button" style={{ float: "left" }}><img style={{marginTop:"5px" , width:"90%"}} src={friend} alt="" ></img><h6 style={{marginTop:"7px"}}>רשימת חברים</h6></button></Link> </Col>
+                                    <Col xs={5}> <button onClick={this.goResearch} type="button" style={{ float: "right" }}><img src={process.env.PUBLIC_URL + "/Images/book.png"} alt=""></img><h6>מחקר</h6></button></Col>
+                                    <Col xs={5}><Link to={"/friendList/" + this.state.id + "/" + this.state.profile}><button type="button" style={{ float: "left" }}><img style={{marginTop:"5px" , width:"90%"}} src={process.env.PUBLIC_URL + "/Images/friend.png"} alt="" ></img><h6 style={{marginTop:"7px"}}>רשימת חברים</h6></button></Link> </Col>
                                     <Col xs={1}></Col>
                                 </Row>
                             </Col>
@@ -105,8 +105,8 @@ class Home extends Component {
                             <Col className="menu">
                                 <Row className="menu" class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
-                                    <Col xs={5}><Link to={'/quiz/' + this.state.id + "/" + true + "/" + this.state.profile}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "10px" ,height:"70px" }} src={quiz} alt=""></img><h6 style={{paddingTop:"5px"}}>שאלונים</h6></button></Link></Col>
-                                    <Col xs={5}><Link to={'/UserBarChart/' + this.state.id + "/" + this.state.profile}> <button type="button" style={{ float: "left" }}><img style={{ height:"70px" }} src={barChart} alt="" ></img><h6 style={{}}>מאפיינים להצלחה בינלאומית</h6></button></Link> </Col>
+                                    <Col xs={5}><Link to={'/quiz/' + this.state.id + "/" + true + "/" + this.state.profile}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "10px" ,height:"70px" }} src={process.env.PUBLIC_URL + "/Images/toQuiz.png"} alt=""></img><h6 style={{paddingTop:"5px"}}>שאלונים</h6></button></Link></Col>
+                                    <Col xs={5}><Link to={'/UserBarChart/' + this.state.id + "/" + this.state.profile}> <button type="button" style={{ float: "left" }}><img style={{ height:"70px" }} src={process.env.PUBLIC_URL + "/Images/barChart.jpeg"} alt="" ></img><h6 style={{}}>מאפיינים להצלחה בינלאומית</h6></button></Link> </Col>
                                     <Col xs={1}></Col>
                                 </Row >
                             </Col>
@@ -116,8 +116,8 @@ class Home extends Component {
                             <Col className="menu">
                                 <Row class="btn-group" role="group" aria-label="Basic example" >
                                     <Col xs={1}></Col>
-                                    <Col xs={5}><Link to={'/findings/' + this.state.profile + "/" + this.state.id}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} src={glass} alt=""></img><h6>ממצאים ותובנות</h6></button></Link></Col>
-                                    <Col xs={5}><Link to={"/profile/" + this.state.profile + "/" + this.state.id + "/" + true + "/" + true}><button type="button" style={{ float: "left" }}><img style={{ paddingTop: "7px", width:"65%" }}  src={profile} alt="" ></img><h6 style={{marginTop:"5px",height:"30%"}}>סוגי פרופיל</h6></button></Link></Col>
+                                    <Col xs={5}><Link to={'/findings/' + this.state.profile + "/" + this.state.id}> <button type="button" style={{ float: "right" }}><img style={{ paddingTop: "3px" }} src={process.env.PUBLIC_URL + "/Images/glass2.png"} alt=""></img><h6>ממצאים ותובנות</h6></button></Link></Col>
+                                    <Col xs={5}><Link to={"/profile/" + this.state.profile + "/" + this.state.id + "/" + true + "/" + true}><button type="button" style={{ float: "left" }}><img style={{ paddingTop: "7px", width:"65%" }}  src={process.env.PUBLIC_URL + "/Images/profile2.jpg"} alt="" ></img><h6 style={{marginTop:"5px",height:"30%"}}>סוגי פרופיל</h6></button></Link></Col>
                                     <Col xs={1}></Col>
                                 </Row>
                             </Col>
