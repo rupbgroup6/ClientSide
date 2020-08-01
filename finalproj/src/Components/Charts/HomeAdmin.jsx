@@ -55,29 +55,33 @@ class HomeAdmin extends Component {
                                     <img className="homeLogo" alt="" src={process.env.PUBLIC_URL + "/Images/homeLogo.png"} style={{ paddingTop: "10px", paddingBottom: "10px" }} />
                                 </Col>
                             </Row>
+                            <Row>
+                                <Col style={{textAlign:"center", marginTop:"50px"}}>
+                                    <Row className="menu" style={{ marginTop: "20px" }} >
+                                        <Col className="menu">
+                                            <Row className="menu" class="btn-group" role="group" aria-label="Basic example" >
+                                                <Col xs={1}></Col>
+                                                <Col xs={5}> <Link to={"/ExcelReport"}>  <button type="button" ><img style={{ marginLeft: "5px" }} src={process.env.PUBLIC_URL + "/Images/toQuiz.png"} alt=""></img><h6>הורדת קבצי אקסל</h6></button></Link></Col>
+                                                <Col xs={5}><Link to={"/RadialChart"}> <button type="button" ><img src={process.env.PUBLIC_URL + "/Images/profile2.jpg"} alt=""></img><h6 style={{ marginTop: "5px" }}>ממוצע פרופילים</h6></button></Link></Col>
+                                                <Col xs={1}></Col>
+                                            </Row >
+                                        </Col>
+                                    </Row>
 
-                            <Row className="menu" style={{ marginTop: "20px" }} >
-                                <Col className="menu">
-                                    <Row className="menu" class="btn-group" role="group" aria-label="Basic example" >
-                                        <Col xs={1}></Col>
-                                        <Col xs={5}> <Link to={"/ExcelReport"}>  <button type="button" style={{ height: "120%", width: "120%" }}><img style={{ marginLeft: "5px" }} src={process.env.PUBLIC_URL + "/Images/toQuiz.png"} alt=""></img><h6>הורדת קבצי אקסל</h6></button></Link></Col>
-                                        <Col xs={5}><Link to={"/RadialChart"}> <button type="button" style={{ height: "120%", width: "120%" }}><img src={process.env.PUBLIC_URL + "/Images/profile2.jpg"} alt=""></img><h6 style={{ marginTop: "5px" }}>ממוצע פרופילים</h6></button></Link></Col>
-                                        <Col xs={1}></Col>
-                                    </Row >
+
+                                    <Row className="menu" style={{ marginTop: "20px" }} >
+                                        <Col className="menu">
+                                            <Row className="menu" class="btn-group" role="group" aria-label="Basic example" >
+                                                <Col xs={1}></Col>
+                                                <Col xs={5}><Link to={"/VComposedChart"}> <button type="button" ><img style={{ height: "120%" }} src={process.env.PUBLIC_URL + "/Images/users.png"} alt=""></img><h6>כמות פרופילים</h6></button></Link></Col>
+                                                <Col xs={5}><Link to={"/BChart"}> <button type="button" ><img style={{ height: "120%" }} src={process.env.PUBLIC_URL + "/Images/users.png"} alt=""></img><h6> קשרי חברויות בין פרופילים</h6></button></Link></Col>
+                                                <Col xs={1}></Col>
+                                            </Row >
+                                        </Col>
+                                    </Row>
                                 </Col>
                             </Row>
 
-
-                            <Row className="menu" style={{ marginTop: "20px" }} >
-                                <Col className="menu">
-                                    <Row className="menu" class="btn-group" role="group" aria-label="Basic example" >
-                                        <Col xs={1}></Col>
-                                        <Col xs={5}><Link to={"/VComposedChart"}> <button type="button" style={{ height: "120%", width: "120%" }}><img style={{ height: "120%" }} src={process.env.PUBLIC_URL + "/Images/users.png"} alt=""></img><h6>כמות פרופילים</h6></button></Link></Col>
-                                        <Col xs={5}><Link to={"/BChart"}> <button type="button" style={{ height: "120%", width: "120%" }}><img style={{ height: "120%" }} src={process.env.PUBLIC_URL + "/Images/users.png"} alt=""></img><h6> קשרי חברויות בין פרופילים</h6></button></Link></Col>
-                                        <Col xs={1}></Col>
-                                    </Row >
-                                </Col>
-                            </Row>
                         </Col>
                     </Row>
                 </div>

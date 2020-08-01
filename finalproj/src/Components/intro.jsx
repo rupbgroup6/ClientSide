@@ -71,7 +71,7 @@ class Intro extends Component {
 
               <Row>
                 <Col xs={12} >
-                  <img className="pic" alt="" src={process.env.PUBLIC_URL + "/Images/IntoImage.png"} style={{ width: "100%", height: "90%", paddingBottom: "0px", paddingTop: "10px" }} />
+                  <img className="pic" alt="" src={process.env.PUBLIC_URL + "/Images/IntroImage.png"} style={{ width: "100%", height: "90%", paddingBottom: "0px", paddingTop: "10px" }} />
                 </Col>
               </Row>
 
